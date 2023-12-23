@@ -24,6 +24,7 @@ def get_ordered_to_be_billed_data(args):
         SELECT
             `{parent_tab}`.name, `{parent_tab}`.{date_field},
             `{parent_tab}`.{party}, `{parent_tab}`.{party}_name,
+            `{parent_tab}`.grand_total, `{parent_tab}`.base_grand_total,
             `{child_tab}`.item_code,
             SUM(`{child_tab}`.base_amount),
             SUM((`{child_tab}`.billed_amt * IFNULL(`{parent_tab}`.conversion_rate, 1))),
