@@ -14,7 +14,7 @@
  "hide_custom": 0,
  "icon": "project",
  "idx": 0,
- "is_hidden": 0,
+ "is_hidden": 1,
  "label": "Projects",
  "links": [
   {
@@ -192,7 +192,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-05-24 14:47:23.179860",
+ "modified": "2023-12-24 14:19:34.550821",
  "modified_by": "Administrator",
  "module": "Projects",
  "name": "Projects",
@@ -203,7 +203,7 @@
  "quick_lists": [],
  "restrict_to_domain": "",
  "roles": [],
- "sequence_id": 11.0,
+ "sequence_id": 20.0,
  "shortcuts": [
   {
    "color": "Blue",
