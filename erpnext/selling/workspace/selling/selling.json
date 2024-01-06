@@ -1,11 +1,6 @@
 {
- "charts": [
-  {
-   "chart_name": "Sales Order Trends",
-   "label": "Sales Order Trends"
-  }
- ],
- "content": "[{\"id\":\"aW2i5R5GRP\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"m2WR6dppyo\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Order Draft\",\"col\":3}},{\"id\":\"8ThcpFXhoB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Orders to Deliver\",\"col\":3}},{\"id\":\"kZkC8nDpq1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Delivery Note Issued\",\"col\":3}},{\"id\":\"-x9OUdWgSL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Delivery Trip in Transit & Scheduled\",\"col\":3}},{\"id\":\"1it3dCOnm6\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Quick Access</b></span>\",\"col\":12}},{\"id\":\"BCCIXDQfZf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Return Note\",\"col\":3}},{\"id\":\"x7pLl-spS4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item\",\"col\":3}},{\"id\":\"SSGrXWmY-H\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Order\",\"col\":3}},{\"id\":\"-5J_yLxDaS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Analytics\",\"col\":3}},{\"id\":\"oNjjNbnUHp\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"U-1xwkvSoU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Fulfilled\",\"col\":3}},{\"id\":\"8HMFnEIHSD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Delivery Note Issued\",\"col\":3}},{\"id\":\"2XB8I1GDvL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Delivery Note To Be Fulfilled\",\"col\":3}},{\"id\":\"c1MVbeeLHu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Delivery Trip in Transit\",\"col\":3}},{\"id\":\"VVXssQVeWw\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"NZ7RSVRE5C\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Delivery Trip Scheduled\",\"col\":3}},{\"id\":\"c_GjZuZ2oN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"0BcePLg0g1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"uze5dJ1ipL\",\"type\":\"card\",\"data\":{\"card_name\":\"Selling\",\"col\":4}},{\"id\":\"xImm8NepFt\",\"type\":\"card\",\"data\":{\"card_name\":\"Product and Pricing\",\"col\":4}},{\"id\":\"6MjIe7KCQo\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"lBu2EKgmJF\",\"type\":\"card\",\"data\":{\"card_name\":\"Key Reports\",\"col\":4}},{\"id\":\"1ARHrjg4kI\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}},{\"id\":\"vBSf8Vi9U8\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Sales Order Trends\",\"col\":12}}]",
+ "charts": [],
+ "content": "[{\"id\":\"aW2i5R5GRP\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"8ThcpFXhoB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Orders to Deliver or PickUp\",\"col\":3}},{\"id\":\"kZkC8nDpq1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Delivery Note Issued\",\"col\":3}},{\"id\":\"-x9OUdWgSL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Delivery Trip in Transit & Scheduled\",\"col\":3}},{\"id\":\"gzYp62gNjg\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"I3Z0anbGK-\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Workspace</b></span>\",\"col\":12}},{\"id\":\"0BcePLg0g1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"uze5dJ1ipL\",\"type\":\"card\",\"data\":{\"card_name\":\"Selling\",\"col\":4}},{\"id\":\"xImm8NepFt\",\"type\":\"card\",\"data\":{\"card_name\":\"Product and Pricing\",\"col\":4}},{\"id\":\"6MjIe7KCQo\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"lBu2EKgmJF\",\"type\":\"card\",\"data\":{\"card_name\":\"Key Reports\",\"col\":4}},{\"id\":\"1ARHrjg4kI\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}}]",
  "creation": "2020-01-28 11:49:12.092882",
  "custom_blocks": [],
  "docstatus": 0,
@@ -564,7 +559,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-12-24 19:17:28.138327",
+ "modified": "2024-01-06 11:10:58.370981",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Selling",
@@ -574,15 +569,11 @@
    "number_card_name": "Delivery Trip in Transit & Scheduled"
   },
   {
-   "label": "Sales Order Draft",
-   "number_card_name": "Sales Order Draft"
-  },
-  {
    "label": "Delivery Note Issued",
    "number_card_name": "Delivery Note Issued"
   },
   {
-   "label": "Sales Orders to Deliver",
+   "label": "Sales Orders to Deliver or PickUp",
    "number_card_name": "Sales Orders to Deliver"
   }
  ],
@@ -593,89 +584,6 @@
  "restrict_to_domain": "",
  "roles": [],
  "sequence_id": 11.0,
- "shortcuts": [
-  {
-   "color": "Grey",
-   "format": "{} Available",
-   "label": "Item",
-   "link_to": "Item",
-   "stats_filter": "[[\"Item\",\"disabled\",\"=\",0,false]]",
-   "type": "DocType"
-  },
-  {
-   "color": "Green",
-   "doc_view": "List",
-   "format": "{} ",
-   "label": "Sales Fulfilled",
-   "link_to": "Sales Order",
-   "stats_filter": "[[\"Sales Order\",\"status\",\"=\",\"To Bill\",false]]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "New",
-   "label": "Return Note",
-   "link_to": "Return Note",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Orange",
-   "doc_view": "List",
-   "format": "{} Open",
-   "label": "Delivery Trip in Transit",
-   "link_to": "Delivery Trip",
-   "stats_filter": "[[\"Delivery Trip\",\"status\",\"=\",\"In Transit\",false]]",
-   "type": "DocType"
-  },
-  {
-   "color": "Yellow",
-   "format": "{}  To Deliver",
-   "label": "Sales Order",
-   "link_to": "Sales Order",
-   "stats_filter": "[[\"Sales Order\",\"company\",\"like\",\"%Ms & Sons Trading Co., Ltd.%\",false],[\"Sales Order\",\"status\",\"in\",[\"To Deliver\",\"To Deliver and Bill\"],false]]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "format": "{}",
-   "label": "Delivery Note Issued",
-   "link_to": "Delivery Note",
-   "stats_filter": "[[\"Delivery Note\",\"status\",\"=\",\"Draft\",false]]",
-   "type": "DocType"
-  },
-  {
-   "color": "Blue",
-   "doc_view": "List",
-   "format": "{} Open",
-   "label": "Delivery Trip Scheduled",
-   "link_to": "Delivery Trip",
-   "stats_filter": "[[\"Delivery Trip\",\"status\",\"=\",\"Scheduled\",false]]",
-   "type": "DocType"
-  },
-  {
-   "color": "Orange",
-   "doc_view": "List",
-   "format": "{}",
-   "label": "Delivery Note To Be Fulfilled",
-   "link_to": "Delivery Note",
-   "stats_filter": "[[\"Delivery Note\",\"status\",\"=\",\"To Bill\",false]]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "format": "{} Open",
-   "label": "Sales Analytics",
-   "link_to": "Sales Analytics",
-   "stats_filter": "{ \"Status\": \"Open\" }",
-   "type": "Report"
-  },
-  {
-   "label": "Dashboard",
-   "link_to": "Selling",
-   "type": "Dashboard"
-  }
- ],
+ "shortcuts": [],
  "title": "Selling"
 }
