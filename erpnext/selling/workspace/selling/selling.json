@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"aW2i5R5GRP\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"8ThcpFXhoB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Orders to Deliver or PickUp\",\"col\":3}},{\"id\":\"kZkC8nDpq1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Delivery Note Issued\",\"col\":3}},{\"id\":\"-x9OUdWgSL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Delivery Trip in Transit & Scheduled\",\"col\":3}},{\"id\":\"gzYp62gNjg\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"I3Z0anbGK-\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Workspace</b></span>\",\"col\":12}},{\"id\":\"0BcePLg0g1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"uze5dJ1ipL\",\"type\":\"card\",\"data\":{\"card_name\":\"Selling\",\"col\":4}},{\"id\":\"xImm8NepFt\",\"type\":\"card\",\"data\":{\"card_name\":\"Product and Pricing\",\"col\":4}},{\"id\":\"6MjIe7KCQo\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"lBu2EKgmJF\",\"type\":\"card\",\"data\":{\"card_name\":\"Key Reports\",\"col\":4}},{\"id\":\"1ARHrjg4kI\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"aW2i5R5GRP\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"hD0uGZmWZL\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Delivery Dashboard</b></span>\",\"col\":12}},{\"id\":\"VCYGhfpzJL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Order To Prepare\",\"col\":3}},{\"id\":\"4TGNjspfbT\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Urgent Sales Order\",\"col\":3}},{\"id\":\"WJCvebinvJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Order Ready To Deliver\",\"col\":3}},{\"id\":\"OrB-iBdqg1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Delivery Note\",\"col\":3}},{\"id\":\"tdiZgcWgB5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Urgent Delivery Note\",\"col\":3}},{\"id\":\"-x9OUdWgSL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Delivery Trip in Transit & Scheduled\",\"col\":3}},{\"id\":\"TgCdvafYRb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Return Request\",\"col\":3}},{\"id\":\"DkMVY3ujgJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Upcoming Shipment\",\"col\":3}},{\"id\":\"gzYp62gNjg\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"I3Z0anbGK-\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Pickup Dashboard</b></span>\",\"col\":6}},{\"id\":\"VERIFcnx0l\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Transfer Dashboard</b></span>\",\"col\":6}},{\"id\":\"xs-MD1qtDb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Order To Prepare\",\"col\":3}},{\"id\":\"eSc_7uUu06\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Order Ready For Pick Up\",\"col\":3}},{\"id\":\"Cghxz8rPKg\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Transfer Request\",\"col\":3}},{\"id\":\"IvIzfOgyvH\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Transfer Ready\",\"col\":3}},{\"id\":\"PhFUN7Jhob\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"0BcePLg0g1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"uze5dJ1ipL\",\"type\":\"card\",\"data\":{\"card_name\":\"Selling\",\"col\":4}},{\"id\":\"xImm8NepFt\",\"type\":\"card\",\"data\":{\"card_name\":\"Product and Pricing\",\"col\":4}},{\"id\":\"6MjIe7KCQo\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"lBu2EKgmJF\",\"type\":\"card\",\"data\":{\"card_name\":\"Key Reports\",\"col\":4}},{\"id\":\"1ARHrjg4kI\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}}]",
  "creation": "2020-01-28 11:49:12.092882",
  "custom_blocks": [],
  "docstatus": 0,
@@ -559,22 +559,54 @@
    "type": "Link"
   }
  ],
- "modified": "2024-01-06 11:10:58.370981",
+ "modified": "2024-01-06 21:30:36.270199",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Selling",
  "number_cards": [
   {
+   "label": "Return Request",
+   "number_card_name": "Return Request-1"
+  },
+  {
+   "label": "Urgent Sales Order",
+   "number_card_name": "Urgent Sales Order"
+  },
+  {
+   "label": "Urgent Delivery Note",
+   "number_card_name": "Delivery Note Urgent"
+  },
+  {
    "label": "Delivery Trip in Transit & Scheduled",
    "number_card_name": "Delivery Trip in Transit & Scheduled"
   },
   {
-   "label": "Delivery Note Issued",
-   "number_card_name": "Delivery Note Issued"
+   "label": "Transfer Ready",
+   "number_card_name": "Transfer Ready"
   },
   {
-   "label": "Sales Orders to Deliver or PickUp",
-   "number_card_name": "Sales Orders to Deliver"
+   "label": "Upcoming Shipment",
+   "number_card_name": "Upcoming Shipment"
+  },
+  {
+   "label": "Transfer Request",
+   "number_card_name": "Transfer Request-1"
+  },
+  {
+   "label": "Sales Order Ready For Pick Up",
+   "number_card_name": "Sales Order Ready For Pick Up"
+  },
+  {
+   "label": "Delivery Note",
+   "number_card_name": "Delivery Note-1"
+  },
+  {
+   "label": "Sales Order To Prepare",
+   "number_card_name": "Sales Order To Prepare"
+  },
+  {
+   "label": "Sales Order Ready To Deliver",
+   "number_card_name": "Sales Order Ready To Deliver"
   }
  ],
  "owner": "Administrator",
