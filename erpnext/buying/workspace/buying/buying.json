@@ -1,13 +1,25 @@
 {
- "charts": [
+ "charts": [],
+ "content": "[{\"id\":\"de5th02Cxp\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Purchasing Dashboard</b></span>\",\"col\":12}},{\"id\":\"8jgOmFCH7a\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Material Request\",\"col\":3}},{\"id\":\"pOaMZBXiKT\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Shipment Report\",\"col\":3}},{\"id\":\"fSCw3PU5rP\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved Shipment\",\"col\":3}},{\"id\":\"JaEB16vqaN\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Local Supplier Dashboard</b></span>\",\"col\":12}},{\"id\":\"NF6WvD245O\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Purchasing Quotation Request\",\"col\":3}},{\"id\":\"TCpm-Wy6Uf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Purchase Order\",\"col\":3}},{\"id\":\"EgRLI6Helo\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved Purchase Order\",\"col\":3}},{\"id\":\"EfL3wm56Q1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Upcoming Shipment\",\"col\":3}},{\"id\":\"4S56l67_4o\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Overseas Supplier Dashboard</b></span>\",\"col\":12}},{\"id\":\"xO-dmHiN25\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Purchasing Quotation Request\",\"col\":3}},{\"id\":\"4VO37G5j0m\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Purchase Order\",\"col\":3}},{\"id\":\"WzBlAQk2zx\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved Purchase Order\",\"col\":3}},{\"id\":\"PAWVQ46EgE\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Upcoming Shipment\",\"col\":3}},{\"id\":\"n6noz-pjq3\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"LoCQfN4iT0\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Workspace</b></span>\",\"col\":12}},{\"id\":\"Sjylyq2Muq\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Buying Links 1\",\"col\":3}},{\"id\":\"7QqlDLE2tL\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Buyer Links 2\",\"col\":3}},{\"id\":\"ZaImiqgCPs\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Buying Links 3\",\"col\":3}},{\"id\":\"RKttzsZ-rz\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Buying Links 4\",\"col\":3}},{\"id\":\"EaH6Pfjfk7\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"_cIKDB1caA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"DjI2fK0FjP\",\"type\":\"card\",\"data\":{\"card_name\":\"Buying\",\"col\":4}},{\"id\":\"0uGHlNAYjb\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"DEeUAI_VQT\",\"type\":\"card\",\"data\":{\"card_name\":\"Supplier\",\"col\":4}},{\"id\":\"HZghjYK0Fj\",\"type\":\"card\",\"data\":{\"card_name\":\"Items & Pricing - (Product Profile)\",\"col\":4}},{\"id\":\"6E5UHalATr\",\"type\":\"card\",\"data\":{\"card_name\":\"Supplier Scorecard\",\"col\":4}},{\"id\":\"UyXcq7HnGA\",\"type\":\"card\",\"data\":{\"card_name\":\"Key Reports\",\"col\":4}},{\"id\":\"-osBuerUPY\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}}]",
+ "creation": "2020-01-28 11:50:26.195467",
+ "custom_blocks": [
   {
-   "chart_name": "Purchase Order Trends",
-   "label": "Purchase Order Trends"
+   "custom_block_name": "Buying Links 1",
+   "label": "Buying Links 1"
+  },
+  {
+   "custom_block_name": "Buyer Links 2",
+   "label": "Buyer Links 2"
+  },
+  {
+   "custom_block_name": "Buying Links 3",
+   "label": "Buying Links 3"
+  },
+  {
+   "custom_block_name": "Buying Links 4",
+   "label": "Buying Links 4"
   }
  ],
- "content": "[{\"id\":\"gpU5qFgIjB\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Purchase Order Trends\",\"col\":12}},{\"id\":\"n6noz-pjq3\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"LoCQfN4iT0\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"id\":\"PsmsPd9Pjp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item\",\"col\":3}},{\"id\":\"022ggcbKGO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Material Request\",\"col\":3}},{\"id\":\"GQv-TcbWaA\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Order\",\"col\":3}},{\"id\":\"nsb6JoAh6a\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Analytics\",\"col\":3}},{\"id\":\"HO4rs4RY_U\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Order Analysis\",\"col\":3}},{\"id\":\"uZiK2F5Rni\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"EaH6Pfjfk7\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"_cIKDB1caA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"DjI2fK0FjP\",\"type\":\"card\",\"data\":{\"card_name\":\"Buying\",\"col\":4}},{\"id\":\"0uGHlNAYjb\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"DEeUAI_VQT\",\"type\":\"card\",\"data\":{\"card_name\":\"Supplier\",\"col\":4}},{\"id\":\"HZghjYK0Fj\",\"type\":\"card\",\"data\":{\"card_name\":\"Items & Pricing - (Product Profile)\",\"col\":4}},{\"id\":\"6E5UHalATr\",\"type\":\"card\",\"data\":{\"card_name\":\"Supplier Scorecard\",\"col\":4}},{\"id\":\"UyXcq7HnGA\",\"type\":\"card\",\"data\":{\"card_name\":\"Key Reports\",\"col\":4}},{\"id\":\"-osBuerUPY\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}}]",
- "creation": "2020-01-28 11:50:26.195467",
- "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
@@ -580,11 +592,40 @@
    "type": "Link"
   }
  ],
- "modified": "2023-12-24 14:19:32.129444",
+ "modified": "2024-01-13 12:19:36.260156",
  "modified_by": "Administrator",
  "module": "Buying",
  "name": "Buying",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Pending Shipment Report",
+   "number_card_name": "Pending Shipment Report"
+  },
+  {
+   "label": "Material Request",
+   "number_card_name": "Material Request"
+  },
+  {
+   "label": "Approved Shipment",
+   "number_card_name": "Approved Shipment"
+  },
+  {
+   "label": "Purchasing Quotation Request",
+   "number_card_name": "Purchasing Quotation Request"
+  },
+  {
+   "label": "Pending Purchase Order",
+   "number_card_name": "Pending Purchase Order"
+  },
+  {
+   "label": "Approved Purchase Order",
+   "number_card_name": "Approved Purchase Order"
+  },
+  {
+   "label": "Upcoming Shipment",
+   "number_card_name": "Upcoming Shipment"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
@@ -592,46 +633,6 @@
  "restrict_to_domain": "",
  "roles": [],
  "sequence_id": 6.0,
- "shortcuts": [
-  {
-   "color": "Green",
-   "format": "{} Available",
-   "label": "Item",
-   "link_to": "Item",
-   "stats_filter": "{\n    \"disabled\": 0\n}",
-   "type": "DocType"
-  },
-  {
-   "color": "Yellow",
-   "format": "{} Pending",
-   "label": "Material Request",
-   "link_to": "Material Request",
-   "stats_filter": "{\n    \"company\": [\"like\", '%' + frappe.defaults.get_global_default(\"company\") + '%'],\n    \"status\": \"Pending\"\n}",
-   "type": "DocType"
-  },
-  {
-   "color": "Yellow",
-   "format": "{}  To Receive",
-   "label": "Purchase Order",
-   "link_to": "Purchase Order",
-   "stats_filter": "{\n    \"company\": [\"like\", '%' + frappe.defaults.get_global_default(\"company\") + '%'],\n    \"status\":[\"in\", [\"To Receive\", \"To Receive and Bill\"]]\n}",
-   "type": "DocType"
-  },
-  {
-   "label": "Purchase Analytics",
-   "link_to": "Purchase Analytics",
-   "type": "Report"
-  },
-  {
-   "label": "Purchase Order Analysis",
-   "link_to": "Purchase Order Analysis",
-   "type": "Report"
-  },
-  {
-   "label": "Dashboard",
-   "link_to": "Buying",
-   "type": "Dashboard"
-  }
- ],
+ "shortcuts": [],
  "title": "Buying"
 }
