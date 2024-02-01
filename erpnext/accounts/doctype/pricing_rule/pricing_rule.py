@@ -479,10 +479,10 @@ def apply_price_discount_rule(pricing_rule, item_details, args):
 			)
 		item_details.update({"discount_percentage": 0.0})
 
-	if pricing_rule.rate_or_discount == "Negative Rate":
+	if pricing_rule.rate_or_discount == "Decr. Rate":
 		pricing_rule_negative_rate = 0.0
 		if pricing_rule.currency == args.currency:
-			pricing_rule_negative_rate = pricing_rule.negative_rate
+			pricing_rule_negative_rate = pricing_rule.decr_rate
 
 		# TODO https://github.com/frappe/erpnext/pull/23636 solve this in some other way.
 		if pricing_rule_negative_rate:
