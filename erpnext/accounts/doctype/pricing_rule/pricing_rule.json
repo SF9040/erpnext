@@ -396,7 +396,7 @@
    "fieldname": "rate_or_discount",
    "fieldtype": "Select",
    "label": "Rate or Discount",
-   "options": "\nRate\nDiscount Percentage\nDiscount Amount\nNegative Rate"
+   "options": "\nRate\nDiscount Percentage\nDiscount Amount\nIncr. Rate\nDecr. Rate"
   },
   {
    "default": "Grand Total",
@@ -623,7 +623,7 @@
  "icon": "fa fa-gift",
  "idx": 1,
  "links": [],
- "modified": "2024-02-01 23:04:26.480976",
+ "modified": "2024-02-01 23:20:13.027845",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Pricing Rule",
