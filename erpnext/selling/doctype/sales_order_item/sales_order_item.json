@@ -23,10 +23,14 @@
   "quantity_and_rate",
   "qty",
   "stock_uom",
+  "customizable_width",
+  "customizable_length",
   "col_break2",
   "uom",
   "conversion_factor",
   "stock_qty",
+  "customizable_net_weight",
+  "customizable_gross_weight",
   "section_break_16",
   "price_list_rate",
   "base_price_list_rate",
@@ -872,12 +876,34 @@
    "label": "Production Plan Qty",
    "no_copy": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "customizable_width",
+   "fieldtype": "Float",
+   "label": "Customizable Width"
+  },
+  {
+   "fieldname": "customizable_length",
+   "fieldtype": "Float",
+   "label": "Customizable Length"
+  },
+  {
+   "fieldname": "customizable_gross_weight",
+   "fieldtype": "Float",
+   "label": "Customizable Gross Weight",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customizable_net_weight",
+   "fieldtype": "Float",
+   "label": "Customizable Net Weight",
+   "read_only": 1
   }
  ],
  "idx": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-01-19 21:10:51.668288",
+ "modified": "2024-02-01 18:34:40.603384",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order Item",
