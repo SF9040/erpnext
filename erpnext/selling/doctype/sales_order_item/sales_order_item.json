@@ -880,12 +880,12 @@
   {
    "fieldname": "customizable_width",
    "fieldtype": "Float",
-   "label": "Customizable Width"
+   "label": "Customizable Width (mm)"
   },
   {
    "fieldname": "customizable_length",
    "fieldtype": "Float",
-   "label": "Customizable Length"
+   "label": "Customizable Length (mm)"
   },
   {
    "fieldname": "customizable_gross_weight",
@@ -903,7 +903,7 @@
  "idx": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-02-01 18:34:40.603384",
+ "modified": "2024-02-01 19:25:33.266242",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order Item",
