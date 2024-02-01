@@ -507,6 +507,19 @@ def apply_price_discount_rule(pricing_rule, item_details, args):
 			)
 		# print("item_details ----------------------", item_details)
 		item_details.update({"discount_percentage": 0.0})
+	if pricing_rule.rate_or_discount == "Incr. Rate":
+		pricing_rule_positive_rate = 0.0
+		if pricing_rule.currency == args.currency:
+			pricing_rule_positive_rate = pricing_rule.incr_rate
+
+		if pricing_rule_positive_rate:
+			is_blank_uom = pricing_rule.get("uom") != args.get("uom")
+			item_details.update(
+				{
+					"price_list_rate": args.get('price_list_rate') + (pricing_rule_positive_rate * (args.get("conversion_factor", 1) if is_blank_uom else 1)),
+				}
+			)
+		item_details.update({"discount_percentage": 0.0})
 
 	for apply_on in ["Discount Amount", "Discount Percentage"]:
 		if pricing_rule.rate_or_discount != apply_on:
