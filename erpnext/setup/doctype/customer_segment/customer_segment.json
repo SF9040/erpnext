@@ -1,0 +1,167 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:customer_segment_name",
+ "creation": "2024-02-02 21:52:50.917701",
+ "default_view": "List",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_segment_name",
+  "parent_customer_segment",
+  "is_group",
+  "lft",
+  "rgt",
+  "is_group",
+  "old_parent",
+  "parent_customer_segment"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_segment_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Segment Name",
+   "no_copy": 1,
+   "oldfieldname": "customer_group_name",
+   "oldfieldtype": "Data",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "parent_customer_segment",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "in_list_view": 1,
+   "label": "Parent Customer Segment",
+   "oldfieldname": "parent_customer_group",
+   "oldfieldtype": "Link",
+   "options": "Customer Segment"
+  },
+  {
+   "bold": 1,
+   "default": "0",
+   "description": "Only leaf nodes are allowed in transaction",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Group",
+   "oldfieldname": "is_group",
+   "oldfieldtype": "Select"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "label": "Old Parent",
+   "options": "Customer Segment"
+  },
+  {
+   "fieldname": "parent_customer_segment",
+   "fieldtype": "Link",
+   "label": "Parent Customer Segment",
+   "options": "Customer Segment"
+  }
+ ],
+ "icon": "fa fa-sitemap",
+ "is_tree": 1,
+ "links": [],
+ "modified": "2024-02-02 21:52:50.917701",
+ "modified_by": "Administrator",
+ "module": "Setup",
+ "name": "Customer Segment",
+ "naming_rule": "By fieldname",
+ "nsm_parent_field": "parent_customer_segment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User"
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Master Manager",
+   "set_user_permissions": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "Sales Master Manager",
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "Sales User"
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "Sales Manager"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "role": "Customer",
+   "select": 1,
+   "share": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1
+  }
+ ],
+ "search_fields": "parent_customer_segment",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
