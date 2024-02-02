@@ -34,6 +34,7 @@
   "applicable_for",
   "customer",
   "customer_group",
+  "customer_segment",
   "territory",
   "sales_partner",
   "campaign",
@@ -619,12 +620,19 @@
    "fieldname": "incr_rate",
    "fieldtype": "Currency",
    "label": "Incr. Rate"
+  },
+  {
+   "depends_on": "eval:doc.applicable_for==\"Customer Segment\"",
+   "fieldname": "customer_segment",
+   "fieldtype": "Link",
+   "label": "Customer Segment",
+   "options": "Customer Segment"
   }
  ],
  "icon": "fa fa-gift",
  "idx": 1,
  "links": [],
- "modified": "2024-02-02 15:37:06.544265",
+ "modified": "2024-02-03 00:09:27.982846",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Pricing Rule",
