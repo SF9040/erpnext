@@ -143,7 +143,7 @@ frappe.ui.form.on('Pricing Rule', {
 		var applicable_for = frm.doc.applicable_for;
 
 		if(frm.doc.selling) {
-			options = $.merge(options, ["Customer", "Customer Group", "Territory", "Sales Partner", "Campaign"]);
+			options = $.merge(options, ["Customer", "Customer Group", "Territory", "Sales Partner", "Campaign", "Customer Segment"]);
 		}
 		if(frm.doc.buying) {
 			$.merge(options, ["Supplier", "Supplier Group"]);

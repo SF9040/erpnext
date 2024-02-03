@@ -244,7 +244,7 @@
    "fieldname": "applicable_for",
    "fieldtype": "Select",
    "label": "Applicable For",
-   "options": "\nCustomer\nCustomer Group\nTerritory\nSales Partner\nCampaign\nSupplier\nSupplier Group\nCustomer Segment"
+   "options": "\nCustomer\nCustomer Group\nTerritory\nSales Partner\nCampaign\nSupplier\nSupplier Group\nCustomer Segment\n"
   },
   {
    "depends_on": "eval:doc.applicable_for==\"Customer\"",
@@ -632,7 +632,7 @@
  "icon": "fa fa-gift",
  "idx": 1,
  "links": [],
- "modified": "2024-02-03 00:09:27.982846",
+ "modified": "2024-02-03 00:24:13.523541",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Pricing Rule",
