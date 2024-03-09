@@ -295,7 +295,7 @@
    "fieldname": "shipment_type",
    "fieldtype": "Select",
    "label": "Shipment Type",
-   "options": "Goods\nDocuments"
+   "options": "Goods\nDocuments\nCT\nBL\nBK"
   },
   {
    "default": "Pickup",
@@ -433,7 +433,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2022-11-17 17:23:27.025802",
+ "modified": "2024-02-11 21:01:27.913156",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Shipment",
