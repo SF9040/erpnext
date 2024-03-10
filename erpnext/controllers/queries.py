@@ -4,7 +4,8 @@
 
 import json
 from collections import defaultdict
-
+from fuzzywuzzy import fuzz
+from unidecode import unidecode
 import frappe
 from frappe import scrub
 from frappe.desk.reportview import get_filters_cond, get_match_cond
@@ -207,12 +208,11 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	if isinstance(filters, str):
 		filters = json.loads(filters)
 
-	# Get searchfields from meta and use in Item Link field query
 	meta = frappe.get_meta(doctype, cached=True)
 	searchfields = meta.get_search_fields()
 
 	columns = ""
-	extra_searchfields = [field for field in searchfields if not field in ["name", "description"]]
+	extra_searchfields = [field for field in searchfields if field not in ["name", "description"]]
 
 	if extra_searchfields:
 		columns += ", " + ", ".join(extra_searchfields)
@@ -221,12 +221,18 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		columns += """, if(length(tabItem.description) > 40, \
 			concat(substr(tabItem.description, 1, 40), "..."), description) as description"""
 
-	searchfields = searchfields + [
-		field
-		for field in [searchfield or "name", "item_code", "item_group", "item_name"]
-		if not field in searchfields
-	]
-	searchfields = " or ".join([field + " like %(txt)s" for field in searchfields])
+	searchfields = [
+    field
+    for field in [
+        searchfield or "name",
+        "item_code",
+        "item_group",
+        "item_name",
+        "description",
+        # "item_name_english",
+    ]
+    if field not in searchfields
+]
 
 	if filters and isinstance(filters, dict):
 		if filters.get("customer") or filters.get("supplier"):
@@ -255,34 +261,34 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 			filters.pop("customer", None)
 			filters.pop("supplier", None)
 
-	description_cond = ""
-	if frappe.db.count(doctype, cache=True) < 50000:
-		# scan description only if items are less than 50000
+	# description_cond = ""
+	# if frappe.db.count(doctype, cache=True) < 50000:
 		description_cond = "or tabItem.description LIKE %(txt)s"
 
-	return frappe.db.sql(
-		"""select
-			tabItem.name {columns}
-		from tabItem
-		where tabItem.docstatus < 2
-			and tabItem.disabled=0
-			and tabItem.has_variants=0
-			and (tabItem.end_of_life > %(today)s or ifnull(tabItem.end_of_life, '0000-00-00')='0000-00-00')
-			and ({scond} or tabItem.item_code IN (select parent from `tabItem Barcode` where barcode LIKE %(txt)s)
-				{description_cond})
-			{fcond} {mcond}
-		order by
-			if(locate(%(_txt)s, name), locate(%(_txt)s, name), 99999),
-			if(locate(%(_txt)s, item_name), locate(%(_txt)s, item_name), 99999),
-			idx desc,
-			name, item_name
-		limit %(start)s, %(page_len)s """.format(
-			columns=columns,
-			scond=searchfields,
-			fcond=get_filters_cond(doctype, filters, conditions).replace("%", "%%"),
-			mcond=get_match_cond(doctype).replace("%", "%%"),
-			description_cond=description_cond,
-		),
+	# Create a valid SQL condition based on searchfields
+	# search_condition = " or ".join([f"CONCAT(tabItem.{field}) LIKE %(txt)s" for field in searchfields])
+
+
+	# Fetch all results without Levenshtein condition
+	q1 = f"""SELECT
+    tabItem.name {columns}
+	FROM tabItem
+	WHERE tabItem.docstatus < 2
+		AND tabItem.disabled = 0
+		AND tabItem.has_variants = 0
+		AND (tabItem.end_of_life > %(today)s OR IFNULL(tabItem.end_of_life, '0000-00-00') = '0000-00-00')
+		{get_filters_cond(doctype, filters, conditions).replace("%", "%%")}
+		{get_match_cond(doctype).replace("%", "%%")}
+	ORDER BY
+		IF(LOCATE(%(_txt)s, name), LOCATE(%(_txt)s, name), 99999),
+		IF(LOCATE(%(_txt)s, item_name), LOCATE(%(_txt)s, item_name), 99999),
+		idx DESC,
+		name, item_name
+	LIMIT %(start)s, %(page_len)s"""
+
+	# print(">>>>>>>>>>>>>>XXXXXXXXXXXXXXXX>>>>>>>>", q1)
+	t = frappe.db.sql(
+		q1,
 		{
 			"today": nowdate(),
 			"txt": "%%%s%%" % txt,
@@ -293,6 +299,59 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		as_dict=as_dict,
 	)
 
+	# Filter results based on fuzzy matching with lower threshold for variations
+	threshold_variations = 60  # Adjust the threshold as needed for variations
+	filtered_results = []
+
+	# print("txt:", txt)
+
+	# print("XXXXXXXXXXXXXX",t)
+
+	# Check for matches with different variations
+	# for result in t:
+	# 	if (
+	# 		fuzz.token_sort_ratio(result[0], txt) >= threshold_variations
+	# 		or fuzz.token_set_ratio(result[0], txt) >= threshold_variations
+	# 		or fuzz.partial_ratio(result[0], txt) >= threshold_variations
+	# 	):
+	# 		filtered_results.append(result)
+
+    # Check for matches with different variations
+	# Check for matches with different variations
+	# Check for matches with different variations
+	filtered_results = []
+
+	for result in t:
+		# Debug information
+		# print(f'\tText: {txt}, Res: {result}, Result: {result[0]}')
+
+		# Calculate the partial ratio for result[0] or result[1]
+
+
+		# partial_ratio_0 = fuzz.partial_ratio(result[0], txt)
+		# partial_ratio_1 = fuzz.partial_ratio(result[1], txt)
+
+
+		# Normalize the strings using unidecode
+		normalized_txt = unidecode(txt)
+		normalized_result_0 = unidecode(result[0])
+		normalized_result_1 = unidecode(result[1])
+
+		# Calculate the partial ratio for normalized strings
+		partial_ratio_0 = fuzz.partial_ratio(normalized_result_0, normalized_txt)
+		partial_ratio_1 = fuzz.partial_ratio(normalized_result_1, normalized_txt)
+
+		# Print the threshold value and partial ratios
+		# print(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0}, Partial Ratio for Result[1]: {partial_ratio_1}')
+
+		# Check if either partial ratio meets the adjusted threshold
+		if partial_ratio_0 >= threshold_variations or partial_ratio_1 >= threshold_variations:
+		# if partial_ratio_1 >= threshold_variations:
+			filtered_results.append(result)
+
+	# print("filtered_results: ", filtered_results)
+
+	return filtered_results
 
 @frappe.whitelist()
 @frappe.validate_and_sanitize_search_inputs
