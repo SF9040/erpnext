@@ -14,6 +14,15 @@ from frappe.utils import nowdate, unique
 import erpnext
 from erpnext.stock.get_item_details import _get_item_tax_template
 
+from logtail import LogtailHandler
+import logging
+
+handler = LogtailHandler(source_token="HbAh49VsfnpeZe5Re6kwT1UF")
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+logger.handlers = []
+logger.addHandler(handler)
+
 
 # searches for active employees
 @frappe.whitelist()
@@ -323,7 +332,9 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 
 	for result in t:
 		# Debug information
-		print(f'\tText: {txt}, Res: {result[1]}, Result: {result[0]}')
+		# print(f'\tText: {txt}, Res: {result[1]}, Result: {result[0]}')
+
+		logger.warning(f'\tText: {txt}, Res: {result[1]}, Result: {result[0]}')
 
 		# Calculate the partial ratio for result[0] or result[1]
 
@@ -342,7 +353,8 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		partial_ratio_1 = fuzz.partial_ratio(normalized_result_1, normalized_txt)
 
 		# Print the threshold value and partial ratios
-		print(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0}, Partial Ratio for Result[1]: {partial_ratio_1}')
+		# print(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0}, Partial Ratio for Result[1]: {partial_ratio_1}')
+		logger.warning(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0}, Partial Ratio for Result[1]: {partial_ratio_1}')
 
 		# Check if either partial ratio meets the adjusted threshold
 		if partial_ratio_0 >= threshold_variations or partial_ratio_1 >= threshold_variations:
