@@ -300,7 +300,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	)
 
 	# Filter results based on fuzzy matching with lower threshold for variations
-	threshold_variations = 60  # Adjust the threshold as needed for variations
+	threshold_variations = 50  # Adjust the threshold as needed for variations
 	filtered_results = []
 
 	# print("txt:", txt)
@@ -323,7 +323,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 
 	for result in t:
 		# Debug information
-		# print(f'\tText: {txt}, Res: {result}, Result: {result[0]}')
+		print(f'\tText: {txt}, Res: {result[1]}, Result: {result[0]}')
 
 		# Calculate the partial ratio for result[0] or result[1]
 
@@ -337,12 +337,23 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		normalized_result_0 = unidecode(result[0])
 		normalized_result_1 = unidecode(result[1])
 
-		# Calculate the partial ratio for normalized strings
-		partial_ratio_0 = fuzz.partial_ratio(normalized_result_0, normalized_txt)
-		partial_ratio_1 = fuzz.partial_ratio(normalized_result_1, normalized_txt)
+		# Remove spaces before calculating partial ratios
+		txt_no_spaces = txt.replace(" ", "")
+		normalized_txt_no_spaces = normalized_txt.replace(" ", "")
+
+		# Calculate the partial ratio for both original and normalized strings
+		partial_ratio_0 = max(
+			fuzz.partial_ratio(result[0].replace(" ", ""), txt_no_spaces),
+			fuzz.partial_ratio(normalized_result_0, normalized_txt_no_spaces),
+		)
+		partial_ratio_1 = max(
+			fuzz.partial_ratio(result[1].replace(" ", ""), txt_no_spaces),
+			fuzz.partial_ratio(normalized_result_1, normalized_txt_no_spaces),
+		)
+
 
 		# Print the threshold value and partial ratios
-		# print(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0}, Partial Ratio for Result[1]: {partial_ratio_1}')
+		print(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0}, Partial Ratio for Result[1]: {partial_ratio_1}')
 
 		# Check if either partial ratio meets the adjusted threshold
 		if partial_ratio_0 >= threshold_variations or partial_ratio_1 >= threshold_variations:
