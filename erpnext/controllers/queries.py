@@ -337,20 +337,9 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		normalized_result_0 = unidecode(result[0])
 		normalized_result_1 = unidecode(result[1])
 
-		# Remove spaces before calculating partial ratios
-		txt_no_spaces = txt.replace(" ", "")
-		normalized_txt_no_spaces = normalized_txt.replace(" ", "")
-
-		# Calculate the partial ratio for both original and normalized strings
-		partial_ratio_0 = max(
-			fuzz.partial_ratio(result[0].replace(" ", ""), txt_no_spaces),
-			fuzz.partial_ratio(normalized_result_0, normalized_txt_no_spaces),
-		)
-		partial_ratio_1 = max(
-			fuzz.partial_ratio(result[1].replace(" ", ""), txt_no_spaces),
-			fuzz.partial_ratio(normalized_result_1, normalized_txt_no_spaces),
-		)
-
+		# Calculate the partial ratio for normalized strings
+		partial_ratio_0 = fuzz.partial_ratio(normalized_result_0, normalized_txt)
+		partial_ratio_1 = fuzz.partial_ratio(normalized_result_1, normalized_txt)
 
 		# Print the threshold value and partial ratios
 		print(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0}, Partial Ratio for Result[1]: {partial_ratio_1}')
