@@ -338,7 +338,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		# Debug information
 		# print(f'\tText: {txt}, Res: {result[1]}, Result: {result[0]}')
 
-		logger.warning(f'Text: {txt}, Res: {result[1]}, Result: {result[0]}')
+		logger.warning(f'Text: {txt}, Res: {result}')
 
 		# Calculate the partial ratio for normalized strings
 		partial_ratio_0 = fuzz.partial_ratio(result[0].lower(), txt.lower())
