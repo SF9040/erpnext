@@ -329,6 +329,9 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	# Check for matches with different variations
 	# Check for matches with different variations
 	filtered_results = []
+	
+	# Temporary list to hold results along with their max_partial_ratio
+	temp_results_with_ratios = []
 
 	for result in t:
 		# Debug information
@@ -348,12 +351,25 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		# print(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0}, Partial Ratio for Result[1]: {partial_ratio_1}')
 		logger.info(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0} | | Partial Ratio for Result[1]: {partial_ratio_1}')
 
+		# Determine the maximum partial ratio for this result
+		max_partial_ratio = max(partial_ratio_0, partial_ratio_1)
+		# Only add results that meet the threshold, along with their max_partial_ratio
+		if max_partial_ratio >= threshold_variations:
+			temp_results_with_ratios.append((max_partial_ratio, result))
+
+
 		# Check if either partial ratio meets the adjusted threshold
 		if partial_ratio_0 >= threshold_variations or partial_ratio_1 >= threshold_variations:
 		# if partial_ratio_1 >= threshold_variations:
 			filtered_results.append(result)
 
-	# print("filtered_results: ", filtered_results)
+	# Sort the temporary list by max_partial_ratio in descending order
+	temp_results_with_ratios.sort(key=lambda x: x[0], reverse=True)
+
+	# Reconstruct filtered_results based on the sorted list, excluding the ratio
+	filtered_results = [result[1] for result in temp_results_with_ratios]
+
+	logger.error(f"filtered_results: { filtered_results}")
 
 	return filtered_results
 
