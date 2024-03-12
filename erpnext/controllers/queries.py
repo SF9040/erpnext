@@ -221,7 +221,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	searchfields = meta.get_search_fields()
 
 	columns = ""
-	extra_searchfields = [field for field in searchfields if field not in ["name", "item_name", "item_name_english"]]
+	extra_searchfields = [field for field in searchfields if field not in ["name", "description", "item_name_english"]]
 
 	if extra_searchfields:
 		columns += ", " + ", ".join(extra_searchfields)
@@ -343,6 +343,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		# Calculate the partial ratio for normalized strings
 		partial_ratio_0 = fuzz.partial_ratio(result[0].lower(), txt.lower())
 		partial_ratio_1 = fuzz.partial_ratio(result[1].lower(), txt.lower())
+		partial_ratio_2 = fuzz.partial_ratio(result[2].lower(), txt.lower())
 		# print("result[0].lower(): ", result[0].lower(), "txt.lower(): ", txt.lower())
 		# print("result[1].lower(): ", result[1].lower(), "txt.lower(): ", txt.lower())
 		# print("partial_ratio_0: ", partial_ratio_0)
@@ -353,16 +354,16 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		logger.info(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0} | | Partial Ratio for Result[1]: {partial_ratio_1}')
 
 		# Determine the maximum partial ratio for this result
-		max_partial_ratio = max(partial_ratio_0, partial_ratio_1)
+		max_partial_ratio = max(partial_ratio_0, partial_ratio_1, partial_ratio_2)
 		# Only add results that meet the threshold, along with their max_partial_ratio
 		if max_partial_ratio >= threshold_variations:
 			temp_results_with_ratios.append((max_partial_ratio, result))
 
 
-		# Check if either partial ratio meets the adjusted threshold
-		if partial_ratio_0 >= threshold_variations or partial_ratio_1 >= threshold_variations:
-		# if partial_ratio_1 >= threshold_variations:
-			filtered_results.append(result)
+		# # Check if either partial ratio meets the adjusted threshold
+		# if partial_ratio_0 >= threshold_variations or partial_ratio_1 >= threshold_variations:
+		# # if partial_ratio_1 >= threshold_variations:
+		# 	filtered_results.append(result)
 
 	# Sort the temporary list by max_partial_ratio in descending order
 	temp_results_with_ratios.sort(key=lambda x: x[0], reverse=True)
