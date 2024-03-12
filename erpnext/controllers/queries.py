@@ -309,7 +309,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	)
 
 	# Filter results based on fuzzy matching with lower threshold for variations
-	threshold_variations = 50  # Adjust the threshold as needed for variations
+	threshold_variations = 29  # Adjust the threshold as needed for variations
 	filtered_results = []
 
 	# print("txt:", txt)
@@ -334,7 +334,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		# Debug information
 		# print(f'\tText: {txt}, Res: {result[1]}, Result: {result[0]}')
 
-		logger.warning(f'\tText: {txt}, Res: {result[1]}, Result: {result[0]}')
+		logger.warning(f'Text: {txt}, Res: {result[1]}, Result: {result[0]}')
 
 		# Calculate the partial ratio for result[0] or result[1]
 
@@ -354,7 +354,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 
 		# Print the threshold value and partial ratios
 		# print(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0}, Partial Ratio for Result[1]: {partial_ratio_1}')
-		logger.warning(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0}, Partial Ratio for Result[1]: {partial_ratio_1}')
+		logger.info(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0} | | Partial Ratio for Result[1]: {partial_ratio_1}')
 
 		# Check if either partial ratio meets the adjusted threshold
 		if partial_ratio_0 >= threshold_variations or partial_ratio_1 >= threshold_variations:
