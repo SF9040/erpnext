@@ -336,21 +336,13 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 
 		logger.warning(f'Text: {txt}, Res: {result[1]}, Result: {result[0]}')
 
-		# Calculate the partial ratio for result[0] or result[1]
-
-
-		# partial_ratio_0 = fuzz.partial_ratio(result[0], txt)
-		# partial_ratio_1 = fuzz.partial_ratio(result[1], txt)
-
-
-		# Normalize the strings using unidecode
-		normalized_txt = unidecode(txt)
-		normalized_result_0 = unidecode(result[0])
-		normalized_result_1 = unidecode(result[1] if len(result) > 1 else "")
-
 		# Calculate the partial ratio for normalized strings
-		partial_ratio_0 = fuzz.partial_ratio(normalized_result_0, normalized_txt)
-		partial_ratio_1 = fuzz.partial_ratio(normalized_result_1, normalized_txt) if normalized_result_1 else 0
+		partial_ratio_0 = fuzz.partial_ratio(result[0].lower(), txt.lower())
+		partial_ratio_1 = fuzz.partial_ratio(result[1].lower(), txt.lower())
+		# print("result[0].lower(): ", result[0].lower(), "txt.lower(): ", txt.lower())
+		# print("result[1].lower(): ", result[1].lower(), "txt.lower(): ", txt.lower())
+		# print("partial_ratio_0: ", partial_ratio_0)
+		# print("partial_ratio_1: ", partial_ratio_1)
 
 		# Print the threshold value and partial ratios
 		# print(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0}, Partial Ratio for Result[1]: {partial_ratio_1}')
