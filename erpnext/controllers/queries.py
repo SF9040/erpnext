@@ -291,6 +291,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	ORDER BY
 		IF(LOCATE(%(_txt)s, name), LOCATE(%(_txt)s, name), 99999),
 		IF(LOCATE(%(_txt)s, item_name), LOCATE(%(_txt)s, item_name), 99999),
+		IF(LOCATE(%(_txt)s, item_name_english), LOCATE(%(_txt)s, item_name_english), 99999),
 		idx DESC,
 		name, item_name
 	LIMIT %(start)s, %(page_len)s"""
