@@ -309,7 +309,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	)
 
 	# Filter results based on fuzzy matching with lower threshold for variations
-	threshold_variations = 29  # Adjust the threshold as needed for variations
+	threshold_variations = 50  # Adjust the threshold as needed for variations
 	filtered_results = []
 
 	# print("txt:", txt)
