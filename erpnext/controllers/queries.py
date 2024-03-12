@@ -277,7 +277,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	# Create a valid SQL condition based on searchfields
 	# search_condition = " or ".join([f"CONCAT(tabItem.{field}) LIKE %(txt)s" for field in searchfields])
 
-
+	logger.error(f'columns: {columns}')
 	# Fetch all results without Levenshtein condition
 	q1 = f"""SELECT
     tabItem.name {columns}
@@ -293,7 +293,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		IF(LOCATE(%(_txt)s, item_name), LOCATE(%(_txt)s, item_name), 99999),
 		IF(LOCATE(%(_txt)s, item_name_english), LOCATE(%(_txt)s, item_name_english), 99999),
 		idx DESC,
-		name, item_name
+		name, item_name, item_name_english
 	LIMIT %(start)s, %(page_len)s"""
 
 	# print(">>>>>>>>>>>>>>XXXXXXXXXXXXXXXX>>>>>>>>", q1)
