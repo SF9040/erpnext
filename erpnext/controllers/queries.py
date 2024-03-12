@@ -4,7 +4,7 @@
 
 import json
 from collections import defaultdict
-from fuzzywuzzy import fuzz
+from rapidfuzz import fuzz, process
 from unidecode import unidecode
 import frappe
 from frappe import scrub
@@ -346,11 +346,11 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		# Normalize the strings using unidecode
 		normalized_txt = unidecode(txt)
 		normalized_result_0 = unidecode(result[0])
-		normalized_result_1 = unidecode(result[1])
+		normalized_result_1 = unidecode(result[1] if len(result) > 1 else "")
 
 		# Calculate the partial ratio for normalized strings
 		partial_ratio_0 = fuzz.partial_ratio(normalized_result_0, normalized_txt)
-		partial_ratio_1 = fuzz.partial_ratio(normalized_result_1, normalized_txt)
+		partial_ratio_1 = fuzz.partial_ratio(normalized_result_1, normalized_txt) if normalized_result_1 else 0
 
 		# Print the threshold value and partial ratios
 		# print(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0}, Partial Ratio for Result[1]: {partial_ratio_1}')
