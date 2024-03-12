@@ -237,7 +237,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
         "item_code",
         "item_group",
         "item_name",
-        "description",
+        # "description",
         "item_name_english",
     ]
     if field not in searchfields
