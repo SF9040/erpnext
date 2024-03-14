@@ -304,7 +304,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 			"txt": "%%%s%%" % txt,
 			"_txt": txt.replace("%", ""),
 			"start": start,
-			"page_len": 1000,
+			"page_len": page_len or 1000,
 		},
 		as_dict=as_dict,
 	)
