@@ -293,8 +293,8 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		IF(LOCATE(%(_txt)s, item_name), LOCATE(%(_txt)s, item_name), 99999),
 		IF(LOCATE(%(_txt)s, item_name_english), LOCATE(%(_txt)s, item_name_english), 99999),
 		idx DESC,
-		name, item_name, item_name_english
-	LIMIT %(start)s, %(page_len)s"""
+		name, item_name, item_name_english"""
+	# LIMIT %(start)s, %(page_len)s"""
 
 	# print(">>>>>>>>>>>>>>XXXXXXXXXXXXXXXX>>>>>>>>", q1)
 	t = frappe.db.sql(
@@ -303,8 +303,8 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 			"today": nowdate(),
 			"txt": "%%%s%%" % txt,
 			"_txt": txt.replace("%", ""),
-			"start": start,
-			"page_len": page_len or 1000,
+			# "start": start,
+			# "page_len": page_len or 1000,
 		},
 		as_dict=as_dict,
 	)
