@@ -313,7 +313,8 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	threshold_variations = 50  # Adjust the threshold as needed for variations
 	filtered_results = []
 
-	logger.info(f'query: {q1}')
+	logger.info(f'start: {start}')
+	logger.info(f'page_len: {page_len}')
 	# print("txt:", txt)
 
 	# print("XXXXXXXXXXXXXX",t)
