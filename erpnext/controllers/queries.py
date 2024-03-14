@@ -334,6 +334,8 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	# Temporary list to hold results along with their max_partial_ratio
 	temp_results_with_ratios = []
 
+	logger.info(f'total: {t.__len__()}')
+
 	for result in t:
 		# Debug information
 		# print(f'\tText: {txt}, Res: {result[1]}, Result: {result[0]}')
