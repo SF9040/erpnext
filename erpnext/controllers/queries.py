@@ -277,7 +277,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	# Create a valid SQL condition based on searchfields
 	# search_condition = " or ".join([f"CONCAT(tabItem.{field}) LIKE %(txt)s" for field in searchfields])
 
-	logger.error(f'columns: {columns}')
+	# logger.error(f'columns: {columns}')
 	# Fetch all results without Levenshtein condition
 	q1 = f"""SELECT
     tabItem.name {columns}
@@ -311,14 +311,14 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		as_dict=as_dict,
 	)
 
-	logger.info(t)
+	# logger.info(t)
 
 	# Filter results based on fuzzy matching with lower threshold for variations
 	threshold_variations = 50  # Adjust the threshold as needed for variations
 	filtered_results = []
 
-	logger.info(f'start: {start}')
-	logger.info(f'page_len: {page_len}')
+	# logger.info(f'start: {start}')
+	# logger.info(f'page_len: {page_len}')
 	# print("txt:", txt)
 
 	# print("XXXXXXXXXXXXXX",t)
@@ -340,13 +340,13 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	# Temporary list to hold results along with their max_partial_ratio
 	temp_results_with_ratios = []
 
-	logger.info(f'total: {t.__len__()}')
+	# logger.info(f'total: {t.__len__()}')
 
 	for result in t:
 		# Debug information
 		# print(f'\tText: {txt}, Res: {result[1]}, Result: {result[0]}')
 
-		logger.warning(f'Text: {txt}, Res: {result[0]}, {result[1]}, {result[2]}')
+		# logger.warning(f'Text: {txt}, Res: {result[0]}, {result[1]}, {result[2]}')
 
 		# Calculate the partial ratio for normalized strings
 		partial_ratio_0 = fuzz.partial_ratio(result[0].lower(), txt.lower()) if result[0] is not None else 0
@@ -360,14 +360,14 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		# Print the threshold value and partial ratios
 		# print(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0}, Partial Ratio for Result[1]: {partial_ratio_1}')
 		# logger.info(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0} | | Partial Ratio for Result[1]: {partial_ratio_1}')
-		logger.info(f'column 0: {(result[0] if result[0] is not None else "").lower() or ""}, partial_ratio_0: {partial_ratio_0}')
-		logger.info(f'column 1: {(result[1] if result[1] is not None else "").lower() or ""}, partial_ratio_1: {partial_ratio_1}')
-		logger.info(f'column 2: {(result[2] if result[2] is not None else "").lower() or ""}, partial_ratio_2: {partial_ratio_2}')
+		# logger.info(f'column 0: {(result[0] if result[0] is not None else "").lower() or ""}, partial_ratio_0: {partial_ratio_0}')
+		# logger.info(f'column 1: {(result[1] if result[1] is not None else "").lower() or ""}, partial_ratio_1: {partial_ratio_1}')
+		# logger.info(f'column 2: {(result[2] if result[2] is not None else "").lower() or ""}, partial_ratio_2: {partial_ratio_2}')
 
 		# Determine the maximum partial ratio for this result
 		max_partial_ratio = max(partial_ratio_0, partial_ratio_1, partial_ratio_2)
 
-		logger.info(f'max_partial_ratio: {max_partial_ratio}')
+		# logger.info(f'max_partial_ratio: {max_partial_ratio}')
 		# Only add results that meet the threshold, along with their max_partial_ratio
 		if max_partial_ratio >= threshold_variations:
 			temp_results_with_ratios.append((max_partial_ratio, result))
@@ -384,7 +384,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	# Reconstruct filtered_results based on the sorted list, excluding the ratio
 	filtered_results = [result[1] for result in temp_results_with_ratios]
 
-	logger.error(f"filtered_results: { filtered_results}")
+	# logger.error(f"filtered_results: { filtered_results}")
 
 	return filtered_results
 
