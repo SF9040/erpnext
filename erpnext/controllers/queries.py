@@ -360,9 +360,9 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		# Print the threshold value and partial ratios
 		# print(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0}, Partial Ratio for Result[1]: {partial_ratio_1}')
 		# logger.info(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0} | | Partial Ratio for Result[1]: {partial_ratio_1}')
-		logger.info(f'column 0: {result[0].lower()}, partial_ratio_0: {partial_ratio_0}')
-		logger.info(f'column 1: {result[1].lower()}, partial_ratio_1: {partial_ratio_1}')
-		logger.info(f'column 2: {result[2].lower()}, partial_ratio_2: {partial_ratio_2}')
+		logger.info(f'column 0: {result[0].lower() or ""}, partial_ratio_0: {partial_ratio_0}')
+		logger.info(f'column 1: {result[1].lower() or ""}, partial_ratio_1: {partial_ratio_1}')
+		logger.info(f'column 2: {result[2].lower() or ""}, partial_ratio_2: {partial_ratio_2}')
 
 		# Determine the maximum partial ratio for this result
 		max_partial_ratio = max(partial_ratio_0, partial_ratio_1, partial_ratio_2)
