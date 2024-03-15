@@ -349,9 +349,9 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		logger.warning(f'Text: {txt}, Res: {result[0]}, {result[1]}, {result[2]}')
 
 		# Calculate the partial ratio for normalized strings
-		partial_ratio_0 = fuzz.partial_ratio(result[0].lower(), txt.lower())
-		partial_ratio_1 = fuzz.partial_ratio(result[1].lower(), txt.lower())
-		partial_ratio_2 = fuzz.partial_ratio(result[2].lower(), txt.lower())
+		partial_ratio_0 = fuzz.partial_ratio(result[0].lower(), txt.lower()) if result[0] is not None else 0
+		partial_ratio_1 = fuzz.partial_ratio(result[1].lower(), txt.lower()) if result[1] is not None else 0
+		partial_ratio_2 = fuzz.partial_ratio(result[2].lower(), txt.lower()) if result[2] is not None else 0
 		# print("result[0].lower(): ", result[0].lower(), "txt.lower(): ", txt.lower())
 		# print("result[1].lower(): ", result[1].lower(), "txt.lower(): ", txt.lower())
 		# print("partial_ratio_0: ", partial_ratio_0)
