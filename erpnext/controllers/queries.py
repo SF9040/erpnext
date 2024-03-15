@@ -294,7 +294,9 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		IF(LOCATE(%(_txt)s, item_name_english), LOCATE(%(_txt)s, item_name_english), 99999),
 		idx DESC,
 		name, item_name, item_name_english
-	LIMIT %(start)s, %(page_len)s"""
+	
+	LIMIT 10000"""
+	# LIMIT %(start)s, %(page_len)s"""
 
 	# print(">>>>>>>>>>>>>>XXXXXXXXXXXXXXXX>>>>>>>>", q1)
 	t = frappe.db.sql(
@@ -308,6 +310,8 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		},
 		as_dict=as_dict,
 	)
+
+	logger.info(t)
 
 	# Filter results based on fuzzy matching with lower threshold for variations
 	threshold_variations = 50  # Adjust the threshold as needed for variations
