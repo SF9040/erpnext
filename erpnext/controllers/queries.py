@@ -349,7 +349,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		# logger.warning(f'Text: {txt}, Res: {result[0]}, {result[1]}, {result[2]}')
 
 		# Calculate the partial ratio for normalized strings
-		partial_ratio_0 = fuzz.partial_ratio(result[0].lower(), txt.lower()) if result[0] is not None else 0
+		# partial_ratio_0 = fuzz.partial_ratio(result[0].lower(), txt.lower()) if result[0] is not None else 0
 		partial_ratio_1 = fuzz.partial_ratio(result[1].lower(), txt.lower()) if result[1] is not None else 0
 		partial_ratio_2 = fuzz.partial_ratio(result[2].lower(), txt.lower()) if result[2] is not None else 0
 		# print("result[0].lower(): ", result[0].lower(), "txt.lower(): ", txt.lower())
@@ -365,7 +365,9 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		# logger.info(f'column 2: {(result[2] if result[2] is not None else "").lower() or ""}, partial_ratio_2: {partial_ratio_2}')
 
 		# Determine the maximum partial ratio for this result
-		max_partial_ratio = max(partial_ratio_0, partial_ratio_1, partial_ratio_2)
+		# max_partial_ratio = max(partial_ratio_0, partial_ratio_1, partial_ratio_2)
+		max_partial_ratio = max(partial_ratio_1, partial_ratio_2)
+
 
 		# logger.info(f'max_partial_ratio: {max_partial_ratio}')
 		# Only add results that meet the threshold, along with their max_partial_ratio
