@@ -386,7 +386,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	# Reconstruct filtered_results based on the sorted list, excluding the ratio
 	filtered_results = [result[1] for result in temp_results_with_ratios]
 
-	# logger.error(f"filtered_results: { filtered_results}")
+	logger.error(f"temp_results_with_ratios: {temp_results_with_ratios}")
 
 	return filtered_results
 
