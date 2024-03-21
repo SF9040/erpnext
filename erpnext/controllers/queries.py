@@ -221,8 +221,8 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	meta = frappe.get_meta(doctype, cached=True)
 	searchfields = meta.get_search_fields()
 	logger.warning(searchfields)
-	logger.info("searchfields", searchfields)
 	searchfields.append('image')
+	logger.info("searchfields", searchfields)
 
 	# Setup columns for SELECT, excluding name and description by default
 	columns = ""
@@ -233,6 +233,8 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	if "description" in searchfields:
 		columns += """, if(length(tabItem.description) > 40, \
 			concat(substr(tabItem.description, 1, 40), "..."), description) as description"""
+
+	logger.info("columns", columns)
 
 	# Split 'txt' into individual keywords
 	keywords = txt.split()
