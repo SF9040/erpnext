@@ -268,7 +268,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 			IF(LOCATE(%(_txt)s, name), LOCATE(%(_txt)s, name), 99999),
 			IF(LOCATE(%(_txt)s, item_name), LOCATE(%(_txt)s, item_name), 99999),
 			IF(LOCATE(%(_txt)s, item_name_english), LOCATE(%(_txt)s, item_name_english), 99999),
-			idx DESC,
+			idx ASC,
 			name, item_name, item_name_english
 		LIMIT %(page_len)s OFFSET %(start)s"""
 	
