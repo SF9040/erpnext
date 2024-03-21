@@ -285,6 +285,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	logger.info(q1)
 	# Execute the query
 	t = frappe.db.sql(q1, params, as_dict=as_dict)
+	logger.info(t)
 
 	return t
 
