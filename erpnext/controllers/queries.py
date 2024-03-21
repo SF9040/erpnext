@@ -211,184 +211,104 @@ def tax_account_query(doctype, txt, searchfield, start, page_len, filters):
 @frappe.whitelist()
 @frappe.validate_and_sanitize_search_inputs
 def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=False):
-	doctype = "Item"
-	conditions = []
+    doctype = "Item"
+    conditions = []
 
-	if isinstance(filters, str):
-		filters = json.loads(filters)
+    # Parse filters from JSON if necessary
+    if isinstance(filters, str):
+        filters = json.loads(filters)
 
-	meta = frappe.get_meta(doctype, cached=True)
-	searchfields = meta.get_search_fields()
+    # Get meta and search fields for the doctype
+    meta = frappe.get_meta(doctype, cached=True)
+    searchfields = meta.get_search_fields()
 
-	columns = ""
-	extra_searchfields = [field for field in searchfields if field not in ["name", "description"]]
+    # Setup columns for SELECT, excluding name and description by default
+    columns = ""
+    extra_searchfields = [field for field in searchfields if field not in ["name", "description"]]
+    if extra_searchfields:
+        columns += ", " + ", ".join(extra_searchfields)
 
-	if extra_searchfields:
-		columns += ", " + ", ".join(extra_searchfields)
+    # Format description if included in searchfields
+    if "description" in searchfields:
+        columns += """, if(length(tabItem.description) > 40, \
+            concat(substr(tabItem.description, 1, 40), "..."), description) as description"""
 
-	if "description" in searchfields:
-		columns += """, if(length(tabItem.description) > 40, \
-			concat(substr(tabItem.description, 1, 40), "..."), description) as description"""
+    # Setup searchfields, making sure to exclude duplicates
+    searchfields = [
+        field for field in [
+            searchfield or "name",
+            "item_code",
+            "item_group",
+            "item_name",
+            "item_name_english",
+        ] if field not in searchfields
+    ]
 
-	searchfields = [
-    field
-    for field in [
-        searchfield or "name",
+    # Process filters, specifically for customer or supplier
+    if filters and isinstance(filters, dict):
+        # Handle party-specific item rules
+        party = filters.get("customer") or filters.get("supplier")
+        if party:
+            item_rules_list = frappe.get_all(
+                "Party Specific Item", filters={"party": party}, fields=["restrict_based_on", "based_on_value"]
+            )
+
+            filters_dict = {}
+            for rule in item_rules_list:
+                rule_key = "name" if rule["restrict_based_on"] == "Item" else rule["restrict_based_on"]
+                filters_dict.setdefault(rule_key, []).append(rule["based_on_value"])
+
+            for filter_key, values in filters_dict.items():
+                filters[filter_key] = ["in", values]
+
+            filters.pop("customer", None)
+            filters.pop("supplier", None)
+    
+    # Split 'txt' into individual keywords
+    keywords = txt.split()
+
+    # Construct LIKE conditions for each keyword
+    like_conditions = ' AND '.join([f"tabItem.{field} LIKE %({keyword})s" for keyword in keywords for field in [
+        "name",
         "item_code",
         "item_group",
         "item_name",
-        # "description",
+        "description",
         "item_name_english",
-    ]
-    if field not in searchfields
-]
+    ]])
 
-	if filters and isinstance(filters, dict):
-		if filters.get("customer") or filters.get("supplier"):
-			party = filters.get("customer") or filters.get("supplier")
-			item_rules_list = frappe.get_all(
-				"Party Specific Item", filters={"party": party}, fields=["restrict_based_on", "based_on_value"]
-			)
+    # Formulate the SQL query string
+    q1 = f"""SELECT
+        tabItem.name {columns}
+        FROM tabItem
+        WHERE tabItem.docstatus < 2
+            AND tabItem.disabled = 0
+            AND tabItem.has_variants = 0
+            AND (tabItem.end_of_life > %(today)s OR IFNULL(tabItem.end_of_life, '0000-00-00') = '0000-00-00')
+            AND ({like_conditions})
+            {get_filters_cond(doctype, filters, conditions).replace("%", "%%")}
+            {get_match_cond(doctype).replace("%", "%%")}
+        ORDER BY
+            IF(LOCATE(%(_txt)s, name), LOCATE(%(_txt)s, name), 99999),
+            IF(LOCATE(%(_txt)s, item_name), LOCATE(%(_txt)s, item_name), 99999),
+            IF(LOCATE(%(_txt)s, item_name_english), LOCATE(%(_txt)s, item_name_english), 99999),
+            idx DESC,
+            name, item_name, item_name_english
+        LIMIT %(page_len)s OFFSET %(start)s"""
 
-			filters_dict = {}
-			for rule in item_rules_list:
-				if rule["restrict_based_on"] == "Item":
-					rule["restrict_based_on"] = "name"
-				filters_dict[rule.restrict_based_on] = []
+    # Prepare parameters for the SQL query, including keywords for LIKE conditions
+    params = {
+        "today": nowdate(),
+        "_txt": txt.replace("%", ""),
+        "start": int(start),
+        "page_len": int(page_len or 1000),
+    }
+    params.update({keyword: f"%{keyword}%" for keyword in keywords})
 
-			for rule in item_rules_list:
-				filters_dict[rule.restrict_based_on].append(rule.based_on_value)
+    # Execute the query
+    t = frappe.db.sql(q1, params, as_dict=as_dict)
 
-			for filter in filters_dict:
-				filters[scrub(filter)] = ["in", filters_dict[filter]]
-
-			if filters.get("customer"):
-				del filters["customer"]
-			else:
-				del filters["supplier"]
-		else:
-			filters.pop("customer", None)
-			filters.pop("supplier", None)
-
-	# description_cond = ""
-	# if frappe.db.count(doctype, cache=True) < 50000:
-		description_cond = "or tabItem.description LIKE %(txt)s"
-
-	# Create a valid SQL condition based on searchfields
-	# search_condition = " or ".join([f"CONCAT(tabItem.{field}) LIKE %(txt)s" for field in searchfields])
-
-	# logger.error(f'columns: {columns}')
-	# Fetch all results without Levenshtein condition
-	q1 = f"""SELECT
-    tabItem.name {columns}
-	FROM tabItem
-	WHERE tabItem.docstatus < 2
-		AND tabItem.disabled = 0
-		AND tabItem.has_variants = 0
-		AND (tabItem.end_of_life > %(today)s OR IFNULL(tabItem.end_of_life, '0000-00-00') = '0000-00-00')
-		{get_filters_cond(doctype, filters, conditions).replace("%", "%%")}
-		{get_match_cond(doctype).replace("%", "%%")}
-	ORDER BY
-		IF(LOCATE(%(_txt)s, name), LOCATE(%(_txt)s, name), 99999),
-		IF(LOCATE(%(_txt)s, item_name), LOCATE(%(_txt)s, item_name), 99999),
-		IF(LOCATE(%(_txt)s, item_name_english), LOCATE(%(_txt)s, item_name_english), 99999),
-		idx DESC,
-		name, item_name, item_name_english
-	
-	LIMIT 10000"""
-	# LIMIT %(start)s, %(page_len)s"""
-
-	# print(">>>>>>>>>>>>>>XXXXXXXXXXXXXXXX>>>>>>>>", q1)
-	t = frappe.db.sql(
-		q1,
-		{
-			"today": nowdate(),
-			"txt": "%%%s%%" % txt,
-			"_txt": txt.replace("%", ""),
-			"start": start,
-			"page_len": page_len or 1000,
-		},
-		as_dict=as_dict,
-	)
-
-	# logger.info(t)
-
-	# Filter results based on fuzzy matching with lower threshold for variations
-	threshold_variations = 50  # Adjust the threshold as needed for variations
-	filtered_results = []
-
-	# logger.info(f'start: {start}')
-	# logger.info(f'page_len: {page_len}')
-	# print("txt:", txt)
-
-	# print("XXXXXXXXXXXXXX",t)
-
-	# Check for matches with different variations
-	# for result in t:
-	# 	if (
-	# 		fuzz.token_sort_ratio(result[0], txt) >= threshold_variations
-	# 		or fuzz.token_set_ratio(result[0], txt) >= threshold_variations
-	# 		or fuzz.partial_ratio(result[0], txt) >= threshold_variations
-	# 	):
-	# 		filtered_results.append(result)
-
-    # Check for matches with different variations
-	# Check for matches with different variations
-	# Check for matches with different variations
-	filtered_results = []
-	
-	# Temporary list to hold results along with their max_partial_ratio
-	temp_results_with_ratios = []
-
-	# logger.info(f'total: {t.__len__()}')
-
-	for result in t:
-		# Debug information
-		# print(f'\tText: {txt}, Res: {result[1]}, Result: {result[0]}')
-
-		# logger.warning(f'Text: {txt}, Res: {result[0]}, {result[1]}, {result[2]}')
-
-		# Calculate the partial ratio for normalized strings
-		# partial_ratio_0 = fuzz.partial_ratio(result[0].lower(), txt.lower()) if result[0] is not None else 0
-		partial_ratio_1 = fuzz.partial_ratio(result[1].lower(), txt.lower()) if result[1] is not None else 0
-		partial_ratio_2 = fuzz.partial_ratio(result[2].lower(), txt.lower()) if result[2] is not None else 0
-		# print("result[0].lower(): ", result[0].lower(), "txt.lower(): ", txt.lower())
-		# print("result[1].lower(): ", result[1].lower(), "txt.lower(): ", txt.lower())
-		# print("partial_ratio_0: ", partial_ratio_0)
-		# print("partial_ratio_1: ", partial_ratio_1)
-
-		# Print the threshold value and partial ratios
-		# print(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0}, Partial Ratio for Result[1]: {partial_ratio_1}')
-		# logger.info(f'\tThreshold Value: {threshold_variations}, Partial Ratio for Result[0]: {partial_ratio_0} | | Partial Ratio for Result[1]: {partial_ratio_1}')
-		# logger.info(f'column 0: {(result[0] if result[0] is not None else "").lower() or ""}, partial_ratio_0: {partial_ratio_0}')
-		# logger.info(f'column 1: {(result[1] if result[1] is not None else "").lower() or ""}, partial_ratio_1: {partial_ratio_1}')
-		# logger.info(f'column 2: {(result[2] if result[2] is not None else "").lower() or ""}, partial_ratio_2: {partial_ratio_2}')
-
-		# Determine the maximum partial ratio for this result
-		# max_partial_ratio = max(partial_ratio_0, partial_ratio_1, partial_ratio_2)
-		max_partial_ratio = max(partial_ratio_1, partial_ratio_2)
-
-
-		# logger.info(f'max_partial_ratio: {max_partial_ratio}')
-		# Only add results that meet the threshold, along with their max_partial_ratio
-		if max_partial_ratio >= threshold_variations:
-			temp_results_with_ratios.append((max_partial_ratio, result))
-
-
-		# # Check if either partial ratio meets the adjusted threshold
-		# if partial_ratio_0 >= threshold_variations or partial_ratio_1 >= threshold_variations:
-		# # if partial_ratio_1 >= threshold_variations:
-		# 	filtered_results.append(result)
-
-	# Sort the temporary list by max_partial_ratio in descending order
-	temp_results_with_ratios.sort(key=lambda x: x[0], reverse=True)
-
-	# Reconstruct filtered_results based on the sorted list, excluding the ratio
-	filtered_results = [result[1] for result in temp_results_with_ratios]
-
-	logger.error(f"temp_results_with_ratios: {temp_results_with_ratios}")
-
-	return filtered_results
+    return t
 
 @frappe.whitelist()
 @frappe.validate_and_sanitize_search_inputs
