@@ -234,13 +234,22 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	# Split 'txt' into individual keywords
 	keywords = txt.split()
 
-	# For each field, construct a condition that applies 'AND' logic for all keywords
-	field_conditions = []
-	for field in ["name", "item_code", "item_group", "item_name", "description", "item_name_english"]:
-		field_condition = " AND ".join([f"tabItem.{field} LIKE %({keyword.replace(' ', '_')})s" for keyword in keywords])
-		field_conditions.append(f"({field_condition})")
+	# Split 'txt' into individual keywords
+	keywords = txt.split()
 
-	# Combine the per-field conditions with 'OR' logic
+	# Initialize an empty list to hold conditions for each field
+	field_conditions = []
+
+	# List of fields to search
+	fields = ["name", "item_code", "item_group", "item_name", "description", "item_name_english"]
+
+	# Construct conditions for each field only if keywords are present
+	if keywords:
+		for field in fields:
+			field_condition = " AND ".join([f"tabItem.{field} LIKE %({keyword.replace(' ', '_')})s" for keyword in keywords])
+			field_conditions.append(f"({field_condition})")
+
+	# Combine field conditions with OR, but only if there are any conditions at all
 	like_conditions = " OR ".join(field_conditions) if field_conditions else "1=1"
 
 	# Formulate the SQL query string
@@ -259,14 +268,19 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		LIMIT %(page_len)s OFFSET %(start)s"""
 
 	# Prepare parameters for the SQL query, including keywords for LIKE conditions
+# Prepare parameters for the SQL query
 	params = {
 		"today": nowdate(),
 		"_txt": txt.replace("%", ""),
 		"start": int(start),
 		"page_len": int(page_len or 1000),
 	}
-	for keyword in keywords:
-		params[keyword.replace(' ', '_')] = f"%{keyword}%"
+
+	# Update params only if there are keywords
+	if keywords:
+		for keyword in keywords:
+			params[keyword.replace(' ', '_')] = f"%{keyword}%"
+
 
 	logger.info(q1)
 	# Execute the query
