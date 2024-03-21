@@ -283,11 +283,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		for keyword in keywords:
 			params[keyword.replace(' ', '_')] = f"%{keyword}%"
 
-	# Execute the query
-	t = frappe.db.sql(q1, params, as_dict=as_dict)
-	logger.info(t)
-
-	return t
+	return frappe.db.sql(q1, params, as_dict=as_dict)
 
 @frappe.whitelist()
 @frappe.validate_and_sanitize_search_inputs
