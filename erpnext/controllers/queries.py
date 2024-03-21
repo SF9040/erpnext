@@ -235,15 +235,23 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	# Split 'txt' into individual keywords
 	keywords = txt.split()
 
-	# Construct LIKE conditions for each keyword
-	like_conditions = ' AND '.join([f"tabItem.{field} LIKE %({keyword.replace(' ', '_')})s" for keyword in keywords for field in [
-		"name",
-		"item_code",
-		"item_group",
-		"item_name",
-		"description",
-		"item_name_english",
-	]]) if keywords else "1=1"  # Fallback to a trivially true condition if no keywords
+	# Construct LIKE conditions for each keyword using OR logic
+	like_conditions_parts = []
+	for keyword in keywords:
+		keyword_conditions = " OR ".join([
+			f"tabItem.{field} LIKE %({keyword.replace(' ', '_')})s" for field in [
+				"name",
+				"item_code",
+				"item_group",
+				"item_name",
+				"description",
+				"item_name_english",
+			]
+		])
+		like_conditions_parts.append(f"({keyword_conditions})")
+
+	like_conditions = " AND ".join(like_conditions_parts) if keywords else "1=1"
+
 
 	# Formulate the SQL query string
 	q1 = f"""SELECT
