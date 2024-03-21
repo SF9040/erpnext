@@ -226,17 +226,12 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	columns = ""
 	extra_searchfields = [field for field in searchfields if field not in ["name", "description", "image"]]
 
-	extra_searchfields.append("image")
-
-	logger.warning("extra_searchfields: ", extra_searchfields)
 	if extra_searchfields:
 		columns += ", " + ", ".join(extra_searchfields)
 
 	if "description" in searchfields:
 		columns += """, if(length(tabItem.description) > 40, \
 			concat(substr(tabItem.description, 1, 40), "..."), description) as description"""
-
-	logger.info("columns", columns)
 
 	# Split 'txt' into individual keywords
 	keywords = txt.split()
@@ -275,7 +270,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		LIMIT %(page_len)s OFFSET %(start)s"""
 
 	# Prepare parameters for the SQL query, including keywords for LIKE conditions
-# Prepare parameters for the SQL query
+	# Prepare parameters for the SQL query
 	params = {
 		"today": nowdate(),
 		"_txt": txt.replace("%", ""),
@@ -288,8 +283,6 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		for keyword in keywords:
 			params[keyword.replace(' ', '_')] = f"%{keyword}%"
 
-
-	logger.info(q1)
 	# Execute the query
 	t = frappe.db.sql(q1, params, as_dict=as_dict)
 	logger.info(t)
