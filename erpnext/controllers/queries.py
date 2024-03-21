@@ -227,7 +227,6 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	if extra_searchfields:
 		columns += ", " + ", ".join(extra_searchfields)
 
-	# Format description if included in searchfields
 	if "description" in searchfields:
 		columns += """, if(length(tabItem.description) > 40, \
 			concat(substr(tabItem.description, 1, 40), "..."), description) as description"""
@@ -235,23 +234,14 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	# Split 'txt' into individual keywords
 	keywords = txt.split()
 
-	# Construct LIKE conditions for each keyword using OR logic
-	like_conditions_parts = []
-	for keyword in keywords:
-		keyword_conditions = " OR ".join([
-			f"tabItem.{field} LIKE %({keyword.replace(' ', '_')})s" for field in [
-				"name",
-				"item_code",
-				"item_group",
-				"item_name",
-				"description",
-				"item_name_english",
-			]
-		])
-		like_conditions_parts.append(f"({keyword_conditions})")
+	# For each field, construct a condition that applies 'AND' logic for all keywords
+	field_conditions = []
+	for field in ["name", "item_code", "item_group", "item_name", "description", "item_name_english"]:
+		field_condition = " AND ".join([f"tabItem.{field} LIKE %({keyword.replace(' ', '_')})s" for keyword in keywords])
+		field_conditions.append(f"({field_condition})")
 
-	like_conditions = " AND ".join(like_conditions_parts) if keywords else "1=1"
-
+	# Combine the per-field conditions with 'OR' logic
+	like_conditions = " OR ".join(field_conditions) if field_conditions else "1=1"
 
 	# Formulate the SQL query string
 	q1 = f"""SELECT
@@ -267,8 +257,6 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		ORDER BY
 			tabItem.item_name ASC
 		LIMIT %(page_len)s OFFSET %(start)s"""
-	
-	logger.info(q1)
 
 	# Prepare parameters for the SQL query, including keywords for LIKE conditions
 	params = {
@@ -280,6 +268,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	for keyword in keywords:
 		params[keyword.replace(' ', '_')] = f"%{keyword}%"
 
+	logger.info(q1)
 	# Execute the query
 	t = frappe.db.sql(q1, params, as_dict=as_dict)
 
