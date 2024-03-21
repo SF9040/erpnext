@@ -222,6 +222,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	searchfields = meta.get_search_fields()
 	logger.warning(searchfields)
 	logger.info("searchfields", searchfields)
+	searchfields.append('image')
 
 	# Setup columns for SELECT, excluding name and description by default
 	columns = ""
