@@ -223,7 +223,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 
 	# Setup columns for SELECT, excluding name and description by default
 	columns = ""
-	extra_searchfields = [field for field in searchfields if field not in ["name", "description"]]
+	extra_searchfields = [field for field in searchfields if field not in ["name", "description", "image"]]
 	if extra_searchfields:
 		columns += ", " + ", ".join(extra_searchfields)
 
