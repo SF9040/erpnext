@@ -265,11 +265,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 			{get_filters_cond(doctype, filters, []).replace("%", "%%")}
 			{get_match_cond(doctype).replace("%", "%%")}
 		ORDER BY
-			IF(LOCATE(%(_txt)s, name), LOCATE(%(_txt)s, name), 99999),
-			IF(LOCATE(%(_txt)s, item_name), LOCATE(%(_txt)s, item_name), 99999),
-			IF(LOCATE(%(_txt)s, item_name_english), LOCATE(%(_txt)s, item_name_english), 99999),
-			idx ASC,
-			name, item_name, item_name_english
+			tabItem.item_name ASC
 		LIMIT %(page_len)s OFFSET %(start)s"""
 	
 	logger.info(q1)
