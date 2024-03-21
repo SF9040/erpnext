@@ -220,13 +220,15 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	# Get meta and search fields for the doctype
 	meta = frappe.get_meta(doctype, cached=True)
 	searchfields = meta.get_search_fields()
-	logger.warning(searchfields)
-	searchfields.append('image')
-	logger.info("searchfields", searchfields)
+
 
 	# Setup columns for SELECT, excluding name and description by default
 	columns = ""
 	extra_searchfields = [field for field in searchfields if field not in ["name", "description", "image"]]
+
+	extra_searchfields.append("image")
+
+	logger.warning("extra_searchfields: ", extra_searchfields)
 	if extra_searchfields:
 		columns += ", " + ", ".join(extra_searchfields)
 
