@@ -263,6 +263,8 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 			idx DESC,
 			name, item_name, item_name_english
 		LIMIT %(page_len)s OFFSET %(start)s"""
+	
+	logger.info(q1)
 
 	# Prepare parameters for the SQL query, including keywords for LIKE conditions
 	params = {
