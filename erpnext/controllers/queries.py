@@ -221,6 +221,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	meta = frappe.get_meta(doctype, cached=True)
 	searchfields = meta.get_search_fields()
 	logging.warning(searchfields)
+	logging.info("searchfields", searchfields)
 
 	# Setup columns for SELECT, excluding name and description by default
 	columns = ""
