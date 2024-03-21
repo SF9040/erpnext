@@ -211,104 +211,73 @@ def tax_account_query(doctype, txt, searchfield, start, page_len, filters):
 @frappe.whitelist()
 @frappe.validate_and_sanitize_search_inputs
 def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=False):
-    doctype = "Item"
-    conditions = []
+	doctype = "Item"
 
-    # Parse filters from JSON if necessary
-    if isinstance(filters, str):
-        filters = json.loads(filters)
+	# Parse filters from JSON if necessary
+	if isinstance(filters, str):
+		filters = json.loads(filters)
 
-    # Get meta and search fields for the doctype
-    meta = frappe.get_meta(doctype, cached=True)
-    searchfields = meta.get_search_fields()
+	# Get meta and search fields for the doctype
+	meta = frappe.get_meta(doctype, cached=True)
+	searchfields = meta.get_search_fields()
 
-    # Setup columns for SELECT, excluding name and description by default
-    columns = ""
-    extra_searchfields = [field for field in searchfields if field not in ["name", "description"]]
-    if extra_searchfields:
-        columns += ", " + ", ".join(extra_searchfields)
+	# Setup columns for SELECT, excluding name and description by default
+	columns = ""
+	extra_searchfields = [field for field in searchfields if field not in ["name", "description"]]
+	if extra_searchfields:
+		columns += ", " + ", ".join(extra_searchfields)
 
-    # Format description if included in searchfields
-    if "description" in searchfields:
-        columns += """, if(length(tabItem.description) > 40, \
-            concat(substr(tabItem.description, 1, 40), "..."), description) as description"""
+	# Format description if included in searchfields
+	if "description" in searchfields:
+		columns += """, if(length(tabItem.description) > 40, \
+			concat(substr(tabItem.description, 1, 40), "..."), description) as description"""
 
-    # Setup searchfields, making sure to exclude duplicates
-    searchfields = [
-        field for field in [
-            searchfield or "name",
-            "item_code",
-            "item_group",
-            "item_name",
-            "item_name_english",
-        ] if field not in searchfields
-    ]
+	# Split 'txt' into individual keywords
+	keywords = txt.split()
 
-    # Process filters, specifically for customer or supplier
-    if filters and isinstance(filters, dict):
-        # Handle party-specific item rules
-        party = filters.get("customer") or filters.get("supplier")
-        if party:
-            item_rules_list = frappe.get_all(
-                "Party Specific Item", filters={"party": party}, fields=["restrict_based_on", "based_on_value"]
-            )
+	# Construct LIKE conditions for each keyword
+	like_conditions = ' AND '.join([f"tabItem.{field} LIKE %({keyword.replace(' ', '_')})s" for keyword in keywords for field in [
+		"name",
+		"item_code",
+		"item_group",
+		"item_name",
+		"description",
+		"item_name_english",
+	]]) if keywords else "1=1"  # Fallback to a trivially true condition if no keywords
 
-            filters_dict = {}
-            for rule in item_rules_list:
-                rule_key = "name" if rule["restrict_based_on"] == "Item" else rule["restrict_based_on"]
-                filters_dict.setdefault(rule_key, []).append(rule["based_on_value"])
+	# Formulate the SQL query string
+	q1 = f"""SELECT
+		tabItem.name {columns}
+		FROM tabItem
+		WHERE tabItem.docstatus < 2
+			AND tabItem.disabled = 0
+			AND tabItem.has_variants = 0
+			AND (tabItem.end_of_life > %(today)s OR IFNULL(tabItem.end_of_life, '0000-00-00') = '0000-00-00')
+			AND ({like_conditions})
+			{get_filters_cond(doctype, filters, []).replace("%", "%%")}
+			{get_match_cond(doctype).replace("%", "%%")}
+		ORDER BY
+			IF(LOCATE(%(_txt)s, name), LOCATE(%(_txt)s, name), 99999),
+			IF(LOCATE(%(_txt)s, item_name), LOCATE(%(_txt)s, item_name), 99999),
+			IF(LOCATE(%(_txt)s, item_name_english), LOCATE(%(_txt)s, item_name_english), 99999),
+			idx DESC,
+			name, item_name, item_name_english
+		LIMIT %(page_len)s OFFSET %(start)s"""
 
-            for filter_key, values in filters_dict.items():
-                filters[filter_key] = ["in", values]
+	# Prepare parameters for the SQL query, including keywords for LIKE conditions
+	params = {
+		"today": nowdate(),
+		"_txt": txt.replace("%", ""),
+		"start": int(start),
+		"page_len": int(page_len or 1000),
+	}
+	for keyword in keywords:
+		params[keyword.replace(' ', '_')] = f"%{keyword}%"
 
-            filters.pop("customer", None)
-            filters.pop("supplier", None)
-    
-    # Split 'txt' into individual keywords
-    keywords = txt.split()
+	# Execute the query
+	t = frappe.db.sql(q1, params, as_dict=as_dict)
 
-    # Construct LIKE conditions for each keyword
-    like_conditions = ' AND '.join([f"tabItem.{field} LIKE %({keyword})s" for keyword in keywords for field in [
-        "name",
-        "item_code",
-        "item_group",
-        "item_name",
-        "description",
-        "item_name_english",
-    ]])
-
-    # Formulate the SQL query string
-    q1 = f"""SELECT
-        tabItem.name {columns}
-        FROM tabItem
-        WHERE tabItem.docstatus < 2
-            AND tabItem.disabled = 0
-            AND tabItem.has_variants = 0
-            AND (tabItem.end_of_life > %(today)s OR IFNULL(tabItem.end_of_life, '0000-00-00') = '0000-00-00')
-            AND ({like_conditions})
-            {get_filters_cond(doctype, filters, conditions).replace("%", "%%")}
-            {get_match_cond(doctype).replace("%", "%%")}
-        ORDER BY
-            IF(LOCATE(%(_txt)s, name), LOCATE(%(_txt)s, name), 99999),
-            IF(LOCATE(%(_txt)s, item_name), LOCATE(%(_txt)s, item_name), 99999),
-            IF(LOCATE(%(_txt)s, item_name_english), LOCATE(%(_txt)s, item_name_english), 99999),
-            idx DESC,
-            name, item_name, item_name_english
-        LIMIT %(page_len)s OFFSET %(start)s"""
-
-    # Prepare parameters for the SQL query, including keywords for LIKE conditions
-    params = {
-        "today": nowdate(),
-        "_txt": txt.replace("%", ""),
-        "start": int(start),
-        "page_len": int(page_len or 1000),
-    }
-    params.update({keyword: f"%{keyword}%" for keyword in keywords})
-
-    # Execute the query
-    t = frappe.db.sql(q1, params, as_dict=as_dict)
-
-    return t
+	return t
 
 @frappe.whitelist()
 @frappe.validate_and_sanitize_search_inputs
