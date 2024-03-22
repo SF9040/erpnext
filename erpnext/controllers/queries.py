@@ -217,6 +217,31 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 	if isinstance(filters, str):
 		filters = json.loads(filters)
 
+	# Inserted Code: Party Specific Filtering
+	if filters and isinstance(filters, dict):
+		if filters.get("customer") or filters.get("supplier"):
+			party = filters.get("customer") or filters.get("supplier")
+			item_rules_list = frappe.get_all(
+				"Party Specific Item", filters={"party": party}, fields=["restrict_based_on", "based_on_value"]
+			)
+			filters_dict = {}
+			for rule in item_rules_list:
+				if rule["restrict_based_on"] == "Item":
+					rule["restrict_based_on"] = "name"
+				if rule["restrict_based_on"] not in filters_dict:
+					filters_dict[rule["restrict_based_on"]] = []
+				filters_dict[rule["restrict_based_on"]].append(rule["based_on_value"])
+			for filter_key in filters_dict:
+				filters[filter_key] = ["in", filters_dict[filter_key]]
+			if filters.get("customer"):
+				del filters["customer"]
+			else:
+				del filters["supplier"]
+		else:
+			filters.pop("customer", None)
+			filters.pop("supplier", None)
+	
+
 	# Get meta and search fields for the doctype
 	meta = frappe.get_meta(doctype, cached=True)
 	searchfields = meta.get_search_fields()
