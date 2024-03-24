@@ -34,7 +34,8 @@
   "wheels",
   "doors",
   "amended_from",
-  "maximum_weight_capacity"
+  "maximum_weight_capacity",
+  "raw_weight"
  ],
  "fields": [
   {
@@ -194,10 +195,15 @@
    "fieldtype": "Float",
    "label": "Maximum Weight Capacity (Kg)",
    "reqd": 1
+  },
+  {
+   "fieldname": "raw_weight",
+   "fieldtype": "Float",
+   "label": "Raw Weight (Kg)"
   }
  ],
  "links": [],
- "modified": "2024-01-12 17:20:37.288317",
+ "modified": "2024-03-23 15:53:04.156930",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Vehicle",
