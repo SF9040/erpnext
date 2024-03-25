@@ -1,0 +1,28 @@
+{
+ "attach_print": 0,
+ "channel": "System Notification",
+ "creation": "2024-03-12 04:42:48.053209",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Sales Order",
+ "enabled": 1,
+ "event": "Value Change",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Add your message here",
+ "modified": "2024-03-12 09:04:15.866904",
+ "modified_by": "Administrator",
+ "module": "Selling",
+ "name": "Sales Order Workflow Notification",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "Sales Manager"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "Sales Order Workflow : {{doc.name}} ",
+ "value_changed": "workflow_state"
+}

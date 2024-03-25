@@ -1,0 +1,28 @@
+{
+ "attach_print": 0,
+ "channel": "System Notification",
+ "creation": "2024-03-14 05:39:57.081678",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Shipment",
+ "enabled": 1,
+ "event": "Value Change",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Add your message here",
+ "modified": "2024-03-14 05:39:57.081678",
+ "modified_by": "Administrator",
+ "module": "Stock",
+ "name": "Shipment Workflow Notification",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "Sales Manager"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "Shipment Workflow : {{doc.name}} {{doc.status}}",
+ "value_changed": "workflow_state"
+}
