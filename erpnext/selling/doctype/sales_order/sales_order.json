@@ -24,6 +24,7 @@
   "po_no",
   "po_date",
   "company",
+  "value_added_tax",
   "total_net_weight",
   "skip_delivery_note",
   "amended_from",
@@ -1624,13 +1625,21 @@
    "fieldname": "named_place",
    "fieldtype": "Data",
    "label": "Named Place"
+  },
+  {
+   "default": "VAT NoN",
+   "fieldname": "value_added_tax",
+   "fieldtype": "Select",
+   "label": "Value-Added Tax",
+   "options": "VAT +\nVAT NoN\nVAT Included",
+   "reqd": 1
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-03-25 07:17:49.596838",
+ "modified": "2024-03-25 20:18:59.918677",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order",
