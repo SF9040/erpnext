@@ -1259,7 +1259,7 @@
    "width": "50%"
   },
   {
-   "default": "To Prepare",
+   "default": "Draft",
    "fieldname": "status",
    "fieldtype": "Select",
    "hide_days": 1,
@@ -1269,7 +1269,7 @@
    "no_copy": 1,
    "oldfieldname": "status",
    "oldfieldtype": "Select",
-   "options": "To Prepare\nReady to Deliver\nReady to Pickup\nTo Deliver and Bill\nTo Bill\nTo Deliver\nTo Pickup\nCompleted\nCancelled\nClosed",
+   "options": "\nDraft\nTo Prepare\nReady to Deliver\nReady to Pickup\nTo Deliver and Bill\nTo Bill\nTo Deliver\nTo Pickup\nCompleted\nCancelled\nClosed",
    "print_hide": 1,
    "read_only": 1,
    "reqd": 1,
