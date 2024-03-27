@@ -23,6 +23,8 @@
   "quantity_and_rate",
   "qty",
   "stock_uom",
+  "is_customizable",
+  "customizable_uom",
   "customizable_width",
   "customizable_length",
   "col_break2",
@@ -878,14 +880,20 @@
    "read_only": 1
   },
   {
+   "depends_on": "eval:doc.customizable_uom == 'LxW';",
    "fieldname": "customizable_width",
    "fieldtype": "Float",
-   "label": "Customizable Width (mm)"
+   "label": "Customizable Width (cm)",
+   "mandatory_depends_on": "eval:doc.customizable_uom == 'LxW';\n",
+   "precision": "2"
   },
   {
+   "depends_on": "eval:doc.customizable_uom == 'LxW';",
    "fieldname": "customizable_length",
    "fieldtype": "Float",
-   "label": "Customizable Length (mm)"
+   "label": "Customizable Length (cm)",
+   "mandatory_depends_on": "eval:doc.customizable_uom == 'LxW';",
+   "precision": "2"
   },
   {
    "fieldname": "customizable_gross_weight",
@@ -898,12 +906,27 @@
    "fieldtype": "Float",
    "label": "Customizable Net Weight",
    "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.is_customizable == 1;",
+   "fieldname": "customizable_uom",
+   "fieldtype": "Select",
+   "label": "Customizable UoM",
+   "options": "\nLxW",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_customizable",
+   "fieldtype": "Check",
+   "label": "Customizable",
+   "read_only": 1
   }
  ],
  "idx": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-03-25 07:16:28.817611",
+ "modified": "2024-03-27 23:17:42.440019",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order Item",

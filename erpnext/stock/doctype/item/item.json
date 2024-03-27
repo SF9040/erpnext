@@ -21,6 +21,9 @@
   "column_break0",
   "item_name_english",
   "is_customizable",
+  "customizable_uom",
+  "width",
+  "length",
   "disabled",
   "allow_alternative_item",
   "is_stock_item",
@@ -909,6 +912,29 @@
    "fieldname": "is_customizable",
    "fieldtype": "Check",
    "label": "Customizable"
+  },
+  {
+   "depends_on": "eval:doc.customizable_uom == 'LxW';",
+   "fieldname": "length",
+   "fieldtype": "Float",
+   "label": "Length (cm)",
+   "mandatory_depends_on": "eval:doc.customizable_uom == 'LxW';",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:doc.customizable_uom == 'LxW';",
+   "fieldname": "width",
+   "fieldtype": "Float",
+   "label": "Width (cm)",
+   "mandatory_depends_on": "eval:doc.customizable_uom == 'LxW';",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:doc.is_customizable == 1;",
+   "fieldname": "customizable_uom",
+   "fieldtype": "Select",
+   "label": "Customizable UoM",
+   "options": "\nLxW"
   }
  ],
  "icon": "fa fa-tag",
@@ -917,7 +943,7 @@
  "index_web_pages_for_search": 1,
  "links": [],
  "make_attachments_public": 1,
- "modified": "2024-01-17 03:55:22.353378",
+ "modified": "2024-03-27 22:43:51.470005",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Item",
