@@ -1,25 +1,8 @@
 {
  "charts": [],
- "content": "[{\"id\":\"aW2i5R5GRP\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"hD0uGZmWZL\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Delivery Dashboard</span>\",\"col\":12}},{\"id\":\"VCYGhfpzJL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Order To Prepare\",\"col\":3}},{\"id\":\"4TGNjspfbT\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Urgent Sales Order\",\"col\":3}},{\"id\":\"WJCvebinvJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Order Ready To Deliver\",\"col\":3}},{\"id\":\"OrB-iBdqg1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Delivery Note\",\"col\":3}},{\"id\":\"tdiZgcWgB5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Urgent Delivery Note\",\"col\":3}},{\"id\":\"-x9OUdWgSL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Delivery Trip in Transit & Scheduled\",\"col\":3}},{\"id\":\"TgCdvafYRb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Return Request\",\"col\":3}},{\"id\":\"DkMVY3ujgJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Upcoming Shipment\",\"col\":3}},{\"id\":\"gzYp62gNjg\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"I3Z0anbGK-\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Pickup Dashboard</span>\",\"col\":6}},{\"id\":\"VERIFcnx0l\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Transfer Dashboard</span>\",\"col\":6}},{\"id\":\"xs-MD1qtDb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Order To Prepare\",\"col\":3}},{\"id\":\"eSc_7uUu06\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Order Ready For Pick Up\",\"col\":3}},{\"id\":\"5zLbBPCx5x\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Transfer Request\",\"col\":3}},{\"id\":\"EYW5PlDsRJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Transfer Ready\",\"col\":3}},{\"id\":\"Ob9kXaXGwK\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"n7zAYQXuPZ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Workspace</span><br>\",\"col\":12}},{\"id\":\"bpXpULfT-F\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Selling Documents\",\"col\":3}},{\"id\":\"NOG6P7o_CL\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Selling Links 2\",\"col\":3}},{\"id\":\"PooZn0b6Pg\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Selling Links 3\",\"col\":3}},{\"id\":\"5aIdKPcdMj\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Selling Links 4\",\"col\":3}},{\"id\":\"0BcePLg0g1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reports &amp; Masters</span>\",\"col\":12}},{\"id\":\"lBu2EKgmJF\",\"type\":\"card\",\"data\":{\"card_name\":\"Key Reports\",\"col\":4}},{\"id\":\"1ARHrjg4kI\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}},{\"id\":\"6MjIe7KCQo\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}}]",
+ "content": "[{\"id\":\"hD0uGZmWZL\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Delivery Dashboard</span>\",\"col\":12}},{\"id\":\"VCYGhfpzJL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Order To Prepare\",\"col\":3}},{\"id\":\"4TGNjspfbT\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Urgent Sales Order\",\"col\":3}},{\"id\":\"WJCvebinvJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Order Ready To Deliver\",\"col\":3}},{\"id\":\"OrB-iBdqg1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Delivery Note\",\"col\":3}},{\"id\":\"tdiZgcWgB5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Urgent Delivery Note\",\"col\":3}},{\"id\":\"-x9OUdWgSL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Delivery Trip in Transit & Scheduled\",\"col\":3}},{\"id\":\"TgCdvafYRb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Return Request\",\"col\":3}},{\"id\":\"DkMVY3ujgJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Upcoming Shipment\",\"col\":3}},{\"id\":\"gzYp62gNjg\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"I3Z0anbGK-\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Pickup Dashboard</span>\",\"col\":6}},{\"id\":\"VERIFcnx0l\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Transfer Dashboard</span>\",\"col\":6}},{\"id\":\"xs-MD1qtDb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Order To Prepare\",\"col\":3}},{\"id\":\"eSc_7uUu06\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Order Ready For Pick Up\",\"col\":3}},{\"id\":\"5zLbBPCx5x\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Transfer Request\",\"col\":3}},{\"id\":\"EYW5PlDsRJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Transfer Ready\",\"col\":3}},{\"id\":\"Ob9kXaXGwK\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"n7zAYQXuPZ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Workspace</span><br>\",\"col\":12}},{\"id\":\"k31rvvQOyd\",\"type\":\"card\",\"data\":{\"card_name\":\"Documents\",\"col\":3}},{\"id\":\"y9gokN31-A\",\"type\":\"card\",\"data\":{\"card_name\":\"Documents List\",\"col\":3}},{\"id\":\"G8GZ9WuHp2\",\"type\":\"card\",\"data\":{\"card_name\":\"Selling\",\"col\":3}},{\"id\":\"C62FY_LItD\",\"type\":\"card\",\"data\":{\"card_name\":\"Pricing\",\"col\":3}},{\"id\":\"0BcePLg0g1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reports &amp; Masters</span>\",\"col\":12}},{\"id\":\"lBu2EKgmJF\",\"type\":\"card\",\"data\":{\"card_name\":\"Key Reports\",\"col\":4}},{\"id\":\"1ARHrjg4kI\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}},{\"id\":\"6MjIe7KCQo\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}}]",
  "creation": "2020-01-28 11:49:12.092882",
- "custom_blocks": [
-  {
-   "custom_block_name": "Selling Links 2",
-   "label": "Selling Links 2"
-  },
-  {
-   "custom_block_name": "Selling Links 4",
-   "label": "Selling Links 4"
-  },
-  {
-   "custom_block_name": "Selling Links 1",
-   "label": "Selling Documents"
-  },
-  {
-   "custom_block_name": "Selling Links 3",
-   "label": "Selling Links 3"
-  }
- ],
+ "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
@@ -437,9 +420,261 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Documents",
+   "link_count": 6,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "doc_view": "New",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "New Quotation",
+   "link_count": 0,
+   "link_to": "Quotation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "New",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "New Sales Order",
+   "link_count": 0,
+   "link_to": "Sales Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "New",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "New Delivery Note",
+   "link_count": 0,
+   "link_to": "Delivery Note",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "New",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "New Work Order Request",
+   "link_count": 0,
+   "link_to": "Work Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "New",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "New Transfer Request",
+   "link_count": 0,
+   "link_to": "Stock Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "New",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "New Return Note Request",
+   "link_count": 0,
+   "link_to": "Return Note",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Documents List",
+   "link_count": 6,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Quotation",
+   "link_count": 0,
+   "link_to": "Quotation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Order",
+   "link_count": 0,
+   "link_to": "Sales Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Delivery Note",
+   "link_count": 0,
+   "link_to": "Delivery Note",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Work Order",
+   "link_count": 0,
+   "link_to": "Work Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Transfer Note",
+   "link_count": 0,
+   "link_to": "Stock Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Return Note",
+   "link_count": 0,
+   "link_to": "Return Note",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Selling",
+   "link_count": 5,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer",
+   "link_count": 0,
+   "link_to": "Customer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Item Group",
+   "link_count": 0,
+   "link_to": "Item Group",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Items & Inventory",
+   "link_count": 0,
+   "link_to": "Item",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Upcoming Shipments",
+   "link_count": 0,
+   "link_to": "Shipment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Salesperson",
+   "link_count": 0,
+   "link_to": "Sales Person",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Pricing",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Price List",
+   "link_count": 0,
+   "link_to": "Price List",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Pricing Rules",
+   "link_count": 0,
+   "link_to": "Pricing Rule",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Item Price",
+   "link_count": 0,
+   "link_to": "Item Price",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-03-23 16:43:57.357849",
+ "modified": "2024-03-29 02:54:37.962768",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Selling",

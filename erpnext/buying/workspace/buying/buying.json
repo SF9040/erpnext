@@ -1,25 +1,8 @@
 {
  "charts": [],
- "content": "[{\"id\":\"de5th02Cxp\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Purchasing Dashboard</span>\",\"col\":12}},{\"id\":\"8jgOmFCH7a\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Material Request\",\"col\":3}},{\"id\":\"pOaMZBXiKT\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Shipment Report\",\"col\":3}},{\"id\":\"fSCw3PU5rP\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved Shipment\",\"col\":3}},{\"id\":\"EOqpMdOPMK\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"NF6WvD245O\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Purchasing Quotation Request\",\"col\":3}},{\"id\":\"TCpm-Wy6Uf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Purchase Order\",\"col\":3}},{\"id\":\"EgRLI6Helo\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved Purchase Order\",\"col\":3}},{\"id\":\"EfL3wm56Q1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Upcoming Shipment\",\"col\":3}},{\"id\":\"mDc68XyPYu\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"4S56l67_4o\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Overseas Supplier Dashboard</span>\",\"col\":12}},{\"id\":\"xO-dmHiN25\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Purchasing Quotation Request\",\"col\":3}},{\"id\":\"4VO37G5j0m\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Purchase Order\",\"col\":3}},{\"id\":\"WzBlAQk2zx\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved Purchase Order\",\"col\":3}},{\"id\":\"PAWVQ46EgE\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Upcoming Shipment\",\"col\":3}},{\"id\":\"n6noz-pjq3\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"LoCQfN4iT0\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Workspace</span>\",\"col\":12}},{\"id\":\"Sjylyq2Muq\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Buying Links 1\",\"col\":3}},{\"id\":\"7QqlDLE2tL\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Buyer Links 2\",\"col\":3}},{\"id\":\"ZaImiqgCPs\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Buying Links 3\",\"col\":3}},{\"id\":\"RKttzsZ-rz\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Buying Links 4\",\"col\":3}},{\"id\":\"EaH6Pfjfk7\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"_cIKDB1caA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reports &amp; Masters</span>\",\"col\":12}},{\"id\":\"DjI2fK0FjP\",\"type\":\"card\",\"data\":{\"card_name\":\"Buying\",\"col\":4}},{\"id\":\"0uGHlNAYjb\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"DEeUAI_VQT\",\"type\":\"card\",\"data\":{\"card_name\":\"Supplier\",\"col\":4}},{\"id\":\"HZghjYK0Fj\",\"type\":\"card\",\"data\":{\"card_name\":\"Items & Pricing - (Product Profile)\",\"col\":4}},{\"id\":\"6E5UHalATr\",\"type\":\"card\",\"data\":{\"card_name\":\"Supplier Scorecard\",\"col\":4}},{\"id\":\"UyXcq7HnGA\",\"type\":\"card\",\"data\":{\"card_name\":\"Key Reports\",\"col\":4}},{\"id\":\"-osBuerUPY\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"de5th02Cxp\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Purchasing Dashboard</span>\",\"col\":12}},{\"id\":\"8jgOmFCH7a\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Material Request\",\"col\":3}},{\"id\":\"pOaMZBXiKT\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Shipment Report\",\"col\":3}},{\"id\":\"fSCw3PU5rP\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved Shipment\",\"col\":3}},{\"id\":\"EOqpMdOPMK\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"NF6WvD245O\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Purchasing Quotation Request\",\"col\":3}},{\"id\":\"TCpm-Wy6Uf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Purchase Order\",\"col\":3}},{\"id\":\"EgRLI6Helo\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved Purchase Order\",\"col\":3}},{\"id\":\"EfL3wm56Q1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Upcoming Shipment\",\"col\":3}},{\"id\":\"mDc68XyPYu\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"4S56l67_4o\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Overseas Supplier Dashboard</span>\",\"col\":12}},{\"id\":\"xO-dmHiN25\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Purchasing Quotation Request\",\"col\":3}},{\"id\":\"4VO37G5j0m\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Purchase Order\",\"col\":3}},{\"id\":\"WzBlAQk2zx\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved Purchase Order\",\"col\":3}},{\"id\":\"PAWVQ46EgE\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Upcoming Shipment\",\"col\":3}},{\"id\":\"n6noz-pjq3\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"LoCQfN4iT0\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Workspace</span>\",\"col\":12}},{\"id\":\"Pt4bukdvFd\",\"type\":\"card\",\"data\":{\"card_name\":\"Documents\",\"col\":3}},{\"id\":\"dUzuRjFTID\",\"type\":\"card\",\"data\":{\"card_name\":\"Documents List\",\"col\":3}},{\"id\":\"-AdkAxcBvA\",\"type\":\"card\",\"data\":{\"card_name\":\"Buying\",\"col\":3}},{\"id\":\"74-qIX1Mc_\",\"type\":\"card\",\"data\":{\"card_name\":\"Extra\",\"col\":3}},{\"id\":\"EaH6Pfjfk7\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"_cIKDB1caA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reports &amp; Masters</span>\",\"col\":12}},{\"id\":\"DjI2fK0FjP\",\"type\":\"card\",\"data\":{\"card_name\":\"Buying\",\"col\":4}},{\"id\":\"0uGHlNAYjb\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"DEeUAI_VQT\",\"type\":\"card\",\"data\":{\"card_name\":\"Supplier\",\"col\":4}},{\"id\":\"HZghjYK0Fj\",\"type\":\"card\",\"data\":{\"card_name\":\"Items & Pricing - (Product Profile)\",\"col\":4}},{\"id\":\"6E5UHalATr\",\"type\":\"card\",\"data\":{\"card_name\":\"Supplier Scorecard\",\"col\":4}},{\"id\":\"UyXcq7HnGA\",\"type\":\"card\",\"data\":{\"card_name\":\"Key Reports\",\"col\":4}},{\"id\":\"-osBuerUPY\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}}]",
  "creation": "2020-01-28 11:50:26.195467",
- "custom_blocks": [
-  {
-   "custom_block_name": "Buying Links 1",
-   "label": "Buying Links 1"
-  },
-  {
-   "custom_block_name": "Buying Links 2",
-   "label": "Buyer Links 2"
-  },
-  {
-   "custom_block_name": "Buying Links 3",
-   "label": "Buying Links 3"
-  },
-  {
-   "custom_block_name": "Buying Links 4",
-   "label": "Buying Links 4"
-  }
- ],
+ "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
@@ -29,146 +12,6 @@
  "is_hidden": 0,
  "label": "Buying",
  "links": [
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Buying",
-   "link_count": 0,
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "dependencies": "Item",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Material Request",
-   "link_count": 0,
-   "link_to": "Material Request",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "Item, Supplier",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Purchase Order",
-   "link_count": 0,
-   "link_to": "Purchase Order",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "Item, Supplier",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Purchase Invoice",
-   "link_count": 0,
-   "link_to": "Purchase Invoice",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "Item, Supplier",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Request for Quotation",
-   "link_count": 0,
-   "link_to": "Request for Quotation",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "Item, Supplier",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Supplier Quotation",
-   "link_count": 0,
-   "link_to": "Supplier Quotation",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Item",
-   "link_count": 0,
-   "link_to": "Item",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Item Price",
-   "link_count": 0,
-   "link_to": "Item Price",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Price List",
-   "link_count": 0,
-   "link_to": "Price List",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Product Bundle",
-   "link_count": 0,
-   "link_to": "Product Bundle",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Item Group",
-   "link_count": 0,
-   "link_to": "Item Group",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Promotional Scheme",
-   "link_count": 0,
-   "link_to": "Promotional Scheme",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Pricing Rule",
-   "link_count": 0,
-   "link_to": "Pricing Rule",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -590,9 +433,227 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Documents",
+   "link_count": 5,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "doc_view": "New",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "New Material Request",
+   "link_count": 0,
+   "link_to": "Material Request",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "New Purchasing Quotation Request",
+   "link_count": 0,
+   "link_to": "Request for Quotation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "New",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "New Purchasing Quotation Request",
+   "link_count": 0,
+   "link_to": "Supplier Quotation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "New",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "New Purchase Order",
+   "link_count": 0,
+   "link_to": "Purchase Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "New",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "New Shipment",
+   "link_count": 0,
+   "link_to": "Shipment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Documents List",
+   "link_count": 5,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Material Request",
+   "link_count": 0,
+   "link_to": "Material Request",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchasing Quotation",
+   "link_count": 0,
+   "link_to": "Supplier Quotation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Order",
+   "link_count": 0,
+   "link_to": "Purchase Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Shipment",
+   "link_count": 0,
+   "link_to": "Shipment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Shipment Report",
+   "link_count": 0,
+   "link_to": "Shipment Tracking",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Buying",
+   "link_count": 5,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Supplier",
+   "link_count": 0,
+   "link_to": "Supplier",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Item Group",
+   "link_count": 0,
+   "link_to": "Item Group",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Items & Inventory",
+   "link_count": 0,
+   "link_to": "Item",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Upcoming Shipments",
+   "link_count": 0,
+   "link_to": "Shipment Tracking",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Person",
+   "link_count": 0,
+   "link_to": "Sales Person",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Extra",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Delivery Note",
+   "link_count": 0,
+   "link_to": "Delivery Note",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "doc_view": "List",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Work Order",
+   "link_count": 0,
+   "link_to": "Work Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-01-18 07:45:13.213448",
+ "modified": "2024-03-28 23:22:17.708424",
  "modified_by": "Administrator",
  "module": "Buying",
  "name": "Buying",

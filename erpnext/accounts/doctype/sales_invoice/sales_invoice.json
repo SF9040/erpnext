@@ -244,7 +244,7 @@
    "no_copy": 1,
    "oldfieldname": "naming_series",
    "oldfieldtype": "Select",
-   "options": "ACC-SINV-.YYYY.-\nACC-SINV-RET-.YYYY.-",
+   "options": "SI-.YY.MM.-.####\nRET-SI-.YY.MM.-.####\nSI-MS-.YY.MM.-.####\nSI-STVS-.YY.MM.-.####\nRET-SI-MS-.YY.MM.-.####\nRET-SI-STVS-.YY.MM.-.####\nACC-SINV-.YYYY.-\nACC-SINV-RET-.YYYY.-",
    "print_hide": 1,
    "reqd": 1,
    "set_only_once": 1
@@ -2135,6 +2135,7 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "depends_on": "allocate_advances_automatically",
    "description": "Advance payments allocated against orders will only be fetched",
    "fieldname": "only_include_allocated_payments",
@@ -2165,7 +2166,7 @@
    "link_fieldname": "consolidated_invoice"
   }
  ],
- "modified": "2023-11-23 16:56:29.679499",
+ "modified": "2024-03-30 04:48:27.504166",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Sales Invoice",

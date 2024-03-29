@@ -1,0 +1,114 @@
+{
+ "add_total_row": 1,
+ "columns": [
+  {
+   "fieldname": "Sales Order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order",
+   "width": 0
+  },
+  {
+   "fieldname": "Customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "width": 0
+  },
+  {
+   "fieldname": "Order Date",
+   "fieldtype": "Date",
+   "label": "Order Date",
+   "width": 0
+  },
+  {
+   "fieldname": "Total Amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "width": 0
+  },
+  {
+   "fieldname": "Pending Amount",
+   "fieldtype": "Currency",
+   "label": "Pending Amount",
+   "width": 0
+  },
+  {
+   "fieldname": "Due Date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "width": 0
+  },
+  {
+   "fieldname": "Payment Due",
+   "fieldtype": "Currency",
+   "label": "Payment Due",
+   "width": 0
+  },
+  {
+   "fieldname": "Payment Due Week",
+   "fieldtype": "Date",
+   "label": "Payment Due Week",
+   "width": 0
+  },
+  {
+   "fieldname": "Payment Due Month",
+   "fieldtype": "Date",
+   "label": "Payment Due Month",
+   "width": 0
+  }
+ ],
+ "creation": "2024-03-29 05:49:38.985149",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "mandatory": 0,
+   "options": "Sales Order",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "mandatory": 0,
+   "options": "Customer",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2024-03-29 07:22:35.666432",
+ "modified_by": "Administrator",
+ "module": "Selling",
+ "name": "Sales Order - Payment Dues by Week or Month",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Sales Order",
+ "reference_report": "Sales Order Payment Dues",
+ "report_name": "Sales Order - Payment Dues by Week or Month",
+ "report_script": "from frappe import _\n\ndef execute(filters=None):\n    columns = [\n        _(\"Sales Order\") + \"::120\",\n        _(\"Customer\") + \"::150\",\n        _(\"Order Date\") + \"::120\",\n        _(\"Total Amount\") + \":Currency:120\",\n        _(\"Pending Amount\") + \":Currency:120\",\n        _(\"Due Date\") + \":Date:120\",\n        _(\"Payment Due\") + \":Currency:120\",\n        _(\"Payment Due Week\") + \"::120\",\n        _(\"Payment Due Month\") + \"::120\"\n    ]\n\n    data = get_data(filters)\n    return columns, data\n\ndef get_data(filters):\n    # Construct your query based on the filters\n    conditions = \"\"\n    if filters.get(\"from_date\"):\n        conditions += f\" AND due_date >= '{filters.get('from_date')}'\"\n    if filters.get(\"to_date\"):\n        conditions += f\" AND due_date <= '{filters.get('to_date')}'\"\n    if filters.get(\"customer\"):\n        conditions += f\" AND customer = '{filters.get('customer')}'\"\n\n    # Fetch data based on the constructed query\n    # Example query (replace with your actual data retrieval logic)\n    data = frappe.db.sql(\"\"\"\n        SELECT\n            name,\n            customer,\n            order_date,\n            total_amount,\n            pending_amount,\n            due_date\n        FROM\n            `tabSales Order`\n        WHERE\n            docstatus = 1 {0}\n        \"\"\".format(conditions), as_dict=True)\n\n    formatted_data = []\n    for row in data:\n        formatted_data.append([\n            row.get(\"name\"),\n            row.get(\"customer\"),\n            row.get(\"order_date\"),\n            row.get(\"total_amount\"),\n            row.get(\"pending_amount\"),\n            row.get(\"due_date\"),\n            calculate_payment_due(row.get(\"pending_amount\"), row.get(\"due_date\")),\n            calculate_week_start(row.get(\"due_date\")),\n            calculate_month_start(row.get(\"due_date\"))\n        ])\n\n    return formatted_data\n\ndef calculate_payment_due(pending_amount, due_date):\n    # Calculate payment due based on business logic\n    # This is a placeholder function, replace with your actual logic\n    return pending_amount\n\ndef calculate_week_start(due_date):\n    # Calculate start of the week based on due date\n    # This is a placeholder function, replace with your actual logic\n    return week_start_date\n\ndef calculate_month_start(due_date):\n    # Calculate start of the month based on due date\n    # This is a placeholder function, replace with your actual logic\n    return month_start_date\n",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Sales User"
+  },
+  {
+   "role": "Sales Manager"
+  },
+  {
+   "role": "Maintenance User"
+  },
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Stock User"
+  }
+ ]
+}

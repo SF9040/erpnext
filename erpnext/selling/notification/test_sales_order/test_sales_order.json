@@ -1,0 +1,28 @@
+{
+ "attach_print": 0,
+ "channel": "System Notification",
+ "creation": "2024-03-30 06:13:38.179400",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Sales Order",
+ "enabled": 1,
+ "event": "Value Change",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "test workflow state",
+ "modified": "2024-03-30 06:13:38.179400",
+ "modified_by": "Administrator",
+ "module": "Selling",
+ "name": "test sales order",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "Sales Manager"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "Sales Order test Workflow : {{doc.name}} {{doc.workflow}} {{doc.workflow_state}}",
+ "value_changed": "workflow_state"
+}
