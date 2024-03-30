@@ -10,8 +10,8 @@
  "event": "Value Change",
  "idx": 0,
  "is_standard": 1,
- "message": "Add your message here",
- "modified": "2024-03-13 09:33:06.435881",
+ "message": "Quotation Approval Status",
+ "modified": "2024-03-30 07:59:50.276008",
  "modified_by": "Administrator",
  "module": "Buying",
  "name": "Quotation Approval Buying Notification",
@@ -23,6 +23,6 @@
  ],
  "send_system_notification": 0,
  "send_to_all_assignees": 0,
- "subject": "Quotation Approval Buying Workflow : {{doc.name}} {{doc.status}}",
+ "subject": "Quotation Approval Buying Workflow : {{doc.name}} {{doc.workflow_state}}",
  "value_changed": "workflow_state"
 }

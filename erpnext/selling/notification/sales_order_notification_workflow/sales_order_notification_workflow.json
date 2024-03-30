@@ -1,28 +1,29 @@
 {
  "attach_print": 0,
  "channel": "System Notification",
- "creation": "2024-03-13 07:08:14.403578",
+ "creation": "2024-03-30 08:04:42.217549",
  "days_in_advance": 0,
  "docstatus": 0,
  "doctype": "Notification",
- "document_type": "Material Request",
+ "document_type": "Sales Order",
  "enabled": 1,
  "event": "Value Change",
  "idx": 0,
  "is_standard": 1,
- "message": "Material Request Status",
- "modified": "2024-03-30 08:00:19.054139",
+ "message": "Sales Order Notification Status",
+ "modified": "2024-03-30 08:04:42.217549",
  "modified_by": "Administrator",
- "module": "Stock",
- "name": "Material Request Notification Status",
+ "module": "Selling",
+ "name": "Sales Order Notification Workflow",
  "owner": "Administrator",
  "recipients": [
   {
+   "receiver_by_document_field": "",
    "receiver_by_role": "Sales Manager"
   }
  ],
- "send_system_notification": 0,
+ "send_system_notification": 1,
  "send_to_all_assignees": 0,
- "subject": "Material Request Workflow : {{doc.name}} {{doc.workflow_state}}",
+ "subject": "Sales Order Workflow : {{doc.name}} {{doc.workflow_state}}",
  "value_changed": "workflow_state"
 }

@@ -15,6 +15,8 @@
   "posting_date",
   "company",
   "mode_of_payment",
+  "proof_of_payment_section",
+  "payment_proof",
   "party_section",
   "party_type",
   "party",
@@ -212,7 +214,6 @@
    "read_only": 1
   },
   {
-   "collapsible": 1,
    "fieldname": "payment_accounts_section",
    "fieldtype": "Section Break",
    "label": "Accounts"
@@ -735,6 +736,21 @@
    "fieldname": "get_outstanding_orders",
    "fieldtype": "Button",
    "label": "Get Outstanding Orders"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_payment === 'QR' || doc.mode_of_payment === 'Cash' || doc.mode_of_payment === 'Cheque' || doc.mode_of_payment === 'Wire Transfer'",
+   "description": "Please upload a scanned copy or a clear photo of the payment receipt or any other relevant document confirming the payment.\n\nSupported file formats: JPG, JPEG, PNG, PDF. Maximum file size: 2MB.",
+   "fieldname": "proof_of_payment_section",
+   "fieldtype": "Section Break",
+   "label": "Proof of Payment"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_payment === 'QR' || doc.mode_of_payment === 'Cash' || doc.mode_of_payment === 'Cheque' || doc.mode_of_payment === 'Wire Transfer';",
+   "description": "Please upload a scanned copy or a clear photo of the payment receipt or any other relevant document confirming the payment.\n\nSupported file formats: JPG, JPEG, PNG, PDF. Maximum file size: 2MB.",
+   "fieldname": "payment_proof",
+   "fieldtype": "Attach",
+   "label": "Files",
+   "mandatory_depends_on": "eval:doc.mode_of_payment === 'QR' || doc.mode_of_payment === 'Cash' || doc.mode_of_payment === 'Cheque' || doc.mode_of_payment === 'Wire Transfer';"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -748,7 +764,7 @@
    "table_fieldname": "payment_entries"
   }
  ],
- "modified": "2023-11-23 12:07:20.887885",
+ "modified": "2024-03-30 07:09:05.777538",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Payment Entry",

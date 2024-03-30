@@ -15,12 +15,16 @@
   "customer_name",
   "column_break1",
   "posting_date",
+  "so_date",
   "posting_time",
   "set_posting_time",
   "column_break_10",
   "company",
   "amended_from",
   "is_return",
+  "so_urgent",
+  "so_buyer_self_collect",
+  "so_buyer_self_collect_time",
   "issue_credit_note",
   "return_against",
   "accounting_dimensions_section",
@@ -1323,6 +1327,7 @@
   {
    "fieldname": "terms_tab",
    "fieldtype": "Tab Break",
+   "hidden": 1,
    "label": "Terms"
   },
   {
@@ -1394,13 +1399,39 @@
    "fieldname": "named_place",
    "fieldtype": "Data",
    "label": "Named Place"
+  },
+  {
+   "fieldname": "so_date",
+   "fieldtype": "Date",
+   "label": "Sales Order Delivery Date",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "so_urgent",
+   "fieldtype": "Check",
+   "label": "Urgent",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "so_buyer_self_collect",
+   "fieldtype": "Check",
+   "label": "Buyer Self-collect / Pickup",
+   "read_only": 1
+  },
+  {
+   "fieldname": "so_buyer_self_collect_time",
+   "fieldtype": "Data",
+   "label": "Self-collection / Pickup Time",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-truck",
  "idx": 146,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-12-23 10:24:01.869244",
+ "modified": "2024-03-30 11:45:48.825992",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Note",

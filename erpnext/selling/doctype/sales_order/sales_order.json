@@ -27,6 +27,9 @@
   "value_added_tax",
   "total_net_weight",
   "skip_delivery_note",
+  "urgent",
+  "buyer_self_collect",
+  "buyer_self_collect_time",
   "amended_from",
   "accounting_dimensions_section",
   "cost_center",
@@ -1094,6 +1097,7 @@
    "collapsible_depends_on": "terms",
    "fieldname": "terms_section_break",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "hide_days": 1,
    "hide_seconds": 1,
    "label": "Terms & Conditions",
@@ -1633,13 +1637,32 @@
    "label": "Value-Added Tax",
    "options": "VAT +\nVAT NoN\nVAT Included",
    "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "urgent",
+   "fieldtype": "Check",
+   "label": "Urgent"
+  },
+  {
+   "default": "0",
+   "fieldname": "buyer_self_collect",
+   "fieldtype": "Check",
+   "label": "Buyer Self-collect / Pickup"
+  },
+  {
+   "depends_on": "eval:doc.buyer_self_collect == 1",
+   "fieldname": "buyer_self_collect_time",
+   "fieldtype": "Datetime",
+   "label": "Self-collection / Pickup Time",
+   "mandatory_depends_on": "eval:doc.buyer_self_collect == 1"
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-03-25 20:18:59.918677",
+ "modified": "2024-03-30 11:30:08.750213",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order",

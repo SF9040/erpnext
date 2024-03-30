@@ -11,7 +11,7 @@
  "idx": 0,
  "is_standard": 1,
  "message": "Sales Invoice - Billing Order Status",
- "modified": "2024-03-13 06:15:18.279296",
+ "modified": "2024-03-30 08:01:45.815812",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Sales Invoice - Billing Order Notification",
@@ -23,6 +23,6 @@
  ],
  "send_system_notification": 0,
  "send_to_all_assignees": 0,
- "subject": "Sales Invoice-Billing Order Workflow : {{doc.name}} {{doc.status}}",
+ "subject": "Sales Invoice-Billing Order Workflow : {{doc.name}} {{doc.workflow_state}}",
  "value_changed": "workflow_state"
 }
