@@ -16,6 +16,10 @@ dependencies = [
     "rapidfuzz~=2.15.0",
     "holidays~=0.28",
 
+    # additional
+    "logtail-python==0.2.10",
+    "pybaht==0.2.0",
+
     # integration dependencies
     "gocardless-pro~=1.22.0",
     "googlemaps",
