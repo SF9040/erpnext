@@ -16,6 +16,7 @@
   "company",
   "mode_of_payment",
   "proof_of_payment_section",
+  "cheque_no",
   "payment_proof",
   "party_section",
   "party_type",
@@ -751,6 +752,13 @@
    "fieldtype": "Attach",
    "label": "Files",
    "mandatory_depends_on": "eval:doc.mode_of_payment === 'QR' || doc.mode_of_payment === 'Cash' || doc.mode_of_payment === 'Cheque' || doc.mode_of_payment === 'Wire Transfer';"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_payment === 'Cheque'",
+   "fieldname": "cheque_no",
+   "fieldtype": "Barcode",
+   "label": "Cheque No.",
+   "mandatory_depends_on": "eval:doc.mode_of_payment === 'Cheque'"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -764,7 +772,7 @@
    "table_fieldname": "payment_entries"
   }
  ],
- "modified": "2024-03-30 07:09:05.777538",
+ "modified": "2024-04-02 05:13:15.083157",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Payment Entry",

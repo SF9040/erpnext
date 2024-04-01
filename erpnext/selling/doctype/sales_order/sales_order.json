@@ -1654,15 +1654,14 @@
    "depends_on": "eval:doc.buyer_self_collect == 1",
    "fieldname": "buyer_self_collect_time",
    "fieldtype": "Datetime",
-   "label": "Self-collection / Pickup Time",
-   "mandatory_depends_on": "eval:doc.buyer_self_collect == 1"
+   "label": "Self-collection / Pickup Time"
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-03-30 11:30:08.750213",
+ "modified": "2024-04-02 04:14:20.504376",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order",

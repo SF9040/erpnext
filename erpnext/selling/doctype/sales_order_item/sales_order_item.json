@@ -883,7 +883,7 @@
    "depends_on": "eval:doc.customizable_uom == 'LxW';",
    "fieldname": "customizable_width",
    "fieldtype": "Float",
-   "label": "Customizable Width (cm)",
+   "label": "Customizable Width (m)",
    "mandatory_depends_on": "eval:doc.customizable_uom == 'LxW';\n",
    "precision": "2"
   },
@@ -891,7 +891,7 @@
    "depends_on": "eval:doc.customizable_uom == 'LxW';",
    "fieldname": "customizable_length",
    "fieldtype": "Float",
-   "label": "Customizable Length (cm)",
+   "label": "Customizable Length (m)",
    "mandatory_depends_on": "eval:doc.customizable_uom == 'LxW';",
    "precision": "2"
   },
@@ -926,7 +926,7 @@
  "idx": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-03-27 23:17:42.440019",
+ "modified": "2024-04-02 04:51:30.465013",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order Item",
