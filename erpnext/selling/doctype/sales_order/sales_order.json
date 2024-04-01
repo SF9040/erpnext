@@ -54,6 +54,7 @@
   "column_break_33",
   "base_total",
   "base_net_total",
+  "total_amount_in_words",
   "column_break_33a",
   "total",
   "net_total",
@@ -78,6 +79,7 @@
   "base_in_words",
   "column_break3",
   "grand_total",
+  "grand_total_amount_in_words",
   "rounding_adjustment",
   "rounded_total",
   "in_words",
@@ -1655,13 +1657,25 @@
    "fieldname": "buyer_self_collect_time",
    "fieldtype": "Datetime",
    "label": "Self-collection / Pickup Time"
+  },
+  {
+   "fieldname": "total_amount_in_words",
+   "fieldtype": "Data",
+   "label": "Total Amount in Words",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grand_total_amount_in_words",
+   "fieldtype": "Data",
+   "label": "Grand Total Amount in Words",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-02 04:14:20.504376",
+ "modified": "2024-04-02 06:12:29.995253",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order",
