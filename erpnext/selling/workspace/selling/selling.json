@@ -7,7 +7,7 @@
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "tag",
+ "icon": "sell",
  "idx": 0,
  "is_hidden": 0,
  "label": "Selling",
@@ -674,7 +674,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-03-29 02:54:37.962768",
+ "modified": "2024-04-03 01:42:48.803248",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Selling",

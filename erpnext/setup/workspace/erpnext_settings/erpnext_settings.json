@@ -9,7 +9,7 @@
  "hide_custom": 0,
  "icon": "setting",
  "idx": 0,
- "is_hidden": 1,
+ "is_hidden": 0,
  "label": "ERPNext Settings",
  "links": [
   {
@@ -437,7 +437,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-12-24 14:19:32.920596",
+ "modified": "2024-04-03 02:00:24.856832",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "ERPNext Settings",

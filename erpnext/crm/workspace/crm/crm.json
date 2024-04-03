@@ -12,7 +12,7 @@
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "crm",
+ "icon": "person_search",
  "idx": 0,
  "is_hidden": 1,
  "label": "CRM",
@@ -452,7 +452,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-12-24 14:19:34.719091",
+ "modified": "2024-04-03 02:54:50.003810",
  "modified_by": "Administrator",
  "module": "CRM",
  "name": "CRM",

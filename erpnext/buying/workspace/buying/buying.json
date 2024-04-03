@@ -7,7 +7,7 @@
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "shopping-cart",
+ "icon": "shopping_cart",
  "idx": 0,
  "is_hidden": 0,
  "label": "Buying",
@@ -653,7 +653,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-03-28 23:22:17.708424",
+ "modified": "2024-04-03 01:42:25.808211",
  "modified_by": "Administrator",
  "module": "Buying",
  "name": "Buying",

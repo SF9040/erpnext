@@ -12,7 +12,7 @@
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "assets",
+ "icon": "flowsheet",
  "idx": 0,
  "is_hidden": 0,
  "label": "Assets",
@@ -185,7 +185,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-12-24 14:19:31.949703",
+ "modified": "2024-04-03 01:59:51.604338",
  "modified_by": "Administrator",
  "module": "Assets",
  "name": "Assets",

@@ -12,7 +12,7 @@
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "calculator",
+ "icon": "calculate",
  "idx": 0,
  "is_hidden": 0,
  "label": "Accounting",
@@ -1095,7 +1095,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-01-16 17:54:45.551402",
+ "modified": "2024-04-03 01:42:07.296917",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Accounting",

@@ -9,7 +9,7 @@
  "hide_custom": 0,
  "icon": "loan",
  "idx": 0,
- "is_hidden": 1,
+ "is_hidden": 0,
  "label": "Loans",
  "links": [
   {
@@ -280,7 +280,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-12-24 14:19:35.322448",
+ "modified": "2024-04-03 02:00:17.474421",
  "modified_by": "Administrator",
  "module": "Loan Management",
  "name": "Loans",

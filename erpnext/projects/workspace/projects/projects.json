@@ -12,9 +12,9 @@
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "project",
+ "icon": "checkbook",
  "idx": 0,
- "is_hidden": 1,
+ "is_hidden": 0,
  "label": "Projects",
  "links": [
   {
@@ -192,7 +192,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-12-24 14:19:34.550821",
+ "modified": "2024-04-03 02:03:48.597266",
  "modified_by": "Administrator",
  "module": "Projects",
  "name": "Projects",

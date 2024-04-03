@@ -53,6 +53,7 @@
   "total_qty",
   "total_net_weight",
   "column_break_35",
+  "total_amount_in_words",
   "base_total",
   "base_net_total",
   "column_break_33",
@@ -79,6 +80,7 @@
   "base_in_words",
   "column_break3",
   "grand_total",
+  "grand_total_amount_in_words",
   "rounding_adjustment",
   "rounded_total",
   "in_words",
@@ -1425,13 +1427,25 @@
    "fieldtype": "Data",
    "label": "Self-collection / Pickup Time",
    "read_only": 1
+  },
+  {
+   "fieldname": "total_amount_in_words",
+   "fieldtype": "Data",
+   "label": "Total Amount in Words",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grand_total_amount_in_words",
+   "fieldtype": "Data",
+   "label": "Grand Total Amount in Words",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-truck",
  "idx": 146,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-03-30 11:45:48.825992",
+ "modified": "2024-04-03 13:11:24.963184",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Note",
