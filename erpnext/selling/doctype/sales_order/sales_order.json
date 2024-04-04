@@ -100,6 +100,7 @@
   "pricing_rules",
   "contact_info",
   "billing_address_column",
+  "billing_address_name",
   "customer_address",
   "address_display",
   "customer_group",
@@ -1669,13 +1670,19 @@
    "fieldtype": "Data",
    "label": "Grand Total Amount in Words",
    "read_only": 1
+  },
+  {
+   "fieldname": "billing_address_name",
+   "fieldtype": "Link",
+   "label": "Billing Address",
+   "options": "Address"
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-02 06:12:29.995253",
+ "modified": "2024-04-04 16:07:58.578192",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order",
