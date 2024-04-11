@@ -27,6 +27,8 @@
   "customizable_uom",
   "customizable_width",
   "customizable_length",
+  "customizable_sqm",
+  "customizable_sqm_per_roll_price",
   "customizable_weight",
   "customizable_uom_quantity",
   "note",
@@ -946,12 +948,24 @@
    "fieldname": "note",
    "fieldtype": "Text",
    "label": "Note"
+  },
+  {
+   "depends_on": "eval:doc.customizable_uom == 'LxW';",
+   "fieldname": "customizable_sqm",
+   "fieldtype": "Float",
+   "label": "Customizable (Sqm)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "customizable_sqm_per_roll_price",
+   "fieldtype": "Data",
+   "label": "Customizable (Sqm) - Per Roll Price"
   }
  ],
  "idx": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-04-04 12:39:37.261960",
+ "modified": "2024-04-11 17:47:44.680285",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order Item",

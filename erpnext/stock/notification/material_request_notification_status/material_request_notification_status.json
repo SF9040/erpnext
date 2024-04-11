@@ -10,8 +10,8 @@
  "event": "Value Change",
  "idx": 0,
  "is_standard": 1,
- "message": "Material Request Status",
- "modified": "2024-03-30 08:00:19.054139",
+ "message": "Material Request Status Notification",
+ "modified": "2024-04-09 06:37:15.665907",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Material Request Notification Status",
@@ -23,6 +23,6 @@
  ],
  "send_system_notification": 0,
  "send_to_all_assignees": 0,
- "subject": "Material Request Workflow : {{doc.name}} {{doc.workflow_state}}",
+ "subject": "Material Request : {{doc.name}} {{doc.workflow_state}}",
  "value_changed": "workflow_state"
 }

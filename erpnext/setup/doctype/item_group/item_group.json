@@ -13,6 +13,7 @@
   "item_group_name",
   "parent_item_group",
   "is_group",
+  "is_vat",
   "image",
   "column_break_5",
   "defaults",
@@ -225,6 +226,12 @@
    "fieldname": "include_descendants",
    "fieldtype": "Check",
    "label": "Include Descendants"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_vat",
+   "fieldtype": "Check",
+   "label": "Is VAT"
   }
  ],
  "icon": "fa fa-sitemap",
@@ -233,7 +240,7 @@
  "is_tree": 1,
  "links": [],
  "max_attachments": 3,
- "modified": "2023-01-05 12:21:30.458628",
+ "modified": "2024-04-11 15:17:21.496541",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Item Group",

@@ -86,6 +86,8 @@
   "rounded_total",
   "in_words",
   "disable_rounded_total",
+  "pickup_records_section",
+  "pickup_records",
   "section_break_49",
   "apply_discount_on",
   "base_discount_amount",
@@ -191,7 +193,7 @@
    "no_copy": 1,
    "oldfieldname": "naming_series",
    "oldfieldtype": "Select",
-   "options": "MAT-DN-.YYYY.-\nMAT-DN-RET-.YYYY.-",
+   "options": "DN-.YY.MM.-.####\nRET-DN-.YY.MM.-.####\nDN-MS-.YY.MM.-.####\nDN-STVS-.YY.MM.-.####\nRET-DN-MS-.YY.MM.-.####\nRET-DN-STVS-.YY.MM.-.####\nMAT-DN-.YYYY.-\nMAT-DN-RET-.YYYY.-",
    "print_hide": 1,
    "reqd": 1,
    "set_only_once": 1
@@ -1420,8 +1422,7 @@
    "default": "0",
    "fieldname": "so_buyer_self_collect",
    "fieldtype": "Check",
-   "label": "Buyer Self-collect / Pickup",
-   "read_only": 1
+   "label": "Buyer Self-collect / Pickup"
   },
   {
    "fieldname": "so_buyer_self_collect_time",
@@ -1447,13 +1448,25 @@
    "label": "Value-Added Tax",
    "options": "\nVAT +\nVAT NoN\nVAT Included",
    "read_only": 1
+  },
+  {
+   "fieldname": "pickup_records_section",
+   "fieldtype": "Section Break",
+   "label": "Pickup Records"
+  },
+  {
+   "depends_on": "eval:doc.so_buyer_self_collect == 1;",
+   "fieldname": "pickup_records",
+   "fieldtype": "Table",
+   "label": "Pickup Records",
+   "options": "Pickup Records"
   }
  ],
  "icon": "fa fa-truck",
  "idx": 146,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-04 07:47:33.364267",
+ "modified": "2024-04-12 00:14:57.178609",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Note",

@@ -33,7 +33,9 @@
   "net_weight",
   "capacity",
   "tare_weight",
-  "gross_weight"
+  "gross_weight",
+  "expenses_section",
+  "expenses"
  ],
  "fields": [
   {
@@ -211,11 +213,22 @@
    "fieldtype": "Float",
    "label": "Gross Weight",
    "precision": "2"
+  },
+  {
+   "fieldname": "expenses_section",
+   "fieldtype": "Section Break",
+   "label": "Expenses"
+  },
+  {
+   "fieldname": "expenses",
+   "fieldtype": "Table",
+   "label": "Expenses",
+   "options": "Trip Expenses"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-03-25 08:22:53.263977",
+ "modified": "2024-04-11 23:40:55.188879",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Trip",

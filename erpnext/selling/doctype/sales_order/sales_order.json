@@ -764,6 +764,7 @@
   {
    "fieldname": "taxes",
    "fieldtype": "Table",
+   "hidden": 1,
    "hide_days": 1,
    "hide_seconds": 1,
    "label": "Sales Taxes and Charges",
@@ -1490,7 +1491,7 @@
    "fieldtype": "Check",
    "hide_days": 1,
    "hide_seconds": 1,
-   "label": "Skip Delivery Note",
+   "label": "Skip Delivery Date",
    "print_hide": 1
   },
   {
@@ -1682,7 +1683,7 @@
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-04 16:07:58.578192",
+ "modified": "2024-04-11 18:08:09.367301",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order",
