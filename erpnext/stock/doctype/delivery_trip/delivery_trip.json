@@ -34,6 +34,7 @@
   "capacity",
   "tare_weight",
   "gross_weight",
+  "total_weight",
   "expenses_section",
   "expenses"
  ],
@@ -224,11 +225,18 @@
    "fieldtype": "Table",
    "label": "Expenses",
    "options": "Trip Expenses"
+  },
+  {
+   "fieldname": "total_weight",
+   "fieldtype": "Float",
+   "label": "Total Weight (Kg)",
+   "precision": "2",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-11 23:40:55.188879",
+ "modified": "2024-04-12 21:39:15.687164",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Trip",

@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "customer",
+  "customer_name",
   "address",
   "locked",
   "column_break_6",
@@ -15,6 +16,7 @@
   "delivery_note",
   "shipping_address",
   "shipping_note",
+  "total_weight",
   "cb_order",
   "grand_total",
   "section_break_7",
@@ -191,11 +193,24 @@
    "fieldname": "shipping_address",
    "fieldtype": "Text",
    "label": "Shipping Address"
+  },
+  {
+   "fieldname": "total_weight",
+   "fieldtype": "Float",
+   "label": "Total Weight",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
   }
  ],
  "istable": 1,
  "links": [],
- "modified": "2024-04-11 22:17:09.863907",
+ "modified": "2024-04-12 21:30:52.131358",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Stop",

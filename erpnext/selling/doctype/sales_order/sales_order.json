@@ -15,6 +15,7 @@
   "naming_series",
   "customer",
   "customer_name",
+  "forklift_driver",
   "tax_id",
   "order_type",
   "column_break_7",
@@ -1677,13 +1678,18 @@
    "fieldtype": "Link",
    "label": "Billing Address",
    "options": "Address"
+  },
+  {
+   "fieldname": "forklift_driver",
+   "fieldtype": "Data",
+   "label": "Forklift Driver"
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-11 18:08:09.367301",
+ "modified": "2024-04-12 13:09:07.902822",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order",
