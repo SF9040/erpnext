@@ -1466,7 +1466,7 @@
  "idx": 146,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-12 00:14:57.178609",
+ "modified": "2024-04-14 20:58:49.383467",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Note",
@@ -1527,7 +1527,7 @@
    "write": 1
   }
  ],
- "search_fields": "status,customer,customer_name, territory,base_grand_total",
+ "search_fields": "status,customer,customer_name",
  "show_name_in_global_search": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2023-12-24 19:13:37.269432",
  "default_view": "List",
  "doctype": "DocType",
@@ -11,17 +12,21 @@
   "delivery_note_date",
   "column_break_zsi6u",
   "driver_name",
-  "column_break_ybla9",
   "customer",
+  "customer_name",
+  "column_break_ybla9",
+  "naming_series",
   "posting_date",
   "section_break_6kuvt",
   "items",
   "section_break_jiby5",
+  "retrieve_returned_items",
+  "reviews",
+  "section_break_djl6b",
   "amended_from",
   "total_weight",
-  "actual_weight",
   "column_break_xzie2",
-  "amount_in_words",
+  "actual_weight",
   "column_break_pewwd",
   "status"
  ],
@@ -37,19 +42,16 @@
   {
    "fieldname": "customer",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Customer",
    "options": "Customer",
    "read_only": 1
   },
   {
-   "fieldname": "amount_in_words",
-   "fieldtype": "Data",
-   "label": "Amount In Words"
-  },
-  {
+   "description": "Office People.",
    "fieldname": "items",
    "fieldtype": "Table",
-   "label": "Items",
+   "label": "Returned Items",
    "options": "Return Note Item"
   },
   {
@@ -61,7 +63,8 @@
   },
   {
    "fieldname": "section_break_6kuvt",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Returned Items"
   },
   {
    "fieldname": "amended_from",
@@ -80,7 +83,7 @@
   {
    "fieldname": "total_weight",
    "fieldtype": "Float",
-   "label": "Total Weight",
+   "label": "Total Weight (Kg)",
    "precision": "2",
    "read_only": 1
   },
@@ -98,7 +101,8 @@
   },
   {
    "fieldname": "section_break_jiby5",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Reviews Items"
   },
   {
    "fieldname": "driver_name",
@@ -127,16 +131,47 @@
    "fieldname": "actual_weight",
    "fieldtype": "Float",
    "label": "Actual Weight",
+   "non_negative": 1,
    "precision": "2"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "RN-.YY.MM.-.####",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "description": "Store People.",
+   "fieldname": "reviews",
+   "fieldtype": "Table",
+   "label": "Reviews",
+   "options": "Return Note Review"
+  },
+  {
+   "fieldname": "section_break_djl6b",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "retrieve_returned_items",
+   "fieldtype": "Button",
+   "label": "Retrieve Returned Items"
   }
  ],
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2024-04-14 00:51:12.622830",
+ "modified": "2024-04-15 01:22:44.728772",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Return Note",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

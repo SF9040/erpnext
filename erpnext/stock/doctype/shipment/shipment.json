@@ -241,7 +241,8 @@
   },
   {
    "fieldname": "column_break_28",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "hidden": 1
   },
   {
    "fieldname": "shipment_details_section",
@@ -376,6 +377,7 @@
   {
    "fieldname": "awb_number",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "AWB Number",
    "no_copy": 1,
    "print_hide": 1
@@ -419,6 +421,7 @@
   {
    "fieldname": "shipment_delivery_note",
    "fieldtype": "Table",
+   "hidden": 1,
    "label": "Shipment Delivery Note",
    "options": "Shipment Delivery Note"
   },
@@ -433,7 +436,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-02-11 21:01:27.913156",
+ "modified": "2024-04-14 14:07:08.488821",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Shipment",
