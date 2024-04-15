@@ -280,7 +280,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-04-03 02:00:17.474421",
+ "modified": "2024-04-15 17:43:20.303549",
  "modified_by": "Administrator",
  "module": "Loan Management",
  "name": "Loans",
@@ -291,7 +291,7 @@
  "quick_lists": [],
  "restrict_to_domain": "",
  "roles": [],
- "sequence_id": 24.0,
+ "sequence_id": 25.0,
  "shortcuts": [
   {
    "color": "Green",

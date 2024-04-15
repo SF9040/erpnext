@@ -96,7 +96,7 @@
    "in_standard_filter": 1,
    "label": "Status",
    "no_copy": 1,
-   "options": "\nDraft\nTo Review\nReturn Issued\nCancelled",
+   "options": "\nDraft\nTo Review\nInspection Complete\nReturn Issued\nReturn Approved\nComplete\nCancelled",
    "read_only": 1,
    "reqd": 1,
    "search_index": 1
@@ -183,7 +183,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-15 13:41:56.948560",
+ "modified": "2024-04-15 17:31:22.574476",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Return Note",
