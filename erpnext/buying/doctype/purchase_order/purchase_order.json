@@ -24,6 +24,7 @@
   "apply_tds",
   "tax_withholding_category",
   "is_subcontracted",
+  "is_credit_supplier",
   "supplier_warehouse",
   "amended_from",
   "accounting_dimensions_section",
@@ -61,6 +62,8 @@
   "raw_material_details",
   "set_reserve_warehouse",
   "supplied_items",
+  "freight_charges_note_section",
+  "freight_charges_included",
   "taxes_section",
   "tax_category",
   "taxes_and_charges",
@@ -1267,13 +1270,30 @@
    "fieldtype": "Tab Break",
    "label": "Connections",
    "show_dashboard": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_credit_supplier",
+   "fieldtype": "Check",
+   "label": "is Credit Supplier"
+  },
+  {
+   "fieldname": "freight_charges_note_section",
+   "fieldtype": "Section Break",
+   "label": "Freight Charges Note"
+  },
+  {
+   "fieldname": "freight_charges_included",
+   "fieldtype": "Currency",
+   "label": "Freight Charges Included (USD)",
+   "precision": "2"
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-01 20:58:07.851037",
+ "modified": "2024-04-15 15:14:07.814722",
  "modified_by": "Administrator",
  "module": "Buying",
  "name": "Purchase Order",

@@ -16,8 +16,11 @@
   "column_break0",
   "supplier_group",
   "supplier_type",
+  "is_credited",
   "is_transporter",
   "image",
+  "credit_section",
+  "credit_ref_table",
   "defaults_section",
   "default_currency",
   "default_bank_account",
@@ -445,6 +448,24 @@
   {
    "fieldname": "column_break_59",
    "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "default": "0",
+   "fieldname": "is_credited",
+   "fieldtype": "Check",
+   "label": "is Credited"
+  },
+  {
+   "fieldname": "credit_section",
+   "fieldtype": "Section Break",
+   "label": "Credit"
+  },
+  {
+   "bold": 1,
+   "fieldname": "credit_ref_table",
+   "fieldtype": "Data",
+   "label": "Credit Ref Table TODO"
   }
  ],
  "icon": "fa fa-user",
@@ -457,7 +478,7 @@
    "link_fieldname": "party"
   }
  ],
- "modified": "2023-10-19 16:55:15.148325",
+ "modified": "2024-04-15 12:07:56.643712",
  "modified_by": "Administrator",
  "module": "Buying",
  "name": "Supplier",

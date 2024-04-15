@@ -28,7 +28,9 @@
   "column_break_xzie2",
   "actual_weight",
   "column_break_pewwd",
-  "status"
+  "status",
+  "return_dn_against",
+  "return_si_against"
  ],
  "fields": [
   {
@@ -163,11 +165,25 @@
    "fieldname": "retrieve_returned_items",
    "fieldtype": "Button",
    "label": "Retrieve Returned Items"
+  },
+  {
+   "fieldname": "return_dn_against",
+   "fieldtype": "Link",
+   "label": "Return Delivery Note Against",
+   "options": "Delivery Note",
+   "read_only": 1
+  },
+  {
+   "fieldname": "return_si_against",
+   "fieldtype": "Link",
+   "label": "Return Sales Invoice Against",
+   "options": "Sales Invoice",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-15 01:22:44.728772",
+ "modified": "2024-04-15 13:41:56.948560",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Return Note",
