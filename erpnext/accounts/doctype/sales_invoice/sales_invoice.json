@@ -141,6 +141,9 @@
   "loyalty_redemption_account",
   "loyalty_redemption_cost_center",
   "contact_and_address_tab",
+  "selected_addresses_section",
+  "selected_billing_address",
+  "selected_shipping_address",
   "address_and_contact",
   "customer_address",
   "address_display",
@@ -244,8 +247,9 @@
    "no_copy": 1,
    "oldfieldname": "naming_series",
    "oldfieldtype": "Select",
-   "options": "SI-.YY.MM.-.####\nRET-SI-.YY.MM.-.####\nSI-MS-.YY.MM.-.####\nSI-STVS-.YY.MM.-.####\nRET-SI-MS-.YY.MM.-.####\nRET-SI-STVS-.YY.MM.-.####\nACC-SINV-.YYYY.-\nACC-SINV-RET-.YYYY.-",
+   "options": "SI-.YY.MM.-.####\nRET-SI-.YY.MM.-.####\nSI-MS-.YY.MM.-.####\nSI-STVS-.YY.MM.-.####\nRET-SI-MS-.YY.MM.-.####\nRET-SI-STVS-.YY.MM.-.####\nACC-SINV-.YYYY.-.####\nACC-SINV-RET-.YYYY.-.####",
    "print_hide": 1,
+   "read_only": 1,
    "reqd": 1,
    "set_only_once": 1
   },
@@ -2154,6 +2158,25 @@
    "fieldname": "update_billed_amount_in_delivery_note",
    "fieldtype": "Check",
    "label": "Update Billed Amount in Delivery Note"
+  },
+  {
+   "fieldname": "selected_addresses_section",
+   "fieldtype": "Section Break",
+   "label": "Selected Addresses"
+  },
+  {
+   "fieldname": "selected_billing_address",
+   "fieldtype": "Link",
+   "label": "Selected Billing Address",
+   "options": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "selected_shipping_address",
+   "fieldtype": "Link",
+   "label": "Selected Shipping Address",
+   "options": "Address",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-file-text",
@@ -2166,7 +2189,7 @@
    "link_fieldname": "consolidated_invoice"
   }
  ],
- "modified": "2024-03-30 04:48:27.504166",
+ "modified": "2024-04-16 23:47:24.562101",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Sales Invoice",

@@ -195,6 +195,7 @@
    "oldfieldtype": "Select",
    "options": "DN-.YY.MM.-.####\nRET-DN-.YY.MM.-.####\nDN-MS-.YY.MM.-.####\nDN-STVS-.YY.MM.-.####\nRET-DN-MS-.YY.MM.-.####\nRET-DN-STVS-.YY.MM.-.####\nMAT-DN-.YYYY.-\nMAT-DN-RET-.YYYY.-",
    "print_hide": 1,
+   "read_only": 1,
    "reqd": 1,
    "set_only_once": 1
   },
@@ -1466,7 +1467,7 @@
  "idx": 146,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-14 20:58:49.383467",
+ "modified": "2024-04-16 22:35:33.930604",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Note",

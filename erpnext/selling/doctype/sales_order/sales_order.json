@@ -211,6 +211,7 @@
    "oldfieldtype": "Select",
    "options": "SAL-ORD-.YYYY.-",
    "print_hide": 1,
+   "read_only": 1,
    "reqd": 1,
    "set_only_once": 1
   },
@@ -1689,7 +1690,7 @@
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-12 13:09:07.902822",
+ "modified": "2024-04-16 22:26:58.962724",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order",
