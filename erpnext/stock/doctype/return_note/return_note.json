@@ -39,6 +39,7 @@
    "in_list_view": 1,
    "label": "Delivery Note",
    "options": "Delivery Note",
+   "read_only_depends_on": "eval:doc.status != \"Draft\"",
    "reqd": 1
   },
   {
@@ -54,7 +55,8 @@
    "fieldname": "items",
    "fieldtype": "Table",
    "label": "Returned Items",
-   "options": "Return Note Item"
+   "options": "Return Note Item",
+   "read_only_depends_on": "eval: doc.status == 'Inspection Complete' || doc.status == 'Return Issued' || doc.status == 'Complete' ||  doc.status == 'Cancelled'"
   },
   {
    "default": "Today",
@@ -64,6 +66,7 @@
    "read_only": 1
   },
   {
+   "depends_on": "eval:doc.status != 'To Review';",
    "fieldname": "section_break_6kuvt",
    "fieldtype": "Section Break",
    "label": "Returned Items"
@@ -96,12 +99,13 @@
    "in_standard_filter": 1,
    "label": "Status",
    "no_copy": 1,
-   "options": "\nDraft\nTo Review\nInspection Complete\nReturn Issued\nReturn Approved\nComplete\nCancelled",
+   "options": "\nDraft\nTo Review\nInspection Complete\nReturn Issued\nComplete\nCancelled",
    "read_only": 1,
    "reqd": 1,
    "search_index": 1
   },
   {
+   "depends_on": "eval:doc.status != 'Draft'",
    "fieldname": "section_break_jiby5",
    "fieldtype": "Section Break",
    "label": "Reviews Items"
@@ -109,7 +113,8 @@
   {
    "fieldname": "driver_name",
    "fieldtype": "Data",
-   "label": "Driver Name"
+   "label": "Driver Name",
+   "read_only_depends_on": "eval: doc.status == 'Inspection Complete' || doc.status == 'Return Issued' || doc.status == 'Complete' ||  doc.status == 'Cancelled'"
   },
   {
    "fieldname": "delivery_note_date",
@@ -130,11 +135,13 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.status != 'Draft'",
    "fieldname": "actual_weight",
    "fieldtype": "Float",
-   "label": "Actual Weight",
+   "label": "Actual Weight (Kg)",
    "non_negative": 1,
-   "precision": "2"
+   "precision": "2",
+   "read_only_depends_on": "eval:doc.status != 'To Review'"
   },
   {
    "fieldname": "naming_series",
@@ -155,13 +162,15 @@
    "fieldname": "reviews",
    "fieldtype": "Table",
    "label": "Reviews",
-   "options": "Return Note Review"
+   "options": "Return Note Review",
+   "read_only_depends_on": "eval: doc.status == 'Inspection Complete' || doc.status == 'Return Issued' || doc.status == 'Complete' ||  doc.status == 'Cancelled'"
   },
   {
    "fieldname": "section_break_djl6b",
    "fieldtype": "Section Break"
   },
   {
+   "depends_on": "eval: doc.status == 'To Review'",
    "fieldname": "retrieve_returned_items",
    "fieldtype": "Button",
    "label": "Retrieve Returned Items"
@@ -183,7 +192,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-15 17:31:22.574476",
+ "modified": "2024-04-16 02:13:58.264162",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Return Note",

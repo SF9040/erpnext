@@ -62,6 +62,8 @@
   "raw_material_details",
   "set_reserve_warehouse",
   "supplied_items",
+  "sales_contract_section",
+  "sales_contract",
   "freight_charges_note_section",
   "freight_charges_included",
   "taxes_section",
@@ -1287,13 +1289,23 @@
    "fieldtype": "Currency",
    "label": "Freight Charges Included (USD)",
    "precision": "2"
+  },
+  {
+   "fieldname": "sales_contract",
+   "fieldtype": "Attach",
+   "label": "Sales Contract"
+  },
+  {
+   "fieldname": "sales_contract_section",
+   "fieldtype": "Section Break",
+   "label": "Sales Contract"
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-15 15:14:07.814722",
+ "modified": "2024-04-16 12:00:23.083547",
  "modified_by": "Administrator",
  "module": "Buying",
  "name": "Purchase Order",
