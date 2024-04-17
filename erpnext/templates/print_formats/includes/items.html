@@ -2,7 +2,7 @@
 	{%- set visible_columns = get_visible_columns(doc.get(df.fieldname),
 		table_meta, df) -%}
 	<div {{ fieldmeta(df) }}>
-		<table class="table table-bordered table-condensed">
+		<table class="table table-bordered table-condensed" data-a4-print-format="">
 			<thead>
 				<tr>
 					<th style="width: 40px" class="table-sr">{{ _("Sr") }}</th>
