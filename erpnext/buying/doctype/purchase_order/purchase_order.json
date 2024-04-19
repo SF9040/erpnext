@@ -188,7 +188,7 @@
    "no_copy": 1,
    "oldfieldname": "naming_series",
    "oldfieldtype": "Select",
-   "options": "PUR-ORD-.YYYY.-",
+   "options": "PO-.YY.MM.-.####\nPO-MS-.YY.MM.-.####\nPO-STVS-.YY.MM.-.####",
    "print_hide": 1,
    "reqd": 1,
    "set_only_once": 1
@@ -1291,9 +1291,11 @@
    "precision": "2"
   },
   {
+   "description": "Please upload the finalized version of your contract. Ensure that all necessary signatures are included and that the text is clearly legible. Up to 10 MB.",
    "fieldname": "sales_contract",
    "fieldtype": "Attach",
-   "label": "Sales Contract"
+   "label": "Sales Contract",
+   "reqd": 1
   },
   {
    "fieldname": "sales_contract_section",
@@ -1305,7 +1307,7 @@
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-16 12:00:23.083547",
+ "modified": "2024-04-20 03:14:37.923468",
  "modified_by": "Administrator",
  "module": "Buying",
  "name": "Purchase Order",
