@@ -153,6 +153,18 @@ class calculate_taxes_and_totals(object):
 				if item.discount_percentage == 100:
 					item.rate = 0.0
 				elif item.price_list_rate:
+					# Fetch the customized length and width, defaulting to 1 if not set
+					if item.customizable_uom == 'LxW':
+						# Fetch the customized width and length, defaulting to 1 if not set
+						local_customizable_width = item.get('customizable_width', 1)
+						local_customizable_length = item.get('customizable_length', 1)
+
+						# Calculate the customization factor based on width and length
+						local_customizable_factor = local_customizable_width * local_customizable_length
+
+						item.compute_rate_lxw = local_customizable_factor
+						# Apply this factor to the price list rate
+						item.price_list_rate *= local_customizable_factor
 					if not item.rate or (item.pricing_rules and item.discount_percentage > 0):
 						item.rate = flt(
 							item.price_list_rate * (1.0 - (item.discount_percentage / 100.0)), item.precision("rate")
