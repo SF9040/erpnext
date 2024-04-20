@@ -207,6 +207,7 @@ def apply_pricing_rule(args, doc=None):
 	        "items": [{"doctype": "", "name": "", "item_code": "", "brand": "", "item_group": ""}, ...],
 	        "customer": "something",
 	        "customer_group": "something",
+			"customer_segment": "something",
 	        "territory": "something",
 	        "supplier": "something",
 	        "supplier_group": "something",
