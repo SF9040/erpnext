@@ -4788,7 +4788,7 @@ Tax detail table fetched from item master as a string and stored in this field.\
 Purchase Order Item,สั่งซื้อสินค้าสั่งซื้อ,
 Purchase Receipt Detail,รายละเอียดการรับสินค้า,
 Item Weight Details,รายละเอียดน้ำหนักรายการ,
-Weight Per Unit,น้ำหนักต่อหน่วย,
+Weight Per Unit,น้ำหนัก/หน่วย,
 Total Weight,น้ำหนักรวม,
 Weight UOM,UOM น้ำหนัก,
 Page Break,แบ่งหน้า,
