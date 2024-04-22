@@ -28,7 +28,6 @@
   "customizable_width",
   "customizable_length",
   "customizable_sqm",
-  "customizable_sqm_per_roll_price",
   "customizable_weight",
   "customizable_uom_quantity",
   "note",
@@ -954,18 +953,14 @@
    "fieldname": "customizable_sqm",
    "fieldtype": "Float",
    "label": "Customizable (Sqm)",
-   "precision": "2"
-  },
-  {
-   "fieldname": "customizable_sqm_per_roll_price",
-   "fieldtype": "Data",
-   "label": "Customizable (Sqm) - Per Roll Price"
+   "precision": "2",
+   "read_only": 1
   }
  ],
  "idx": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-04-11 17:47:44.680285",
+ "modified": "2024-04-21 21:37:59.018385",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order Item",

@@ -32,7 +32,8 @@
   "date_of_commencement",
   "fax",
   "website",
-  "address_name",
+  "address_th",
+  "address_en",
   "address_html",
   "section_break_28",
   "create_chart_of_accounts_based_on",
@@ -708,10 +709,18 @@
    "label": "Submit ERR Journals?"
   },
   {
-   "fieldname": "address_name",
+   "fieldname": "address_th",
    "fieldtype": "Link",
    "label": "Address",
-   "options": "Address"
+   "options": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address_en",
+   "fieldtype": "Link",
+   "label": "Address English",
+   "options": "Address",
+   "reqd": 1
   }
  ],
  "icon": "fa fa-building",
@@ -719,7 +728,7 @@
  "image_field": "company_logo",
  "is_tree": 1,
  "links": [],
- "modified": "2024-04-17 20:56:12.132660",
+ "modified": "2024-04-20 16:18:16.607341",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Company",
