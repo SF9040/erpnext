@@ -15,12 +15,12 @@
   "naming_series",
   "customer",
   "customer_name",
-  "forklift_driver",
   "tax_id",
   "order_type",
   "column_break_7",
   "transaction_date",
   "delivery_date",
+  "branch",
   "column_break1",
   "po_no",
   "po_date",
@@ -31,6 +31,7 @@
   "urgent",
   "buyer_self_collect",
   "buyer_self_collect_time",
+  "forklift_driver",
   "amended_from",
   "accounting_dimensions_section",
   "cost_center",
@@ -451,7 +452,8 @@
    "hide_seconds": 1,
    "label": "Shipping Address Name",
    "options": "Address",
-   "print_hide": 1
+   "print_hide": 1,
+   "read_only": 1
   },
   {
    "allow_on_submit": 1,
@@ -1684,13 +1686,21 @@
    "fieldname": "forklift_driver",
    "fieldtype": "Data",
    "label": "Forklift Driver"
+  },
+  {
+   "depends_on": "eval:doc.customer != null && doc.customer !='';",
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Address",
+   "reqd": 1
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-16 22:26:58.962724",
+ "modified": "2024-04-22 18:38:19.616747",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order",
