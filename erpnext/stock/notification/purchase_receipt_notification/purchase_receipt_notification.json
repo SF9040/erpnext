@@ -10,8 +10,8 @@
  "event": "Value Change",
  "idx": 0,
  "is_standard": 1,
- "message": "Purchase Receipt Notification Status",
- "modified": "2024-04-09 06:38:57.153103",
+ "message": "Add your message here",
+ "modified": "2024-04-26 02:32:43.809418",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Purchase Receipt Notification",
@@ -23,6 +23,6 @@
  ],
  "send_system_notification": 0,
  "send_to_all_assignees": 0,
- "subject": "Purchase Receipt : {{doc.name}} {{doc.workflow_state}}",
- "value_changed": "workflow_state"
+ "subject": "Purchase Receipt : {{doc.name}} {{doc.status}}",
+ "value_changed": "status"
 }

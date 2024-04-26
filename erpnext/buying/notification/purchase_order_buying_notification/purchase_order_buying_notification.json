@@ -10,8 +10,8 @@
  "event": "Value Change",
  "idx": 0,
  "is_standard": 1,
- "message": "Purchase Order-Buying Notification Status",
- "modified": "2024-04-09 06:38:07.786806",
+ "message": "Purchase Order Status",
+ "modified": "2024-04-26 02:33:04.792745",
  "modified_by": "Administrator",
  "module": "Buying",
  "name": "Purchase Order Buying Notification",
@@ -23,6 +23,6 @@
  ],
  "send_system_notification": 0,
  "send_to_all_assignees": 0,
- "subject": "Purchase Order Buying : {{doc.name}} {{doc.workflow_state}}",
- "value_changed": "workflow_state"
+ "subject": "Purchase Order Buying : {{doc.name}} {{doc.status}}",
+ "value_changed": "status"
 }

@@ -11,7 +11,7 @@
  "idx": 0,
  "is_standard": 1,
  "message": "Sales Order Notification Status",
- "modified": "2024-04-08 06:49:02.281843",
+ "modified": "2024-04-26 02:35:54.908945",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order Notification Workflow",
@@ -24,6 +24,6 @@
  ],
  "send_system_notification": 1,
  "send_to_all_assignees": 0,
- "subject": "Sales Order : {{doc.name}} {{doc.workflow_state}}",
- "value_changed": "workflow_state"
+ "subject": "Sales Order : {{doc.name}} {{doc.status}}",
+ "value_changed": "status"
 }

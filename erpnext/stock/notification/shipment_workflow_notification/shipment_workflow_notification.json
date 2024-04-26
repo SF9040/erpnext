@@ -10,8 +10,8 @@
  "event": "Value Change",
  "idx": 0,
  "is_standard": 1,
- "message": "Shipment Notification Status",
- "modified": "2024-04-09 06:39:39.468383",
+ "message": "Add your message here",
+ "modified": "2024-04-26 02:32:20.015175",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Shipment Workflow Notification",
@@ -23,6 +23,6 @@
  ],
  "send_system_notification": 0,
  "send_to_all_assignees": 0,
- "subject": "Shipment : {{doc.name}} {{doc.workflow_state}}",
- "value_changed": "workflow_state"
+ "subject": "Shipment : {{doc.name}} {{doc.status}}",
+ "value_changed": "status"
 }

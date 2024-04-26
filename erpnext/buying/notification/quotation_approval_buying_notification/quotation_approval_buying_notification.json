@@ -11,7 +11,7 @@
  "idx": 0,
  "is_standard": 1,
  "message": "Add your message here",
- "modified": "2024-04-08 07:14:12.587835",
+ "modified": "2024-04-26 02:34:59.087420",
  "modified_by": "Administrator",
  "module": "Buying",
  "name": "Quotation Approval Buying Notification",
@@ -23,6 +23,6 @@
  ],
  "send_system_notification": 0,
  "send_to_all_assignees": 0,
- "subject": "Quotation Approval Buying : {{doc.name}} {{doc.workflow_state}}",
- "value_changed": "workflow_state"
+ "subject": "Quotation Approval Buying : {{doc.name}} {{doc.status}}",
+ "value_changed": "status"
 }

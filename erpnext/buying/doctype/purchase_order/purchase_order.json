@@ -402,7 +402,6 @@
    "read_only": 1
   },
   {
-   "collapsible": 1,
    "fieldname": "currency_and_price_list",
    "fieldtype": "Section Break",
    "label": "Currency and Price List",
@@ -1307,7 +1306,7 @@
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-20 03:14:37.923468",
+ "modified": "2024-04-26 15:52:59.559373",
  "modified_by": "Administrator",
  "module": "Buying",
  "name": "Purchase Order",

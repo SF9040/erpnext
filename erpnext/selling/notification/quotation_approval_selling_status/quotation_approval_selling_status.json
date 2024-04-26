@@ -11,8 +11,8 @@
  "event": "Value Change",
  "idx": 0,
  "is_standard": 1,
- "message": "Quotation Approval-Selling Notification Status",
- "modified": "2024-04-09 06:40:22.715134",
+ "message": "Quotation Approval Selling Status",
+ "modified": "2024-04-26 02:31:30.378171",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Quotation Approval Selling Status",
@@ -24,6 +24,6 @@
  ],
  "send_system_notification": 0,
  "send_to_all_assignees": 0,
- "subject": "Quotation Approval Selling: {{doc.name}} {{doc.workflow_state}}",
- "value_changed": "workflow_state"
+ "subject": "Quotation Approval Selling: {{doc.name}} {{doc.status}}",
+ "value_changed": "status"
 }

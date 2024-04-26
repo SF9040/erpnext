@@ -30,6 +30,8 @@
   "delivery_contact_name",
   "delivery_contact_email",
   "delivery_contact",
+  "to_ship_section",
+  "shipped_items",
   "parcels_section",
   "shipment_parcel",
   "parcel_template",
@@ -48,6 +50,16 @@
   "incoterm",
   "description_of_content",
   "section_break_40",
+  "taxes",
+  "import_tax_calculator_section",
+  "shipment_import_calculus",
+  "section_break_9ed0k",
+  "import_calculus_exchange_rate",
+  "total_import_duty_payable",
+  "column_break_djgjr",
+  "total_vat_payable",
+  "column_break_wrcct",
+  "total_amount",
   "shipment_information_section",
   "service_provider",
   "shipment_id",
@@ -58,6 +70,7 @@
   "carrier",
   "carrier_service",
   "awb_number",
+  "column_break_eftyo",
   "tracking_status",
   "tracking_status_info",
   "amended_from"
@@ -69,7 +82,7 @@
    "label": "Pickup from"
   },
   {
-   "default": "Company",
+   "default": "Supplier",
    "fieldname": "pickup_from_type",
    "fieldtype": "Select",
    "label": "Pickup from",
@@ -108,9 +121,9 @@
    "depends_on": "eval: doc.pickup_customer || doc.pickup_supplier || doc.pickup_from_type == \"Company\"",
    "fieldname": "pickup_address_name",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Address",
-   "options": "Address",
-   "reqd": 1
+   "options": "Address"
   },
   {
    "fieldname": "pickup_address",
@@ -118,11 +131,12 @@
    "read_only": 1
   },
   {
-   "depends_on": "eval: doc.pickup_customer || doc.pickup_supplier || doc.pickup_from_type !== \"Company\"",
+   "depends_on": "//eval: doc.pickup_customer || doc.pickup_supplier || doc.pickup_from_type !== \"Company\"",
    "fieldname": "pickup_contact_name",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Contact",
-   "mandatory_depends_on": "eval: doc.pickup_from_type !== 'Company'",
+   "mandatory_depends_on": "//eval: doc.pickup_from_type !== 'Company'",
    "options": "Contact"
   },
   {
@@ -135,6 +149,7 @@
   {
    "fieldname": "pickup_contact",
    "fieldtype": "Small Text",
+   "hidden": 1,
    "read_only": 1
   },
   {
@@ -147,7 +162,7 @@
    "label": "Delivery to"
   },
   {
-   "default": "Customer",
+   "default": "Company",
    "fieldname": "delivery_to_type",
    "fieldtype": "Select",
    "label": "Delivery to",
@@ -186,9 +201,9 @@
    "depends_on": "eval: doc.delivery_customer || doc.delivery_supplier || doc.delivery_to_type == \"Company\"",
    "fieldname": "delivery_address_name",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Address",
-   "options": "Address",
-   "reqd": 1
+   "options": "Address"
   },
   {
    "fieldname": "delivery_address",
@@ -199,8 +214,9 @@
    "depends_on": "eval: doc.delivery_customer || doc.delivery_supplier || doc.delivery_to_type == \"Company\"",
    "fieldname": "delivery_contact_name",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Contact",
-   "mandatory_depends_on": "eval: doc.delivery_from_type !== 'Company'",
+   "mandatory_depends_on": "//eval: doc.delivery_from_type !== 'Company'",
    "options": "Contact"
   },
   {
@@ -219,6 +235,7 @@
   {
    "fieldname": "parcels_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Parcels"
   },
   {
@@ -247,6 +264,7 @@
   {
    "fieldname": "shipment_details_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Shipment details"
   },
   {
@@ -313,7 +331,8 @@
   },
   {
    "fieldname": "section_break_40",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Expenses"
   },
   {
    "fieldname": "shipment_information_section",
@@ -432,11 +451,86 @@
    "label": "Pickup Contact Person",
    "mandatory_depends_on": "eval:doc.pickup_from_type === 'Company'",
    "options": "User"
+  },
+  {
+   "fieldname": "shipped_items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Shipment Item"
+  },
+  {
+   "fieldname": "to_ship_section",
+   "fieldtype": "Section Break",
+   "label": "To SHIP"
+  },
+  {
+   "fieldname": "column_break_eftyo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "taxes",
+   "fieldtype": "Table",
+   "label": "Taxes and Charges",
+   "options": "Landed Cost Taxes and Charges"
+  },
+  {
+   "fieldname": "import_tax_calculator_section",
+   "fieldtype": "Section Break",
+   "label": "Import Tax Calculator"
+  },
+  {
+   "default": "0.0",
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_djgjr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_wrcct",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_9ed0k",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "shipment_import_calculus",
+   "fieldtype": "Table",
+   "label": " Shipment Import Calculus",
+   "options": "Shipment Import Calculus"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "total_import_duty_payable",
+   "fieldtype": "Currency",
+   "label": "Total Import Duty Payable",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "total_vat_payable",
+   "fieldtype": "Currency",
+   "label": "Total VAT Payable",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0.0",
+   "fieldname": "import_calculus_exchange_rate",
+   "fieldtype": "Float",
+   "label": "Exchange Rate (USD)",
+   "precision": "4"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-14 14:07:08.488821",
+ "modified": "2024-04-26 15:55:14.060369",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Shipment",

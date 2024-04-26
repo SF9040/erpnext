@@ -11,7 +11,7 @@
  "idx": 0,
  "is_standard": 1,
  "message": "Add your message here",
- "modified": "2024-03-12 09:04:15.866904",
+ "modified": "2024-04-26 02:37:55.465707",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order Workflow Notification",
@@ -23,6 +23,6 @@
  ],
  "send_system_notification": 0,
  "send_to_all_assignees": 0,
- "subject": "Sales Order Workflow : {{doc.name}} ",
- "value_changed": "workflow_state"
+ "subject": "Sales Order Workflow : {{doc.name}} {{doc.status}}",
+ "value_changed": "status"
 }

@@ -11,7 +11,7 @@
  "idx": 0,
  "is_standard": 1,
  "message": "Return Note Status Notification.",
- "modified": "2024-04-09 06:34:00.175877",
+ "modified": "2024-04-26 02:33:43.750843",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Return Note Notification Workflow Status",
@@ -23,6 +23,6 @@
  ],
  "send_system_notification": 0,
  "send_to_all_assignees": 0,
- "subject": "Return Note : {{doc.name}} {{doc.workflow_state}}",
- "value_changed": "workflow_state"
+ "subject": "Return Note : {{doc.name}} {{doc.status}}",
+ "value_changed": "status"
 }
