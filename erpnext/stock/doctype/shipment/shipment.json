@@ -327,7 +327,7 @@
   {
    "fieldname": "shipment_information_section",
    "fieldtype": "Section Break",
-   "label": "Shipment Information"
+   "label": "Shipment Information(s)"
   },
   {
    "fieldname": "service_provider",
@@ -531,7 +531,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-29 16:41:29.261135",
+ "modified": "2024-04-29 16:57:02.800472",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Shipment",
