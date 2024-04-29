@@ -30,6 +30,8 @@
   "delivery_contact",
   "to_ship_section",
   "shipped_items",
+  "containers_section",
+  "containers",
   "parcels_section",
   "shipment_parcel",
   "parcel_template",
@@ -47,8 +49,6 @@
   "pickup_type",
   "incoterm",
   "description_of_content",
-  "section_break_40",
-  "taxes",
   "import_tax_calculator_section",
   "shipment_import_calculus",
   "section_break_9ed0k",
@@ -71,7 +71,9 @@
   "column_break_eftyo",
   "tracking_status",
   "tracking_status_info",
-  "amended_from"
+  "amended_from",
+  "section_break_40",
+  "taxes"
  ],
  "fields": [
   {
@@ -514,11 +516,22 @@
    "fieldtype": "Float",
    "label": "Exchange Rate (USD)",
    "precision": "4"
+  },
+  {
+   "fieldname": "containers_section",
+   "fieldtype": "Section Break",
+   "label": "Containers"
+  },
+  {
+   "fieldname": "containers",
+   "fieldtype": "Table",
+   "label": "Containers",
+   "options": "Container"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-26 23:37:21.978202",
+ "modified": "2024-04-29 16:41:29.261135",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Shipment",
