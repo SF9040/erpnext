@@ -49,14 +49,7 @@
   "pickup_type",
   "incoterm",
   "description_of_content",
-  "import_tax_calculator_section",
-  "shipment_import_calculus",
-  "section_break_9ed0k",
-  "import_calculus_exchange_rate",
-  "total_import_duty_payable",
   "column_break_djgjr",
-  "total_vat_payable",
-  "column_break_wrcct",
   "total_amount",
   "shipment_information_section",
   "service_provider",
@@ -73,7 +66,15 @@
   "tracking_status_info",
   "amended_from",
   "section_break_40",
-  "taxes"
+  "taxes",
+  "import_tax_calculator_section",
+  "shipment_import_calculus",
+  "section_break_9ed0k",
+  "total_import_duty_payable",
+  "column_break_81okt",
+  "import_calculus_exchange_rate",
+  "column_break_kj4f3",
+  "total_vat_payable"
  ],
  "fields": [
   {
@@ -255,7 +256,7 @@
    "fieldname": "shipment_details_section",
    "fieldtype": "Section Break",
    "hidden": 1,
-   "label": "Shipment details"
+   "label": "Shipment detail"
   },
   {
    "default": "No",
@@ -451,7 +452,7 @@
   {
    "fieldname": "to_ship_section",
    "fieldtype": "Section Break",
-   "label": "To SHIP"
+   "label": "To Ship"
   },
   {
    "fieldname": "column_break_eftyo",
@@ -478,10 +479,6 @@
   },
   {
    "fieldname": "column_break_djgjr",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_wrcct",
    "fieldtype": "Column Break"
   },
   {
@@ -527,11 +524,19 @@
    "fieldtype": "Table",
    "label": "Containers",
    "options": "Container"
+  },
+  {
+   "fieldname": "column_break_81okt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_kj4f3",
+   "fieldtype": "Column Break"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-29 16:57:02.800472",
+ "modified": "2024-04-29 17:34:04.034485",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Shipment",
