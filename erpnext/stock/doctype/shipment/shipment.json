@@ -224,6 +224,7 @@
    "read_only": 1
   },
   {
+   "description": " ",
    "fieldname": "parcels_section",
    "fieldtype": "Section Break",
    "hidden": 1,
@@ -536,7 +537,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-29 17:54:49.471640",
+ "modified": "2024-04-29 18:05:53.000281",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Shipment",
