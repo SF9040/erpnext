@@ -31,7 +31,6 @@
   "urgent",
   "buyer_self_collect",
   "buyer_self_collect_time",
-  "forklift_driver",
   "amended_from",
   "accounting_dimensions_section",
   "cost_center",
@@ -1682,11 +1681,6 @@
    "options": "Address"
   },
   {
-   "fieldname": "forklift_driver",
-   "fieldtype": "Data",
-   "label": "Forklift Driver"
-  },
-  {
    "depends_on": "eval:doc.customer != null && doc.customer !='';",
    "fieldname": "branch",
    "fieldtype": "Link",
@@ -1699,7 +1693,7 @@
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-02 00:49:42.636685",
+ "modified": "2024-05-02 18:06:39.716321",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order",
