@@ -18,9 +18,11 @@
   "column_break_7",
   "transaction_date",
   "valid_till",
+  "branch",
   "column_break1",
   "order_type",
   "company",
+  "value_added_tax",
   "amended_from",
   "currency_and_price_list",
   "currency",
@@ -82,6 +84,7 @@
   "pricing_rules",
   "address_and_contact_tab",
   "billing_address_section",
+  "billing_address_name",
   "customer_address",
   "address_display",
   "col_break98",
@@ -157,6 +160,7 @@
    "oldfieldtype": "Select",
    "options": "SAL-QTN-.YYYY.-",
    "print_hide": 1,
+   "read_only": 1,
    "reqd": 1,
    "set_only_once": 1
   },
@@ -170,6 +174,7 @@
    "oldfieldtype": "Select",
    "options": "DocType",
    "print_hide": 1,
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -254,6 +259,7 @@
    "oldfieldtype": "Select",
    "options": "\nSales\nMaintenance\nShopping Cart",
    "print_hide": 1,
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -1066,13 +1072,34 @@
    "fieldname": "named_place",
    "fieldtype": "Data",
    "label": "Named Place"
+  },
+  {
+   "fieldname": "billing_address_name",
+   "fieldtype": "Link",
+   "label": "Billing Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Address",
+   "reqd": 1
+  },
+  {
+   "default": "VAT NoN",
+   "fieldname": "value_added_tax",
+   "fieldtype": "Select",
+   "label": "Value-Added Tax",
+   "options": "\nVAT +\nVAT NoN\nVAT Included",
+   "reqd": 1
   }
  ],
  "icon": "fa fa-shopping-cart",
  "idx": 82,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-04-14 16:50:44.550098",
+ "modified": "2024-05-02 01:32:31.398195",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Quotation",
