@@ -15,17 +15,17 @@
   "customer_name",
   "column_break1",
   "posting_date",
-  "so_date",
+  "delivery_date",
   "posting_time",
   "set_posting_time",
   "column_break_10",
   "company",
-  "so_value_added_tax",
+  "value_added_tax",
   "amended_from",
   "is_return",
-  "so_urgent",
-  "so_buyer_self_collect",
-  "so_buyer_self_collect_time",
+  "urgent",
+  "buyer_self_collect",
+  "buyer_self_collect_time",
   "issue_credit_note",
   "return_against",
   "accounting_dimensions_section",
@@ -1407,31 +1407,6 @@
    "label": "Named Place"
   },
   {
-   "fieldname": "so_date",
-   "fieldtype": "Date",
-   "label": "Sales Order Delivery Date",
-   "read_only": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "so_urgent",
-   "fieldtype": "Check",
-   "label": "Urgent",
-   "read_only": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "so_buyer_self_collect",
-   "fieldtype": "Check",
-   "label": "Buyer Self-collect / Pickup"
-  },
-  {
-   "fieldname": "so_buyer_self_collect_time",
-   "fieldtype": "Data",
-   "label": "Self-collection / Pickup Time",
-   "read_only": 1
-  },
-  {
    "fieldname": "total_amount_in_words",
    "fieldtype": "Data",
    "label": "Total Amount in Words",
@@ -1441,13 +1416,6 @@
    "fieldname": "grand_total_amount_in_words",
    "fieldtype": "Data",
    "label": "Grand Total Amount in Words",
-   "read_only": 1
-  },
-  {
-   "fieldname": "so_value_added_tax",
-   "fieldtype": "Select",
-   "label": "Value-Added Tax",
-   "options": "\nVAT +\nVAT NoN\nVAT Included",
    "read_only": 1
   },
   {
@@ -1461,13 +1429,45 @@
    "fieldtype": "Table",
    "label": "Pickup Records",
    "options": "Pickup Records"
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Sales Order Delivery Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "value_added_tax",
+   "fieldtype": "Select",
+   "label": "Value-Added Tax",
+   "options": "\nVAT +\nVAT NoN\nVAT Included",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "urgent",
+   "fieldtype": "Check",
+   "label": "Urgent",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "buyer_self_collect",
+   "fieldtype": "Check",
+   "label": "Buyer Self-collect / Pickup"
+  },
+  {
+   "fieldname": "buyer_self_collect_time",
+   "fieldtype": "Data",
+   "label": "Self-collection / Pickup Time",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-truck",
  "idx": 146,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-16 22:35:33.930604",
+ "modified": "2024-05-02 10:59:06.691009",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Note",
