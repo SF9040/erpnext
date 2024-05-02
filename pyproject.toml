@@ -19,6 +19,7 @@ dependencies = [
     # additional
     "logtail-python==0.2.10",
     "pybaht==0.2.0",
+    "qrcode==7.4.2",
 
     # integration dependencies
     "gocardless-pro~=1.22.0",
