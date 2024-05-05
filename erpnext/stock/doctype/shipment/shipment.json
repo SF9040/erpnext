@@ -29,6 +29,12 @@
   "delivery_contact_email",
   "delivery_contact",
   "to_ship_section",
+  "po_select",
+  "get_po_items_paid_but_not_shipped",
+  "get_po_items_unpaid_and_not_shipped",
+  "column_break_uulnq",
+  "column_break_h9jrb",
+  "section_break_21ndo",
   "shipped_items",
   "shipment_information_section",
   "service_provider",
@@ -82,7 +88,8 @@
    "fieldname": "pickup_from_type",
    "fieldtype": "Select",
    "label": "Pickup from",
-   "options": "Company\nCustomer\nSupplier"
+   "options": "Company\nCustomer\nSupplier",
+   "read_only": 1
   },
   {
    "depends_on": "eval:doc.pickup_from_type == 'Company'",
@@ -157,7 +164,8 @@
    "fieldname": "delivery_to_type",
    "fieldtype": "Select",
    "label": "Delivery to",
-   "options": "Company\nCustomer\nSupplier"
+   "options": "Company\nCustomer\nSupplier",
+   "read_only": 1
   },
   {
    "depends_on": "eval:doc.delivery_to_type == 'Company'",
@@ -270,16 +278,14 @@
    "fieldname": "value_of_goods",
    "fieldtype": "Currency",
    "label": "Value of Goods",
-   "precision": "2",
-   "reqd": 1
+   "precision": "2"
   },
   {
    "allow_on_submit": 1,
    "fieldname": "pickup_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Pickup Date",
-   "reqd": 1
+   "label": "Pickup Date"
   },
   {
    "allow_on_submit": 1,
@@ -318,8 +324,7 @@
   {
    "fieldname": "description_of_content",
    "fieldtype": "Small Text",
-   "label": "Description of Content",
-   "reqd": 1
+   "label": "Description of Content"
   },
   {
    "fieldname": "section_break_40",
@@ -453,7 +458,7 @@
   {
    "fieldname": "to_ship_section",
    "fieldtype": "Section Break",
-   "label": "To Ship"
+   "label": "Items to Ship"
   },
   {
    "fieldname": "column_break_eftyo",
@@ -533,11 +538,40 @@
   {
    "fieldname": "column_break_kj4f3",
    "fieldtype": "Column Break"
+  },
+  {
+   "description": "\u26a0\ufe0f This is loading docstatus >= 1. must filter the workflow status as well.",
+   "fieldname": "po_select",
+   "fieldtype": "Link",
+   "label": "Purchase Order",
+   "options": "Purchase Order"
+  },
+  {
+   "fieldname": "column_break_uulnq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_h9jrb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_21ndo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "get_po_items_paid_but_not_shipped",
+   "fieldtype": "Button",
+   "label": "Get PO Items Paid but Not Shipped"
+  },
+  {
+   "fieldname": "get_po_items_unpaid_and_not_shipped",
+   "fieldtype": "Button",
+   "label": "Get PO Items Unpaid and Not Shipped"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-29 18:05:53.000281",
+ "modified": "2024-05-05 23:01:15.870922",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Shipment",
