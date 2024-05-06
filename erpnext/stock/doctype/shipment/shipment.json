@@ -30,12 +30,15 @@
   "delivery_contact",
   "to_ship_section",
   "po_select",
-  "get_po_items_paid_but_not_shipped",
   "get_po_items_unpaid_and_not_shipped",
   "column_break_uulnq",
   "column_break_h9jrb",
   "section_break_21ndo",
   "shipped_items",
+  "containers_section",
+  "containers",
+  "files_section",
+  "shipments_related_files",
   "shipment_information_section",
   "service_provider",
   "shipment_id",
@@ -50,8 +53,6 @@
   "tracking_status",
   "tracking_status_info",
   "amended_from",
-  "containers_section",
-  "containers",
   "parcels_section",
   "shipment_parcel",
   "parcel_template",
@@ -559,19 +560,24 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "get_po_items_paid_but_not_shipped",
-   "fieldtype": "Button",
-   "label": "Get PO Items Paid but Not Shipped"
-  },
-  {
    "fieldname": "get_po_items_unpaid_and_not_shipped",
    "fieldtype": "Button",
    "label": "Get PO Items Unpaid and Not Shipped"
+  },
+  {
+   "fieldname": "files_section",
+   "fieldtype": "Section Break",
+   "label": "Files"
+  },
+  {
+   "fieldname": "shipments_related_files",
+   "fieldtype": "Table",
+   "options": "Shipment Files"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-05 23:01:15.870922",
+ "modified": "2024-05-06 15:16:08.039797",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Shipment",
