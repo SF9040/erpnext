@@ -63,7 +63,7 @@
   "set_reserve_warehouse",
   "supplied_items",
   "sales_contract_section",
-  "sales_contract",
+  "sales_contracts",
   "freight_charges_note_section",
   "freight_charges_included",
   "taxes_section",
@@ -1290,23 +1290,23 @@
    "precision": "2"
   },
   {
-   "description": "Please upload the finalized version of your contract. Ensure that all necessary signatures are included and that the text is clearly legible. Up to 10 MB.",
-   "fieldname": "sales_contract",
-   "fieldtype": "Attach",
-   "label": "Sales Contract",
-   "reqd": 1
-  },
-  {
    "fieldname": "sales_contract_section",
    "fieldtype": "Section Break",
    "label": "Sales Contract"
+  },
+  {
+   "description": "Please upload the finalized version of your contract. Ensure that all necessary signatures are included and that the text is clearly legible. Up to 10 MB.",
+   "fieldname": "sales_contracts",
+   "fieldtype": "Table",
+   "label": "Sales Contracts",
+   "options": "Purchase Contracts"
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-26 15:52:59.559373",
+ "modified": "2024-05-06 16:56:25.552825",
  "modified_by": "Administrator",
  "module": "Buying",
  "name": "Purchase Order",
