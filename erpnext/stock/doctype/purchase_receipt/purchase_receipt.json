@@ -197,6 +197,7 @@
    "options": "Supplier",
    "print_hide": 1,
    "print_width": "150px",
+   "read_only_depends_on": "eval:doc.workflow_state == \"Scheduled\";",
    "reqd": 1,
    "search_index": 1,
    "width": "150px"
@@ -268,6 +269,7 @@
    "options": "Company",
    "print_hide": 1,
    "print_width": "150px",
+   "read_only_depends_on": "eval:doc.workflow_state == \"Scheduled\";",
    "remember_last_selected_value": 1,
    "reqd": 1,
    "width": "150px"
@@ -1241,7 +1243,7 @@
  "idx": 261,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-08 01:14:36.984003",
+ "modified": "2024-05-08 21:17:30.336281",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Purchase Receipt",
