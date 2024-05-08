@@ -214,6 +214,7 @@
   {
    "fieldname": "supplier_delivery_note",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Supplier Delivery Note"
   },
   {
@@ -355,7 +356,6 @@
    "read_only": 1
   },
   {
-   "collapsible": 1,
    "fieldname": "currency_and_price_list",
    "fieldtype": "Section Break",
    "label": "Currency and Price List",
@@ -884,7 +884,7 @@
    "no_copy": 1,
    "oldfieldname": "status",
    "oldfieldtype": "Select",
-   "options": "\nDraft\nTo Bill\nCompleted\nReturn Issued\nCancelled\nClosed",
+   "options": "\nDraft\nWaiting for QA/QI\nTo Bill\nCompleted\nReturn Issued\nCancelled\nClosed",
    "print_hide": 1,
    "print_width": "150px",
    "read_only": 1,
@@ -1241,7 +1241,7 @@
  "idx": 261,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-01 21:00:44.556816",
+ "modified": "2024-05-08 01:14:36.984003",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Purchase Receipt",
