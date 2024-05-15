@@ -53,7 +53,7 @@
   "section_break_14",
   "get_outstanding_invoices",
   "get_outstanding_orders",
-  "get_outstanding_shipments",
+  "get_outstanding_shipments_expenses",
   "references",
   "section_break_34",
   "total_allocated_amount",
@@ -763,9 +763,9 @@
    "mandatory_depends_on": "eval:doc.mode_of_payment === 'Cheque'"
   },
   {
-   "fieldname": "get_outstanding_shipments",
+   "fieldname": "get_outstanding_shipments_expenses",
    "fieldtype": "Button",
-   "label": "Get Outstanding Shipments"
+   "label": "Get Outstanding Shipments Expenses"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -779,7 +779,7 @@
    "table_fieldname": "payment_entries"
   }
  ],
- "modified": "2024-04-15 16:37:11.621754",
+ "modified": "2024-05-09 16:32:04.798379",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Payment Entry",
