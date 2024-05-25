@@ -35,6 +35,8 @@
   "tare_weight",
   "gross_weight",
   "total_weight",
+  "scale_section",
+  "scales",
   "expenses_section",
   "expenses"
  ],
@@ -232,11 +234,21 @@
    "label": "Total Weight (Kg)",
    "precision": "2",
    "read_only": 1
+  },
+  {
+   "fieldname": "scale_section",
+   "fieldtype": "Section Break",
+   "label": "Scale"
+  },
+  {
+   "fieldname": "scales",
+   "fieldtype": "Table",
+   "options": "Vehicle Scale"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-12 21:39:15.687164",
+ "modified": "2024-05-17 16:21:26.295651",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Trip",

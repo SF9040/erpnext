@@ -18,6 +18,7 @@
   "delivery_date",
   "posting_time",
   "set_posting_time",
+  "vehicle",
   "column_break_10",
   "company",
   "value_added_tax",
@@ -1461,13 +1462,19 @@
    "fieldtype": "Data",
    "label": "Self-collection / Pickup Time",
    "read_only": 1
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Vehicle"
   }
  ],
  "icon": "fa fa-truck",
  "idx": 146,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-16 06:33:41.333648",
+ "modified": "2024-05-16 06:39:04.521844",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Note",
