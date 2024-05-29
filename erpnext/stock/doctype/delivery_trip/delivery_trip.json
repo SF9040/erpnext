@@ -36,6 +36,7 @@
   "gross_weight",
   "total_weight",
   "scale_section",
+  "current_weight",
   "scales",
   "expenses_section",
   "expenses"
@@ -244,11 +245,18 @@
    "fieldname": "scales",
    "fieldtype": "Table",
    "options": "Vehicle Scale"
+  },
+  {
+   "fieldname": "current_weight",
+   "fieldtype": "Float",
+   "label": "Current Weight (Kg)",
+   "precision": "0",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-17 16:21:26.295651",
+ "modified": "2024-05-26 11:23:45.248453",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Trip",
