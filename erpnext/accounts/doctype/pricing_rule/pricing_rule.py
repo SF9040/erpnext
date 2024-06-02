@@ -425,10 +425,11 @@ def update_args_for_pricing_rule(args):
 			if args.quotation_to and args.quotation_to != "Customer":
 				customer = frappe._dict()
 			else:
-				customer = frappe.get_cached_value("Customer", args.customer, ["customer_group", "territory"])
+				customer = frappe.get_cached_value("Customer", args.customer, ["customer_group", "territory", "customer_segment"])
 
 			if customer:
-				args.customer_group, args.territory = customer
+				args.customer_group, args.territory, args.customer_segment = customer
+
 
 		args.supplier = args.supplier_group = None
 

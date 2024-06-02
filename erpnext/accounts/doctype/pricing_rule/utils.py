@@ -138,7 +138,6 @@ def _get_pricing_rules(apply_on, args, values):
 
 	conditions += " and ifnull(`tabPricing Rule`.for_price_list, '') in (%(price_list)s, '')"
 	values["price_list"] = args.get("price_list")
-
 	pricing_rules = (
 		frappe.db.sql(
 			"""select `tabPricing Rule`.*,
@@ -202,7 +201,7 @@ def _get_tree_conditions(args, parenttype, table, allow_blank=True):
 			(lft, rgt),
 		)
 
-		if parenttype in ["Customer Group", "Item Group", "Territory"]:
+		if parenttype in ["Customer Group", "Item Group", "Territory", "Customer Segment"]:
 			parent_field = "parent_{0}".format(frappe.scrub(parenttype))
 			root_name = frappe.db.get_list(
 				parenttype,
