@@ -13,6 +13,7 @@
   "customer",
   "customer_name",
   "tax_id",
+  "branch",
   "column_break1",
   "posting_date",
   "delivery_date",
@@ -104,6 +105,7 @@
   "pricing_rules",
   "address_and_contact_tab",
   "contact_info",
+  "billing_address_name",
   "customer_address",
   "address_display",
   "col_break21",
@@ -1432,10 +1434,10 @@
    "options": "Pickup Records"
   },
   {
+   "depends_on": "eval:doc.buyer_self_collect == 0;",
    "fieldname": "delivery_date",
    "fieldtype": "Date",
-   "label": "Sales Order Delivery Date",
-   "read_only": 1
+   "label": "Delivery Date"
   },
   {
    "fieldname": "value_added_tax",
@@ -1448,8 +1450,7 @@
    "default": "0",
    "fieldname": "urgent",
    "fieldtype": "Check",
-   "label": "Urgent",
-   "read_only": 1
+   "label": "Urgent"
   },
   {
    "default": "0",
@@ -1458,23 +1459,36 @@
    "label": "Buyer Self-collect / Pickup"
   },
   {
+   "depends_on": "eval:doc.buyer_self_collect == 1;",
    "fieldname": "buyer_self_collect_time",
-   "fieldtype": "Data",
-   "label": "Self-collection / Pickup Time",
-   "read_only": 1
+   "fieldtype": "Datetime",
+   "label": "Self-collection / Pickup Time"
   },
   {
    "fieldname": "vehicle",
    "fieldtype": "Link",
    "label": "Vehicle",
    "options": "Vehicle"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "billing_address_name",
+   "fieldtype": "Link",
+   "label": "Billing Address",
+   "options": "Address"
   }
  ],
  "icon": "fa fa-truck",
  "idx": 146,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-16 06:39:04.521844",
+ "modified": "2024-06-06 18:19:26.400628",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Note",
