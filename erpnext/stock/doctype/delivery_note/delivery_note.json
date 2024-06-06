@@ -531,6 +531,7 @@
   },
   {
    "allow_bulk_edit": 1,
+   "description": "Note: Customizable Items must be done in the Sales Order instead to keep the stock as-clean.",
    "fieldname": "items",
    "fieldtype": "Table",
    "label": "Delivery Note Item",
@@ -1440,11 +1441,12 @@
    "label": "Delivery Date"
   },
   {
+   "default": "VAT NoN",
    "fieldname": "value_added_tax",
    "fieldtype": "Select",
    "label": "Value-Added Tax",
-   "options": "\nVAT +\nVAT NoN\nVAT Included",
-   "read_only": 1
+   "options": "VAT +\nVAT NoN\nVAT Included",
+   "reqd": 1
   },
   {
    "default": "0",
@@ -1488,7 +1490,7 @@
  "idx": 146,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-06-06 18:19:26.400628",
+ "modified": "2024-06-06 20:22:04.601869",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Note",
