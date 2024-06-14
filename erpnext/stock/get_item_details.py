@@ -479,7 +479,7 @@ def get_basic_details(args, item, overwrite_warehouse=True):
 
 	if out.get("weight_per_unit"):
 		if out.get('is_customizable') is not None and out.get('is_customizable') == 1 and out.get('customizable_uom') == 'Wt':
-			out["total_weight"] = out.get('customizable_weight') * out.stock_qty
+			out["total_weight"] = out.get('customizable_weight') * out.qty
 		else:
 			out["total_weight"] = out.weight_per_unit * out.stock_qty
 
