@@ -478,7 +478,16 @@ def get_basic_details(args, item, overwrite_warehouse=True):
 		update_barcode_value(out)
 
 	if out.get("weight_per_unit"):
-		out["total_weight"] = out.weight_per_unit * out.stock_qty
+		interm = frappe.db.get_value('Item', out.item_code, ['is_customizable', 'customizable_uom' ], as_dict=1)
+		if interm.get("is_customizable") and interm.get("is_customizable") == 1 and interm.get("customizable_uom") == 'LxW':
+			customizable_sqm = args.get("customizable_sqm", 0) if args else 0
+			out["total_weight"] = out.weight_per_unit * out.qty * customizable_sqm
+
+		elif interm.get("is_customizable") and interm.get("is_customizable") == 1 and interm.get("customizable_uom") == 'Wt':
+			customizable_weight = args.get("customizable_weight", 0) if args else 0
+			out["total_weight"] = customizable_weight * out.qty
+		else:
+			out["total_weight"] = out.weight_per_unit * out.stock_qty
 
 	return out
 
