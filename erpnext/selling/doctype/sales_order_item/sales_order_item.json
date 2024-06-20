@@ -33,6 +33,11 @@
   "note",
   "uom_moe",
   "m_moe",
+  "wpu",
+  "t_name",
+  "user_amount",
+  "user_discount",
+  "t_wpu",
   "col_break2",
   "uom",
   "conversion_factor",
@@ -970,12 +975,47 @@
    "fieldtype": "Currency",
    "label": "Master MoE",
    "precision": "2"
+  },
+  {
+   "fieldname": "wpu",
+   "fieldtype": "Float",
+   "label": "Weight / Unit",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "t_wpu",
+   "fieldtype": "Float",
+   "label": "\u03a3 Total Weight",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "t_name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "user_discount",
+   "fieldtype": "Currency",
+   "label": "User Discount Rate / Unit",
+   "precision": "2"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "user_amount",
+   "fieldtype": "Currency",
+   "label": "User Amount",
+   "precision": "2",
+   "read_only": 1
   }
  ],
  "idx": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-13 16:43:27.221832",
+ "modified": "2024-06-19 23:05:49.878758",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order Item",

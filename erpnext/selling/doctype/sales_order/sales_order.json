@@ -52,6 +52,7 @@
   "items",
   "section_break_31",
   "total_qty",
+  "sigma_total_net_weight",
   "column_break_33",
   "base_total",
   "base_net_total",
@@ -706,6 +707,7 @@
    "depends_on": "total_net_weight",
    "fieldname": "total_net_weight",
    "fieldtype": "Float",
+   "hidden": 1,
    "hide_days": 1,
    "hide_seconds": 1,
    "label": "Total Net Weight",
@@ -1687,13 +1689,21 @@
    "fieldtype": "Link",
    "label": "Branch",
    "options": "Address"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "sigma_total_net_weight",
+   "fieldtype": "Float",
+   "label": "\u03a3 Total Net Weight",
+   "precision": "2",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-06-13 11:57:56.288584",
+ "modified": "2024-06-19 22:51:07.151004",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order",
