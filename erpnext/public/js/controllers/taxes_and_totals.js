@@ -152,7 +152,18 @@ erpnext.taxes_and_totals = class TaxesAndTotals extends erpnext.payments {
 				}
 
 				item.item_tax_amount = 0.0;
-				item.total_weight = flt(item.weight_per_unit * item.stock_qty);
+				if (item.is_customizable && item.is_customizable === 1 && item.customizable_uom === 'LxW') {
+					item.total_weight = flt(item.weight_per_unit * item.qty * item.customizable_sqm)
+					console.log("::::::: library custom total_weight LxW: ", item.total_weight)
+				}
+				else if (item.is_customizable && item.is_customizable === 1 && item.customizable_uom === 'Wt') {
+					item.total_weight = flt(item.customizable_weight * item.qty);
+					console.log("::::::: library custom total_weight Wt: ", item.total_weight)
+				}
+				else {
+					item.total_weight = flt(item.weight_per_unit * item.stock_qty);
+					console.log("::::::: library custom total_weight Std: ", item.total_weight)
+				}
 
 				me.set_in_company_currency(item, ["price_list_rate", "rate", "amount", "net_rate", "net_amount"]);
 			}

@@ -1098,16 +1098,16 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 				console.log("transaction.js ::: ", item , item.total_weight)
 
 				if (item.is_customizable && item.is_customizable === 1 && item.customizable_uom === 'LxW') {
-
-					item.total_weight = flt(item.weight_per_unit * item.qty * item.customizable_sqm);
-					console.log("---------", item.item_code, item.total_weight)
+					item.total_weight = flt(item.weight_per_unit * item.qty * item.customizable_sqm)
+					console.log("::::::: library custom total_weight LxW: ", item.total_weight)
 				}
-	
 				else if (item.is_customizable && item.is_customizable === 1 && item.customizable_uom === 'Wt') {
 					item.total_weight = flt(item.customizable_weight * item.qty);
+					console.log("::::::: library custom total_weight Wt: ", item.total_weight)
 				}
 				else {
-					item.total_weight = flt(item.stock_qty * item.weight_per_unit);
+					item.total_weight = flt(item.weight_per_unit * item.stock_qty);
+					console.log("::::::: library custom total_weight Std: ", item.total_weight)
 				}
 
 				refresh_field("total_weight", item.name, item.parentfield);
