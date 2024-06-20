@@ -480,14 +480,20 @@ def get_basic_details(args, item, overwrite_warehouse=True):
 	if out.get("weight_per_unit"):
 		interm = frappe.db.get_value('Item', out.item_code, ['is_customizable', 'customizable_uom' ], as_dict=1)
 		if interm.get("is_customizable") and interm.get("is_customizable") == 1 and interm.get("customizable_uom") == 'LxW':
-			customizable_sqm = args.get("customizable_sqm", 0) if args else 0
-			out["total_weight"] = out.weight_per_unit * out.qty * customizable_sqm
+			customizable_sqm = args.get("customizable_sqm", 1)
+			if customizable_sqm == 0: 
+				frappe.throw(_("Customizable Sqm cannot be 0 zero"), title=_("Customizable Sqm cannot be 0 zero."))
+			else: 
+				out["total_weight"] = out.weight_per_unit * out.qty * customizable_sqm
 
 		elif interm.get("is_customizable") and interm.get("is_customizable") == 1 and interm.get("customizable_uom") == 'Wt':
-			customizable_weight = args.get("customizable_weight", 0) if args else 0
-			out["total_weight"] = customizable_weight * out.qty
+			customizable_weight = args.get("customizable_weight", 1)
+			if customizable_weight == 0: 
+				frappe.throw(_("Customizable Weight cannot be 0 zero"), title=_("Customizable Weight cannot be 0 zero."))
+			else:
+				out["total_weight"] = customizable_weight * out.qty
 		else:
-			out["total_weight"] = out.weight_per_unit * out.stock_qty
+			out["total_weight"] = out.weight_per_unit * out.stock_qty # !!!!! TODO THIS SHOULD BE out.stock_qty but it is not working !!!!!!
 
 	return out
 
