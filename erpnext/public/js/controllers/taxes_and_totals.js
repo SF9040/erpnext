@@ -161,7 +161,7 @@ erpnext.taxes_and_totals = class TaxesAndTotals extends erpnext.payments {
 					console.log("::::::: library custom total_weight Wt: ", item.total_weight)
 				}
 				else {
-					item.total_weight = flt(item.weight_per_unit * item.qty);
+					item.total_weight = flt(item.weight_per_unit * item.stock_qty);
 					console.log("::::::: library custom total_weight Std: ", item.total_weight)
 				}
 
