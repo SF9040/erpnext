@@ -493,7 +493,10 @@ def get_basic_details(args, item, overwrite_warehouse=True):
 			else:
 				out["total_weight"] = customizable_weight * out.qty
 		else:
-			out["total_weight"] = out.weight_per_unit * out.stock_qty  # !!!!! TODO THIS SHOULD BE out.stock_qty but it is not working !!!!!!
+			if out['weight_uom'] == 'กก' and out['stock_uom'] == 'กก':
+				out["total_weight"] = out.weight_per_unit * out.qty
+			else:
+				out["total_weight"] = out.weight_per_unit * out.stock_qty  # !!!!! TODO THIS SHOULD BE out.stock_qty but it is not working !!!!!!
 
 	return out
 

@@ -1106,8 +1106,13 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 					console.log("::::::: library custom total_weight Wt: ", item.total_weight)
 				}
 				else {
-					item.total_weight = flt(item.weight_per_unit * item.stock_qty);
-					console.log("::::::: library custom total_weight Std: ", item.total_weight)
+					if (item.weight_uom == 'กก' && item.stock_uom == 'กก') {
+						item.total_weight = item.weight_per_unit * item.qty
+					}
+					else {
+						item.total_weight = flt(item.weight_per_unit * item.stock_qty);
+						console.log("::::::: library custom total_weight Std: ", item.total_weight)
+					}
 				}
 
 				refresh_field("total_weight", item.name, item.parentfield);

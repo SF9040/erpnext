@@ -161,8 +161,14 @@ erpnext.taxes_and_totals = class TaxesAndTotals extends erpnext.payments {
 					console.log("::::::: library custom total_weight Wt: ", item.total_weight)
 				}
 				else {
+					if (item.weight_uom == 'กก' && item.stock_uom == 'กก') {
+						item.total_weight = item.weight_per_unit * item.qty
+					}
+					else {
+						
 					item.total_weight = flt(item.weight_per_unit * item.stock_qty);
 					console.log("::::::: library custom total_weight Std: ", item.total_weight)
+					}
 				}
 
 				me.set_in_company_currency(item, ["price_list_rate", "rate", "amount", "net_rate", "net_amount"]);
