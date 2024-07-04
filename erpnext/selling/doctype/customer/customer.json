@@ -20,6 +20,7 @@
   "customer_segment",
   "column_break0",
   "territory",
+  "pricing_rules_html",
   "gender",
   "lead_name",
   "opportunity_name",
@@ -563,6 +564,11 @@
    "fieldtype": "Link",
    "label": "Customer Segment",
    "options": "Customer Segment"
+  },
+  {
+   "fieldname": "pricing_rules_html",
+   "fieldtype": "HTML",
+   "label": "Pricing Rules"
   }
  ],
  "icon": "fa fa-user",
@@ -576,7 +582,7 @@
    "link_fieldname": "party"
   }
  ],
- "modified": "2024-03-16 18:59:56.181078",
+ "modified": "2024-07-04 20:11:13.949699",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Customer",

@@ -21,6 +21,7 @@
   "transaction_date",
   "delivery_date",
   "branch",
+  "multiple_fulfilment_reqd",
   "column_break1",
   "po_no",
   "po_date",
@@ -707,7 +708,6 @@
    "depends_on": "total_net_weight",
    "fieldname": "total_net_weight",
    "fieldtype": "Float",
-   "hidden": 1,
    "hide_days": 1,
    "hide_seconds": 1,
    "label": "Total Net Weight",
@@ -1516,7 +1516,7 @@
    "read_only": 1
   },
   {
-   "default": "0",
+   "default": "1",
    "depends_on": "grand_total",
    "fieldname": "disable_rounded_total",
    "fieldtype": "Check",
@@ -1694,16 +1694,23 @@
    "default": "0.00",
    "fieldname": "sigma_total_net_weight",
    "fieldtype": "Float",
+   "hidden": 1,
    "label": "\u03a3 Total Net Weight",
    "precision": "2",
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "multiple_fulfilment_reqd",
+   "fieldtype": "Check",
+   "label": "Multiple Fulfilment is Required"
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-06-19 22:51:07.151004",
+ "modified": "2024-06-27 12:17:30.860334",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order",

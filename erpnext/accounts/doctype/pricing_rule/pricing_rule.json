@@ -244,7 +244,7 @@
    "fieldname": "applicable_for",
    "fieldtype": "Select",
    "label": "Applicable For",
-   "options": "\nCustomer\nCustomer Group\nTerritory\nSales Partner\nCampaign\nSupplier\nSupplier Group\nCustomer Segment\n"
+   "options": "\nCustomer\nCustomer Group\nTerritory\nSales Partner\nCampaign\nSupplier\nSupplier Group\nCustomer Segment"
   },
   {
    "depends_on": "eval:doc.applicable_for==\"Customer\"",
@@ -494,7 +494,7 @@
    "fieldname": "priority",
    "fieldtype": "Select",
    "label": "Priority",
-   "options": "\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20"
+   "options": "\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42"
   },
   {
    "fieldname": "column_break_66",
@@ -632,7 +632,7 @@
  "icon": "fa fa-gift",
  "idx": 1,
  "links": [],
- "modified": "2024-02-03 00:24:13.523541",
+ "modified": "2024-07-04 14:47:26.244710",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Pricing Rule",
