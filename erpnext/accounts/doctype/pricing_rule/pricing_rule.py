@@ -322,7 +322,9 @@ def get_pricing_rule_for_item(args, doc=None, for_validate=False):
 
 	if args.get("is_free_item") or args.get("parenttype") == "Material Request":
 		return {}
-
+	
+	logger.warning(f"doc: {doc}")
+	logger.warning(f"args: {args}")
 	item_details = frappe._dict(
 		{
 			"doctype": args.doctype,
@@ -492,6 +494,17 @@ def apply_price_discount_rule(pricing_rule, item_details, args):
 				}
 			)
 		item_details.update({"discount_percentage": 0.0})
+	
+	if pricing_rule.rate_or_discount in ["Decr. Rate", "Incr. Rate"]:
+		# Fetch the current price list rate for the item
+		current_price_list_rate = frappe.db.get_value(
+			"Item Price",
+			{"item_code": args.get("item_code"), "price_list": args.get("price_list")},
+		"price_list_rate"
+	)
+	logger.warning(f"current_price_list_rate: {current_price_list_rate}")
+	if current_price_list_rate:
+		args.price_list_rate = current_price_list_rate
 
 	if pricing_rule.rate_or_discount == "Decr. Rate":
 		pricing_rule_negative_rate = 0.0
@@ -520,7 +533,8 @@ def apply_price_discount_rule(pricing_rule, item_details, args):
 			# print("----------------------")
 			item_details.update(
 				{
-					"price_list_rate": args.get('price_list_rate') - (pricing_rule_negative_rate * (args.get("conversion_factor", 1) if is_blank_uom else 1)),
+					# "price_list_rate": args.get('price_list_rate') - (pricing_rule_negative_rate * (args.get("conversion_factor", 1) if is_blank_uom else 1)),
+     				"price_list_rate": flt(args.get('price_list_rate') - pricing_rule_negative_rate) * (flt(args.get("conversion_factor", 1)) if is_blank_uom else 1),
 				}
 			)
 		# print("item_details ----------------------", item_details)
@@ -534,9 +548,13 @@ def apply_price_discount_rule(pricing_rule, item_details, args):
 			is_blank_uom = pricing_rule.get("uom") != args.get("uom")
 			item_details.update(
 				{
-					"price_list_rate": args.get('price_list_rate') + (pricing_rule_positive_rate * (args.get("conversion_factor", 1) if is_blank_uom else 1)),
+					# "price_list_rate": args.get('price_list_rate') + (pricing_rule_positive_rate),
+     
+     "price_list_rate": flt(args.get('price_list_rate') + pricing_rule_positive_rate)
+					* (flt(args.get("conversion_factor", 1)) if is_blank_uom else 1),
 				}
 			)
+   
 		item_details.update({"discount_percentage": 0.0})
 
 	for apply_on in ["Discount Amount", "Discount Percentage"]:
