@@ -12,6 +12,15 @@ from frappe import _, throw
 from frappe.model.document import Document
 from frappe.utils import cint, flt, getdate
 
+from logtail import LogtailHandler
+import logging
+
+handler = LogtailHandler(source_token="HbAh49VsfnpeZe5Re6kwT1UF")
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+logger.handlers = []
+logger.addHandler(handler)
+
 apply_on_dict = {"Item Code": "items", "Item Group": "item_groups", "Brand": "brands"}
 
 other_fields = ["other_item_code", "other_item_group", "other_brand"]
@@ -490,6 +499,8 @@ def apply_price_discount_rule(pricing_rule, item_details, args):
 		# TODO https://github.com/frappe/erpnext/pull/23636 solve this in some other way.
 		if pricing_rule_negative_rate:
 			is_blank_uom = pricing_rule.get("uom") != args.get("uom")
+			logger.warn(f"Debug: qty={args.get('qty', 1)}, price_list_rate={args.get('price_list_rate')}, pricing_rule_negative_rate={pricing_rule_negative_rate}, new_price_list_rate={new_price_list_rate}")
+            
 			# Override already set price list rate (from item price)
 			# if pricing_rule_negative_rate > 0
 
