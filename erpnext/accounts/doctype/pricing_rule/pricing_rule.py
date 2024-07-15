@@ -268,7 +268,7 @@ def apply_pricing_rule(args, doc=None):
 		args_copy = copy.deepcopy(args)
 		args_copy.update(item)
 		data = get_pricing_rule_for_item(args_copy, doc=doc)
-		logging.info(f"pricing rule: {data}")
+		logger.info(f"pricing rule: {data}")
 		out.append(data)
 
 		if (
