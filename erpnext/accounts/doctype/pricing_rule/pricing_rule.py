@@ -499,6 +499,8 @@ def apply_price_discount_rule(pricing_rule, item_details, args):
 		# TODO https://github.com/frappe/erpnext/pull/23636 solve this in some other way.
 		if pricing_rule_negative_rate:
 			is_blank_uom = pricing_rule.get("uom") != args.get("uom")
+			new_price_list_rate = args.get('price_list_rate') - (pricing_rule_negative_rate * args.get("qty", 1) * (args.get("conversion_factor", 1) if is_blank_uom else 1))
+
 			logger.warn(f"Debug: qty={args.get('qty', 1)}, price_list_rate={args.get('price_list_rate')}, pricing_rule_negative_rate={pricing_rule_negative_rate}, new_price_list_rate={new_price_list_rate}")
             
 			# Override already set price list rate (from item price)
