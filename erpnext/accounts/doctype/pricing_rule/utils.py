@@ -11,6 +11,15 @@ import frappe
 from frappe import _, bold
 from frappe.utils import cint, flt, fmt_money, get_link_to_form, getdate, today
 
+from logtail import LogtailHandler
+import logging
+
+handler = LogtailHandler(source_token="HbAh49VsfnpeZe5Re6kwT1UF")
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+logger.handlers = []
+logger.addHandler(handler)
+
 from erpnext.setup.doctype.item_group.item_group import get_child_item_groups
 from erpnext.stock.doctype.warehouse.warehouse import get_child_warehouses
 from erpnext.stock.get_item_details import get_conversion_factor
@@ -164,6 +173,29 @@ def _get_pricing_rules(apply_on, args, values):
 		)
 		or []
 	)
+ 
+	logger.info(f"""select `tabPricing Rule`.*,
+			{child_doc}.{apply_on_field}, {child_doc}.uom
+		from `tabPricing Rule`, {child_doc}
+		where ({item_conditions} or (`tabPricing Rule`.apply_rule_on_other is not null
+			and `tabPricing Rule`.{apply_on_other_field}=%({apply_on_field})s) {item_variant_condition})
+			and {child_doc}.parent = `tabPricing Rule`.name
+			and `tabPricing Rule`.disable = 0 and
+			`tabPricing Rule`.{transaction_type} = 1 {warehouse_cond} {conditions}
+		order by `tabPricing Rule`.priority desc,
+			`tabPricing Rule`.name desc""".format(
+				child_doc=child_doc,
+				apply_on_field=apply_on_field,
+				item_conditions=item_conditions,
+				item_variant_condition=item_variant_condition,
+				transaction_type=args.transaction_type,
+				warehouse_cond=warehouse_conditions,
+				apply_on_other_field="other_{0}".format(apply_on_field),
+				conditions=conditions,
+			),
+			values,
+			as_dict=1,
+		)
 
 	return pricing_rules
 
@@ -233,7 +265,7 @@ def get_other_conditions(conditions, values, args):
 		else:
 			conditions += " and ifnull(`tabPricing Rule`.{0}, '') = ''".format(field)
 
-	for parenttype in ["Customer Group", "Territory", "Supplier Group"]:
+	for parenttype in ["Customer Group", "Territory", "Supplier Group", "Customer Segment"]:
 		group_condition = _get_tree_conditions(args, parenttype, "`tabPricing Rule`")
 		if group_condition:
 			conditions += " and " + group_condition
@@ -259,6 +291,7 @@ def get_other_conditions(conditions, values, args):
 	else:
 		conditions += """ and ifnull(`tabPricing Rule`.buying, 0) = 1"""
 
+	logger.info(f"conditions: {conditions}")
 	return conditions
 
 
