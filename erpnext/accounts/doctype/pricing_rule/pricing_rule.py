@@ -348,12 +348,15 @@ def get_pricing_rule_for_item(args, doc=None, for_validate=False):
 		return item_details
 
 	update_args_for_pricing_rule(args)
+ 
+	logger.warning(f"0x0 update_args_for_pricing_rule: {update_args_for_pricing_rule(args)}")
 
 	pricing_rules = (
 		get_applied_pricing_rules(args.get("pricing_rules"))
 		if for_validate and args.get("pricing_rules")
 		else get_pricing_rules(args, doc)
 	)
+	logger.warning(f"0x1 pricing_rules: {pricing_rules}")
 
 	if pricing_rules:
 		rules = []
