@@ -237,6 +237,8 @@ def apply_pricing_rule(args, doc=None):
 
 	args = frappe._dict(args)
 
+	logger.info(f"__yyYYY : {args}")
+
 	if not args.transaction_type:
 		set_transaction_type(args)
 
@@ -267,6 +269,7 @@ def apply_pricing_rule(args, doc=None):
 	for item in item_list:
 		args_copy = copy.deepcopy(args)
 		args_copy.update(item)
+		logger.info(f"__XXdd : {args}")
 		data = get_pricing_rule_for_item(args_copy, doc=doc)
 		logger.info(f"pricing rule: {data}")
 		logger.info(f"pricing args: {args_copy}")
