@@ -174,6 +174,7 @@ def _get_pricing_rules(apply_on, args, values):
 		)
 		or []
 	)
+	logger.info(f"****NXM: {pricing_ruless}")
  
 
 	return pricing_rules
