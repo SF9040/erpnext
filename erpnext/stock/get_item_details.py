@@ -10,6 +10,8 @@ from frappe.model import child_table_fields, default_fields
 from frappe.model.meta import get_field_precision
 from frappe.query_builder.functions import CombineDatetime, IfNull, Sum
 from frappe.utils import add_days, add_months, cint, cstr, flt, getdate
+from logtail import LogtailHandler
+import logging
 
 handler = LogtailHandler(source_token="HbAh49VsfnpeZe5Re6kwT1UF")
 logger = logging.getLogger(__name__)
