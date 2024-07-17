@@ -1357,8 +1357,8 @@ def apply_price_list(args, as_doc=False):
 		for item in item_list:
 			args_copy = frappe._dict(args.copy())
 			args_copy.update(item)
-			logger.info(f'aargs_copy1: {item_details}')
 			item_details = apply_price_list_on_item(args_copy)
+			logger.info(f'aargs_copy1: {args_copy}')
 			children.append(item_details)
 			logger.info(f'aargs_copy_2: {item_details}')
 
