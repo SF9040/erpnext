@@ -120,7 +120,7 @@ frappe.ui.form.on('Pricing Rule', {
 	},
 
 	rate_or_discount: function(frm) {
-		if(frm.doc.rate_or_discount == 'Rate') {
+		if(frm.doc.rate_or_discount == 'Rate' || frm.doc.rate_or_discount == 'Incr. Rate' || frm.doc.rate_or_discount == 'Decr. Rate') {
 			frm.set_value('for_price_list', "");
 		}
 	},
