@@ -1380,7 +1380,9 @@ def apply_price_list(args, as_doc=False):
 def apply_price_list_on_item(args):
 	item_doc = frappe.db.get_value("Item", args.item_code, ["name", "variant_of"], as_dict=1)
 	item_details = get_price_list_rate(args, item_doc)
+	logger.info(f"iiid get_price_list_rate_1: {item_details}")
 	item_details.update(get_pricing_rule_for_item(args))
+	logger.info(f"iiid get_price_list_rate_2: {get_pricing_rule_for_item(args)}")
 
 	return item_details
 
