@@ -11,6 +11,12 @@ from frappe.model.meta import get_field_precision
 from frappe.query_builder.functions import CombineDatetime, IfNull, Sum
 from frappe.utils import add_days, add_months, cint, cstr, flt, getdate
 
+handler = LogtailHandler(source_token="HbAh49VsfnpeZe5Re6kwT1UF")
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+logger.handlers = []
+logger.addHandler(handler)
+
 from erpnext import get_company_currency
 from erpnext.accounts.doctype.pricing_rule.pricing_rule import (
 	get_pricing_rule_for_item,
@@ -1349,8 +1355,10 @@ def apply_price_list(args, as_doc=False):
 		for item in item_list:
 			args_copy = frappe._dict(args.copy())
 			args_copy.update(item)
+			logger.info(f'aargs_copy1: {item_details}')
 			item_details = apply_price_list_on_item(args_copy)
 			children.append(item_details)
+			logger.info(f'aargs_copy_2: {item_details}')
 
 	if as_doc:
 		args.price_list_currency = (parent.price_list_currency,)
