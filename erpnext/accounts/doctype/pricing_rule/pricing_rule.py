@@ -615,6 +615,7 @@ def remove_pricing_rule_for_item(pricing_rules, item_details, item_code=None, ra
 	item_details.pricing_rules = ""
 	item_details.pricing_rule_removed = True
 
+	logger.info(f"ii: {item_details}")
 	return item_details
 
 
