@@ -578,6 +578,9 @@ def remove_pricing_rule_for_item(pricing_rules, item_details, item_code=None, ra
 		get_pricing_rule_items,
 	)
 
+	logger.warning(f"*get_applied_pricing_rules: {get_applied_pricing_rules(pricing_rules)}")
+	logger.warning(f"*item_details: {item_details}")
+	logger.warning(f"*item_code: {item_code}")
 	for d in get_applied_pricing_rules(pricing_rules):
 		if not d or not frappe.db.exists("Pricing Rule", d):
 			continue
