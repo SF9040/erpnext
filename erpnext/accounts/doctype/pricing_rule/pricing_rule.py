@@ -307,6 +307,7 @@ def update_pricing_rule_uom(pricing_rule, args):
 
 
 def get_pricing_rule_for_item(args, doc=None, for_validate=False):
+	logger.warning(f" 0x4 for_validate: {for_validate}")
 	from erpnext.accounts.doctype.pricing_rule.utils import (
 		get_applied_pricing_rules,
 		get_pricing_rule_items,

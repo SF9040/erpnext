@@ -131,7 +131,7 @@ def get_item_details(args, doc=None, for_validate=False, overwrite_warehouse=Tru
 	for key, value in out.items():
 		if args.get(key) is None:
 			args[key] = value
-
+	logger.warning(f" 0x5 for_validate: {for_validate}")
 	data = get_pricing_rule_for_item(args, doc=doc, for_validate=for_validate)
 
 	out.update(data)
