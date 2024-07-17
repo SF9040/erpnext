@@ -166,10 +166,8 @@ def _get_pricing_rules(apply_on, args, values):
 				transaction_type=args.transaction_type,
 				warehouse_cond=warehouse_conditions,
 				apply_on_other_field="other_{0}".format(apply_on_field),
-				conditions=conditions,
-			),
-			values,
-			as_dict=1,
+				conditions=conditions
+			)
 		)
  
 	pricing_rules = (
