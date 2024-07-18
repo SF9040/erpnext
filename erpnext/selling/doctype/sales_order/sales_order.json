@@ -16,6 +16,7 @@
   "customer",
   "customer_name",
   "tax_id",
+  "customer_segment",
   "order_type",
   "column_break_7",
   "transaction_date",
@@ -106,7 +107,6 @@
   "customer_address",
   "address_display",
   "customer_group",
-  "customer_segment",
   "territory",
   "column_break_84",
   "contact_person",
@@ -234,7 +234,6 @@
    "search_index": 1
   },
   {
-   "bold": 1,
    "fetch_from": "customer.customer_name",
    "fieldname": "customer_name",
    "fieldtype": "Data",
@@ -313,6 +312,7 @@
   },
   {
    "allow_on_submit": 1,
+   "default": "Today",
    "depends_on": "eval:!doc.skip_delivery_note",
    "fieldname": "delivery_date",
    "fieldtype": "Date",
@@ -1490,9 +1490,10 @@
    "read_only": 1
   },
   {
-   "default": "1",
+   "default": "0",
    "fieldname": "skip_delivery_note",
    "fieldtype": "Check",
+   "hidden": 1,
    "hide_days": 1,
    "hide_seconds": 1,
    "label": "Skip Delivery Date",
@@ -1702,14 +1703,15 @@
    "fieldname": "customer_segment",
    "fieldtype": "Link",
    "label": "Customer Segment",
-   "options": "Customer Segment"
+   "options": "Customer Segment",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-18 08:37:37.733097",
+ "modified": "2024-07-19 00:21:54.712059",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order",
