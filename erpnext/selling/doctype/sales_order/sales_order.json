@@ -21,7 +21,6 @@
   "transaction_date",
   "delivery_date",
   "branch",
-  "multiple_fulfilment_reqd",
   "column_break1",
   "po_no",
   "po_date",
@@ -107,6 +106,7 @@
   "customer_address",
   "address_display",
   "customer_group",
+  "customer_segment",
   "territory",
   "column_break_84",
   "contact_person",
@@ -313,7 +313,7 @@
   },
   {
    "allow_on_submit": 1,
-   "default": "Today",
+   "depends_on": "eval:!doc.skip_delivery_note",
    "fieldname": "delivery_date",
    "fieldtype": "Date",
    "hide_days": 1,
@@ -369,7 +369,6 @@
    "allow_on_submit": 1,
    "fieldname": "customer_address",
    "fieldtype": "Link",
-   "hidden": 1,
    "hide_days": 1,
    "hide_seconds": 1,
    "label": "Customer Address",
@@ -380,7 +379,6 @@
    "allow_on_submit": 1,
    "fieldname": "address_display",
    "fieldtype": "Small Text",
-   "hidden": 1,
    "hide_days": 1,
    "hide_seconds": 1,
    "label": "Address",
@@ -455,7 +453,8 @@
    "hide_seconds": 1,
    "label": "Shipping Address Name",
    "options": "Address",
-   "print_hide": 1
+   "print_hide": 1,
+   "read_only": 1
   },
   {
    "allow_on_submit": 1,
@@ -1494,7 +1493,6 @@
    "default": "1",
    "fieldname": "skip_delivery_note",
    "fieldtype": "Check",
-   "hidden": 1,
    "hide_days": 1,
    "hide_seconds": 1,
    "label": "Skip Delivery Date",
@@ -1518,7 +1516,7 @@
    "read_only": 1
   },
   {
-   "default": "1",
+   "default": "0",
    "depends_on": "grand_total",
    "fieldname": "disable_rounded_total",
    "fieldtype": "Check",
@@ -1696,24 +1694,22 @@
    "default": "0.00",
    "fieldname": "sigma_total_net_weight",
    "fieldtype": "Float",
-   "hidden": 1,
    "label": "\u03a3 Total Net Weight",
    "precision": "2",
    "read_only": 1
   },
   {
-   "default": "0",
-   "fieldname": "multiple_fulfilment_reqd",
-   "fieldtype": "Check",
-   "hidden": 1,
-   "label": "Multiple Fulfilment is Required"
+   "fieldname": "customer_segment",
+   "fieldtype": "Link",
+   "label": "Customer Segment",
+   "options": "Customer Segment"
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-18 12:23:06.623023",
+ "modified": "2024-07-18 08:37:37.733097",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order",

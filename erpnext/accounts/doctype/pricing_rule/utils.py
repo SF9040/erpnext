@@ -148,9 +148,7 @@ def _get_pricing_rules(apply_on, args, values):
 	conditions += " and ifnull(`tabPricing Rule`.for_price_list, '') in (%(price_list)s, '')"
 	values["price_list"] = args.get("price_list")
  
-	pricing_rules = (
-		frappe.db.sql(
-			"""select `tabPricing Rule`.*,
+	sql_query = """select `tabPricing Rule`.*,
 			{child_doc}.{apply_on_field}, {child_doc}.uom
 		from `tabPricing Rule`, {child_doc}
 		where ({item_conditions} or (`tabPricing Rule`.apply_rule_on_other is not null
@@ -168,17 +166,31 @@ def _get_pricing_rules(apply_on, args, values):
 				warehouse_cond=warehouse_conditions,
 				apply_on_other_field="other_{0}".format(apply_on_field),
 				conditions=conditions,
-			),
-			values,
-			as_dict=1,
-		)
-		or []
-	)
+			)
+	pricing_rules = (
+        frappe.db.sql(
+            sql_query,
+            values,
+            as_dict=1,
+        )
+        or []
+    )
+ 
+	formatted_sql_query = _format_sql_query(sql_query, values)
+	print(f"Formatted SQL Query: {formatted_sql_query}")
 	logger.info(f"****NXM: {pricing_rules}")
  
 
 	return pricing_rules
 
+def _format_sql_query(query, values):
+    for key, value in values.items():
+        if isinstance(value, str):
+            value = f"'{value}'"
+        elif value is None:
+            value = 'NULL'
+        query = query.replace(f"%({key})s", str(value))
+    return query
 
 def apply_multiple_pricing_rules(pricing_rules):
 	apply_multiple_rule = [
