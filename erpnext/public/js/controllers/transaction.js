@@ -1169,7 +1169,7 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 			() => this.remove_pricing_rule(item),
 			() => this.conversion_factor(doc, cdt, cdn, true),
 			() => this.calculate_stock_uom_rate(doc, cdt, cdn),
-			() => this.apply_pricing_rule(item, true)
+			// () => this.apply_pricing_rule(item, true)
 		]);
 	}
 
