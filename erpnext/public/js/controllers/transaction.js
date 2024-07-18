@@ -1169,7 +1169,7 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 			() => this.remove_pricing_rule(item),
 			() => this.conversion_factor(doc, cdt, cdn, true),
 			() => this.calculate_stock_uom_rate(doc, cdt, cdn),
-			// () => this.apply_pricing_rule(item, true)
+			() => this.apply_pricing_rule(item, true)
 		]);
 	}
 
@@ -1466,6 +1466,7 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 			"customer": me.frm.doc.customer || me.frm.doc.party_name,
 			"quotation_to": me.frm.doc.quotation_to,
 			"customer_group": me.frm.doc.customer_group,
+			"customer_segment": me.frm.doc.customer_segment,
 			"territory": me.frm.doc.territory,
 			"supplier": me.frm.doc.supplier,
 			"supplier_group": me.frm.doc.supplier_group,
