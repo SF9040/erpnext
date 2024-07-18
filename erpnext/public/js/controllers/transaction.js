@@ -1451,6 +1451,8 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 			args: {	args: args, doc: me.frm.doc },
 			callback: function(r) {
 				if (!r.exc && r.message) {
+					console.log("apply_pricing_rule :: args ", args)
+					console.log("apply_pricing_rule :: message ", r.message)
 					me._set_values_for_item_list(r.message);
 					if(item) me.set_gross_profit(item);
 					if (me.frm.doc.apply_discount_on) me.frm.trigger("apply_discount_on")
