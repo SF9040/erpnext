@@ -1476,8 +1476,7 @@
    "fieldname": "branch",
    "fieldtype": "Link",
    "label": "Branch",
-   "options": "Address",
-   "reqd": 1
+   "options": "Address"
   },
   {
    "fieldname": "billing_address_name",
@@ -1490,7 +1489,7 @@
  "idx": 146,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-06-06 20:22:04.601869",
+ "modified": "2024-07-18 07:56:47.925232",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Note",
