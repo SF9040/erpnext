@@ -27,8 +27,8 @@ erpnext.taxes_and_totals = class TaxesAndTotals extends erpnext.payments {
 		}
 
 		if (item.discount_amount) {
-			item_rate = flt((item.rate_with_margin) - (item.discount_amount), precision('rate', item));
-			item.discount_percentage = 100 * flt(item.discount_amount) / flt(item.rate_with_margin);
+			item_rate = flt((item.rate_with_margin) - (item.discount_amount * item.conversion_factor), precision('rate', item));
+			item.discount_percentage = 100 * flt(item.discount_amount * item.conversion_factor) / flt(item.rate_with_margin);
 		}
 
 		frappe.model.set_value(item.doctype, item.name, "rate", item_rate);
