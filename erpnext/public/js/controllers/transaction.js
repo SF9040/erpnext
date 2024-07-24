@@ -964,7 +964,8 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 	}
 
 	apply_discount_on_item(doc, cdt, cdn, field) {
-		
+		console.log("🚀 ~ TransactionController ~ apply_discount_on_item ~ doc, cdt, cdn, field:", doc, cdt, cdn, field)
+
 		var item = frappe.get_doc(cdt, cdn);
 		console.log("🚀 ~ TransactionController ~ apply_discount_on_item ~ item:", item)
 		if(!item.price_list_rate) {
@@ -1911,6 +1912,8 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 	}
 
 	set_gross_profit(item) {
+		console.log("🚀 ~ TransactionController ~ set_gross_profit ~ item:", item)
+		
 		if (["Sales Order", "Quotation"].includes(this.frm.doc.doctype) && item.valuation_rate) {
 			var rate = flt(item.rate) * flt(this.frm.doc.conversion_rate || 1);
 			item.gross_profit = flt(((rate - item.valuation_rate) * item.stock_qty), precision("amount", item));
