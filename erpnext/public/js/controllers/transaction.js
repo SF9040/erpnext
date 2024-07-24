@@ -1916,7 +1916,12 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 		
 		if (["Sales Order", "Quotation"].includes(this.frm.doc.doctype) && item.valuation_rate) {
 			var rate = flt(item.rate) * flt(this.frm.doc.conversion_rate || 1);
+			console.log("🚀 ~ TransactionController ~ set_gross_profit ~ flt(item.rate), flt(this.frm.doc.conversion_rate || 1):", flt(item.rate), flt(this.frm.doc.conversion_rate || 1))
 			item.gross_profit = flt(((rate - item.valuation_rate) * item.stock_qty), precision("amount", item));
+			console.log("🚀 ~ TransactionController ~ set_gross_profit ~ item.stock_qty:", item.stock_qty)
+			console.log("🚀 ~ TransactionController ~ set_gross_profit ~ item.valuation_rate:", item.valuation_rate)
+			console.log("🚀 ~ TransactionController ~ set_gross_profit ~ rate:", rate)
+			console.log("🚀 ~ TransactionController ~ set_gross_profit ~ item.gross_profit:", item.gross_profit)
 		}
 	}
 
