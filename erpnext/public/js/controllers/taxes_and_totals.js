@@ -665,6 +665,7 @@ erpnext.taxes_and_totals = class TaxesAndTotals extends erpnext.payments {
 		if(this.frm.doc.additional_discount_percentage) {
 			this.frm.doc.discount_amount = flt(flt(this.frm.doc[frappe.scrub(this.frm.doc.apply_discount_on)])
 				* this.frm.doc.additional_discount_percentage / 100, precision("discount_amount"));
+			console.log("🚀 ~ TaxesAndTotals ~ set_discount_amount ~ this.frm.doc.discount_amount:", this.frm.doc.discount_amount)
 		}
 	}
 
