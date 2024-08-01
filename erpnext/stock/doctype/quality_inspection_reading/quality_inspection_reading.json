@@ -24,34 +24,36 @@
   "reading_2",
   "reading_3",
   "reading_4",
+  "reading_13",
+  "reading_16",
+  "reading_19",
   "column_break_10",
   "reading_5",
   "reading_6",
   "reading_7",
   "reading_8",
+  "reading_14",
+  "reading_17",
+  "reading_20",
   "column_break_14",
   "reading_9",
   "reading_10",
   "reading_11",
   "reading_12",
-  "section_break_q2dxw",
-  "reading_13",
-  "reading_14",
   "reading_15",
-  "reading_16",
-  "column_break_wxmjh",
-  "reading_17",
   "reading_18",
-  "reading_19",
-  "reading_20",
   "section_break_v4czc",
   "item_code",
   "item_serial_no",
+  "bom_no",
+  "container",
+  "column_break_am9jl",
   "batch_no",
   "sample_size",
-  "description",
-  "bom_no",
-  "provisional_quantity"
+  "provisional_quantity",
+  "vehicle_no",
+  "column_break_v0lus",
+  "description"
  ],
  "fields": [
   {
@@ -248,8 +250,7 @@
    "fieldname": "item_code",
    "fieldtype": "Link",
    "label": "Item Code",
-   "options": "Item",
-   "reqd": 1
+   "options": "Item"
   },
   {
    "fieldname": "item_serial_no",
@@ -268,8 +269,7 @@
    "fieldname": "sample_size",
    "fieldtype": "Float",
    "label": "Sample Size",
-   "precision": "2",
-   "reqd": 1
+   "precision": "2"
   },
   {
    "fieldname": "description",
@@ -285,8 +285,7 @@
   {
    "fieldname": "provisional_quantity",
    "fieldtype": "Float",
-   "label": "Provisional Quantity",
-   "reqd": 1
+   "label": "Provisional Quantity"
   },
   {
    "fieldname": "reading_11",
@@ -297,10 +296,6 @@
    "fieldname": "reading_12",
    "fieldtype": "Data",
    "label": "Reading 12"
-  },
-  {
-   "fieldname": "section_break_q2dxw",
-   "fieldtype": "Section Break"
   },
   {
    "fieldname": "reading_13",
@@ -323,10 +318,6 @@
    "label": "Reading 16"
   },
   {
-   "fieldname": "column_break_wxmjh",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "reading_17",
    "fieldtype": "Data",
    "label": "Reading 17"
@@ -345,12 +336,31 @@
    "fieldname": "reading_20",
    "fieldtype": "Data",
    "label": "Reading 20"
+  },
+  {
+   "fieldname": "container",
+   "fieldtype": "Data",
+   "label": "Container",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_am9jl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_v0lus",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "Vehicle No"
   }
  ],
  "idx": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-08-01 10:10:49.725702",
+ "modified": "2024-08-01 16:06:00.998336",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Quality Inspection Reading",

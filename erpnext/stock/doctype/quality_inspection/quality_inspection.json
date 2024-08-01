@@ -88,6 +88,7 @@
    "oldfieldname": "purchase_receipt_no",
    "oldfieldtype": "Link",
    "options": "reference_type",
+   "read_only_depends_on": "eval:doc.reference_type==\"Purchase Receipt\"",
    "reqd": 1
   },
   {
@@ -251,7 +252,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-01 09:59:03.632296",
+ "modified": "2024-08-01 13:12:28.414328",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Quality Inspection",
