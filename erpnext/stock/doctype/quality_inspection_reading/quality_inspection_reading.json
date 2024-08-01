@@ -32,6 +32,18 @@
   "column_break_14",
   "reading_9",
   "reading_10",
+  "reading_11",
+  "reading_12",
+  "section_break_q2dxw",
+  "reading_13",
+  "reading_14",
+  "reading_15",
+  "reading_16",
+  "column_break_wxmjh",
+  "reading_17",
+  "reading_18",
+  "reading_19",
+  "reading_20",
   "section_break_v4czc",
   "item_code",
   "item_serial_no",
@@ -275,12 +287,70 @@
    "fieldtype": "Float",
    "label": "Provisional Quantity",
    "reqd": 1
+  },
+  {
+   "fieldname": "reading_11",
+   "fieldtype": "Data",
+   "label": "Reading 11"
+  },
+  {
+   "fieldname": "reading_12",
+   "fieldtype": "Data",
+   "label": "Reading 12"
+  },
+  {
+   "fieldname": "section_break_q2dxw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reading_13",
+   "fieldtype": "Data",
+   "label": "Reading 13"
+  },
+  {
+   "fieldname": "reading_14",
+   "fieldtype": "Data",
+   "label": "Reading 14"
+  },
+  {
+   "fieldname": "reading_15",
+   "fieldtype": "Data",
+   "label": "Reading 15"
+  },
+  {
+   "fieldname": "reading_16",
+   "fieldtype": "Data",
+   "label": "Reading 16"
+  },
+  {
+   "fieldname": "column_break_wxmjh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reading_17",
+   "fieldtype": "Data",
+   "label": "Reading 17"
+  },
+  {
+   "fieldname": "reading_18",
+   "fieldtype": "Data",
+   "label": "Reading 18"
+  },
+  {
+   "fieldname": "reading_19",
+   "fieldtype": "Data",
+   "label": "Reading 19"
+  },
+  {
+   "fieldname": "reading_20",
+   "fieldtype": "Data",
+   "label": "Reading 20"
   }
  ],
  "idx": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-08-01 09:58:07.081836",
+ "modified": "2024-08-01 10:10:49.725702",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Quality Inspection Reading",
