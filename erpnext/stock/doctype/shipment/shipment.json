@@ -7,6 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "pickup_from_type",
+  "shipment_name",
+  "bl_number",
   "pickup_company",
   "pickup_customer",
   "pickup_supplier",
@@ -581,11 +583,22 @@
    "label": "Purchase Receipt No.",
    "options": "Purchase Receipt",
    "read_only": 1
+  },
+  {
+   "fieldname": "shipment_name",
+   "fieldtype": "Data",
+   "label": "Shipment Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bl_number",
+   "fieldtype": "Data",
+   "label": "BL Number"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-08 02:56:28.470159",
+ "modified": "2024-07-29 13:11:07.597335",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Shipment",

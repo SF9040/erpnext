@@ -15,6 +15,7 @@
   "inspection_type",
   "reference_type",
   "reference_name",
+  "sp_name",
   "section_break_7",
   "item_code",
   "item_serial_no",
@@ -91,7 +92,8 @@
   },
   {
    "fieldname": "section_break_7",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "hidden": 1
   },
   {
    "fieldname": "item_code",
@@ -103,7 +105,6 @@
    "oldfieldname": "item_code",
    "oldfieldtype": "Link",
    "options": "Item",
-   "reqd": 1,
    "search_index": 1
   },
   {
@@ -127,8 +128,7 @@
    "fieldtype": "Float",
    "label": "Sample Size",
    "oldfieldname": "sample_size",
-   "oldfieldtype": "Currency",
-   "reqd": 1
+   "oldfieldtype": "Currency"
   },
   {
    "fieldname": "column_break1",
@@ -238,6 +238,12 @@
    "fieldname": "manual_inspection",
    "fieldtype": "Check",
    "label": "Manual Inspection"
+  },
+  {
+   "fieldname": "sp_name",
+   "fieldtype": "Data",
+   "label": "Shipment Number",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-search",
@@ -245,7 +251,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-10-04 22:00:13.995221",
+ "modified": "2024-08-01 09:59:03.632296",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Quality Inspection",

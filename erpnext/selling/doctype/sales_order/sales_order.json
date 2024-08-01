@@ -99,6 +99,7 @@
   "other_charges_calculation",
   "packing_list",
   "packed_items",
+  "pricing_rules_tab",
   "pricing_rule_details",
   "pricing_rules",
   "contact_info",
@@ -1705,13 +1706,18 @@
    "label": "Customer Segment",
    "options": "Customer Segment",
    "read_only": 1
+  },
+  {
+   "fieldname": "pricing_rules_tab",
+   "fieldtype": "Tab Break",
+   "label": "Pricing Rules"
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-19 00:21:54.712059",
+ "modified": "2024-07-25 18:45:32.782630",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order",

@@ -47,6 +47,8 @@
   "column_break_39",
   "set_warehouse",
   "set_target_warehouse",
+  "delivery_notes_section",
+  "delivery_notes_items",
   "section_break_42",
   "items",
   "section_break_30",
@@ -247,7 +249,7 @@
    "no_copy": 1,
    "oldfieldname": "naming_series",
    "oldfieldtype": "Select",
-   "options": "SI-.YY.MM.-.####\nRET-SI-.YY.MM.-.####\nSI-MS-.YY.MM.-.####\nSI-STVS-.YY.MM.-.####\nRET-SI-MS-.YY.MM.-.####\nRET-SI-STVS-.YY.MM.-.####\nACC-SINV-.YYYY.-.####\nACC-SINV-RET-.YYYY.-.####",
+   "options": "SI-.YY.MM.-.####\nSI-M&STCL-.YY.MM.-.####\nRET-SI-.YY.MM.-.####\nSI-MS-.YY.MM.-.####\nSI-STVS-.YY.MM.-.####\nRET-SI-MS-.YY.MM.-.####\nRET-SI-STVS-.YY.MM.-.####\nACC-SINV-.YYYY.-.####\nACC-SINV-RET-.YYYY.-.####",
    "print_hide": 1,
    "read_only": 1,
    "reqd": 1,
@@ -2177,6 +2179,17 @@
    "label": "Selected Shipping Address",
    "options": "Address",
    "read_only": 1
+  },
+  {
+   "fieldname": "delivery_notes_section",
+   "fieldtype": "Section Break",
+   "label": "Delivery Notes"
+  },
+  {
+   "fieldname": "delivery_notes_items",
+   "fieldtype": "Table",
+   "label": "Delivery Notes Items",
+   "options": "Sales Invoice Item by Delivery Note"
   }
  ],
  "icon": "fa fa-file-text",
@@ -2189,7 +2202,7 @@
    "link_fieldname": "consolidated_invoice"
   }
  ],
- "modified": "2024-04-16 23:47:24.562101",
+ "modified": "2024-07-25 20:22:33.920405",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Sales Invoice",

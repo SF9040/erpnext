@@ -25,6 +25,11 @@
   "set_warehouse",
   "items_section",
   "items",
+  "section_break_qb7wl",
+  "total_weight",
+  "column_break_3sk5r",
+  "total_quantity",
+  "column_break_qss8e",
   "terms_tab",
   "terms_section_break",
   "tc_name",
@@ -351,13 +356,41 @@
   {
    "fieldname": "column_break_13",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_qb7wl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "total_weight",
+   "fieldtype": "Float",
+   "label": "Total Weight",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "total_quantity",
+   "fieldtype": "Float",
+   "label": "Total Quantity",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3sk5r",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qss8e",
+   "fieldtype": "Column Break"
   }
  ],
  "icon": "fa fa-ticket",
  "idx": 70,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-15 12:07:24.789471",
+ "modified": "2024-07-29 09:48:52.815206",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Material Request",
