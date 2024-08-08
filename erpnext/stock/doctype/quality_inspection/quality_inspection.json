@@ -15,6 +15,7 @@
   "inspection_type",
   "reference_type",
   "reference_name",
+  "purchase_receipt_item_against",
   "sp_name",
   "section_break_7",
   "item_code",
@@ -245,6 +246,12 @@
    "fieldtype": "Data",
    "label": "Shipment Number",
    "read_only": 1
+  },
+  {
+   "fieldname": "purchase_receipt_item_against",
+   "fieldtype": "Data",
+   "label": "Purchase Receipt Item Against",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-search",
@@ -252,7 +259,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-05 11:29:49.479689",
+ "modified": "2024-08-08 14:19:01.045453",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Quality Inspection",
