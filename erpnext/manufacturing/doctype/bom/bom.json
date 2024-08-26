@@ -14,6 +14,7 @@
   "cb0",
   "is_active",
   "is_default",
+  "is_customizable",
   "allow_alternative_item",
   "set_rate_of_sub_assembly_item_based_on_bom",
   "project",
@@ -599,6 +600,12 @@
    "fieldname": "operating_cost_per_bom_quantity",
    "fieldtype": "Currency",
    "label": "Operating Cost Per BOM Quantity"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_customizable",
+   "fieldtype": "Check",
+   "label": "Is Customizable"
   }
  ],
  "icon": "fa fa-sitemap",
@@ -606,7 +613,7 @@
  "image_field": "image",
  "is_submittable": 1,
  "links": [],
- "modified": "2023-04-06 12:47:58.514795",
+ "modified": "2024-08-15 19:07:30.215313",
  "modified_by": "Administrator",
  "module": "Manufacturing",
  "name": "BOM",

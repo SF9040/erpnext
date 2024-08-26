@@ -259,9 +259,11 @@
    "width": "150px"
   },
   {
+   "allow_on_submit": 1,
    "default": "Today",
    "fieldname": "posting_date",
    "fieldtype": "Date",
+   "ignore_user_permissions": 1,
    "label": "Date",
    "no_copy": 1,
    "oldfieldname": "posting_date",
@@ -1489,7 +1491,7 @@
  "idx": 146,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-18 07:56:47.925232",
+ "modified": "2024-08-22 18:18:35.164945",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Note",

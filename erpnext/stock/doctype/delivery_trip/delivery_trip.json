@@ -125,8 +125,7 @@
    "fieldname": "delivery_stops",
    "fieldtype": "Table",
    "label": "Delivery Stop",
-   "options": "Delivery Stop",
-   "reqd": 1
+   "options": "Delivery Stop"
   },
   {
    "depends_on": "eval:!doc.__islocal",
@@ -236,7 +235,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-06-27 19:34:47.247406",
+ "modified": "2024-08-22 20:27:33.120527",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Delivery Trip",
