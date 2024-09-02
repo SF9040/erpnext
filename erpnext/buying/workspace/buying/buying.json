@@ -727,7 +727,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-07-04 12:23:49.766916",
+ "modified": "2024-08-29 17:10:01.320852",
  "modified_by": "Administrator",
  "module": "Buying",
  "name": "Buying",
@@ -747,7 +747,7 @@
  "quick_lists": [],
  "restrict_to_domain": "",
  "roles": [],
- "sequence_id": 6.0,
+ "sequence_id": 11.0,
  "shortcuts": [],
  "title": "Buying"
 }

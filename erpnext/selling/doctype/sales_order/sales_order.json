@@ -27,6 +27,7 @@
   "po_date",
   "company",
   "value_added_tax",
+  "require_discount_approval",
   "total_net_weight",
   "skip_delivery_note",
   "urgent",
@@ -1711,13 +1712,21 @@
    "fieldname": "pricing_rules_tab",
    "fieldtype": "Tab Break",
    "label": "Pricing Rules"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "require_discount_approval",
+   "fieldtype": "Check",
+   "label": "Discount Approval is Required",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-25 18:45:32.782630",
+ "modified": "2024-08-29 16:25:15.322090",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Sales Order",
