@@ -17,6 +17,8 @@
   "mode_of_payment",
   "proof_of_payment_section",
   "cheque_no",
+  "column_break_adqim",
+  "cheque_post_date",
   "payment_proof",
   "party_section",
   "party_type",
@@ -766,6 +768,17 @@
    "fieldname": "get_outstanding_shipments_expenses",
    "fieldtype": "Button",
    "label": "Get Outstanding Shipments Expenses"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_payment === 'Cheque'",
+   "fieldname": "cheque_post_date",
+   "fieldtype": "Date",
+   "label": "Cheque Post-Date",
+   "mandatory_depends_on": "eval:doc.mode_of_payment === 'Cheque'"
+  },
+  {
+   "fieldname": "column_break_adqim",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -779,7 +792,7 @@
    "table_fieldname": "payment_entries"
   }
  ],
- "modified": "2024-09-02 19:18:17.863791",
+ "modified": "2024-09-05 13:50:26.646255",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Payment Entry",
